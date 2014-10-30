@@ -70,8 +70,9 @@ qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 
 ### ggplot2: `ggplot()`
 
-```{r message=FALSE, fig.height=6.5, fig.width=10}
-ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=clarity))
+```{r message=FALSE, fig.height=6, fig.width=14}
+ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color)) + 
+       facet_grid(. ~ clarity)
 ```
 
 --- .class #id

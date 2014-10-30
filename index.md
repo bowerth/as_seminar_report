@@ -73,7 +73,8 @@ qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 
 
 ```r
-ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=clarity))
+ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color)) + 
+       facet_grid(. ~ clarity)
 ```
 
 ![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3.png) 
