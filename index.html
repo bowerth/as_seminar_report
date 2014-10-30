@@ -128,7 +128,7 @@
     <h3>ggplot2: <code>qplot()</code></h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">qplot(x=price, y=carat, colour=color, data=diamonds, geom=(&quot;point&quot;))
+    <pre><code class="r">qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=(&quot;point&quot;))
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
@@ -142,7 +142,7 @@
     <h3>ggplot2: <code>ggplot()</code></h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color))
+    <pre><code class="r">ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=clarity))
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>

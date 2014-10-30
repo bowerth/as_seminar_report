@@ -62,7 +62,7 @@ ext_widgets : {rCharts: [libraries/highcharts, libraries/nvd3]}
 
 
 ```r
-qplot(x=price, y=carat, colour=color, data=diamonds, geom=("point"))
+qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 ```
 
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
@@ -73,7 +73,7 @@ qplot(x=price, y=carat, colour=color, data=diamonds, geom=("point"))
 
 
 ```r
-ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color))
+ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=clarity))
 ```
 
 ![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3.png) 
