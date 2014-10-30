@@ -63,7 +63,7 @@ require(ggplot2)
 ```
 
 ```{r message=FALSE, fig.height=6.5, fig.width=10}
-qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
+qplot(x=price, y=carat, colour=color, data=diamonds, geom=("point"))
 ```
 
 --- .class #id
@@ -71,7 +71,7 @@ qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 ### ggplot2: `ggplot()`
 
 ```{r message=FALSE, fig.height=6.5, fig.width=10}
-ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=clarity))
+ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color))
 ```
 
 --- .class #id
