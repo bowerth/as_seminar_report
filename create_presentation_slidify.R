@@ -19,4 +19,4 @@ setwd(path)
 
 slidify(inputFile = "index.Rmd")
 
-## publish(user = "bowerth", repo = "as_seminar_shiny", host = "github")
+## publish(user = "bowerth", repo = "as_seminar_report", host = "github")

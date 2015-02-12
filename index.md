@@ -6,12 +6,10 @@ job         : Statistician STI/EAS
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # {arta, ascetic, brown_paper, dark, default, far, github, googlecode, hemisu-light, idea, ir_black, magula, monokai, pojoaque, school_book, solarized_dark, solarized_light, sunburst, tomorrow_night, vs, xcode, zenburn}
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
 ext_widgets : {rCharts: [libraries/highcharts, libraries/nvd3]}
-bibliography: "references.bib"
-csl         : "ecology.csl"
+github      : {user: slidify, repo: idocs}
 
 --- &twocol
 
@@ -87,7 +85,7 @@ grid graphics system
 
 ### traditional S-PLUS graphics: `example(plot)`
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
+![plot of chunk plotexample](assets/fig/plotexample-1.png) 
 
 --- &twocol
 
@@ -207,12 +205,12 @@ Source: http://vis.supstat.com/2013/04/plotting-symbols-and-color-palettes/
 *** =left
 example(barplot)
 
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6.png) 
+![plot of chunk barplot](assets/fig/barplot-1.png) 
 
 *** =right
 example(boxplot)
 
-![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7.png) 
+![plot of chunk boxplotex](assets/fig/boxplotex-1.png) 
 
 --- &twocol
 
@@ -221,12 +219,12 @@ example(boxplot)
 *** =left
 example(pairs)
 
-![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8.png) 
+![plot of chunk pairplot](assets/fig/pairplot-1.png) 
 
 *** =right
 example(persp)
 
-![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9.png) 
+![plot of chunk perspplot](assets/fig/perspplot-1.png) 
 
 --- &twocol
 
@@ -234,11 +232,11 @@ example(persp)
 
 *** =left
 
-![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10.png) 
+![plot of chunk starsegment](assets/fig/starsegment-1.png) 
 
 *** =right
 
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11.png) 
+![plot of chunk starradar](assets/fig/starradar-1.png) 
 
 --- &twocol
 
@@ -246,11 +244,11 @@ example(persp)
 
 *** =left
 
-![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12.png) 
+![plot of chunk mosaic1](assets/fig/mosaic1-1.png) 
 
 *** =right
 
-![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13.png) 
+![plot of chunk mosaic2](assets/fig/mosaic2-1.png) 
 
 --- &twocol
 
@@ -258,23 +256,23 @@ example(persp)
 
 *** =left
 
-![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14.png) 
+![plot of chunk coplot1](assets/fig/coplot1-1.png) 
 
 *** =right
 
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15.png) 
+![plot of chunk coplot2](assets/fig/coplot2-1.png) 
 
 --- .class #id
 
 ### traditional S-PLUS graphics: lm example
 
-![plot of chunk unnamed-chunk-16](assets/fig/unnamed-chunk-16.png) 
+![plot of chunk lmplot](assets/fig/lmplot-1.png) 
 
 --- .class #id
 
 ### traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)
 
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17.png) 
+![plot of chunk agnesplot](assets/fig/agnesplot-1.png) 
 
 --- .class #id
 
@@ -287,7 +285,7 @@ example(persp)
 plot(hclust(d = dist(USArrests), method = "average"), main=title)
 ```
 
-![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19.png) 
+![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png) 
 
 --- &twocol
 
@@ -295,7 +293,7 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 
 *** =left
 
-![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20.png) 
+![plot of chunk oztemp](assets/fig/oztemp-1.png) 
 
 *** =right
 - draw map of Australia
@@ -307,7 +305,7 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 
 *** =left
 
-![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21.png) 
+![plot of chunk viewport](assets/fig/viewport-1.png) 
 
 *** =right
 - create dendrogram object and cut it into four subtrees
@@ -347,7 +345,7 @@ Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
 plot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23.png) 
+![plot of chunk plot1](assets/fig/plot1-1.png) 
 
 *** =right
 
@@ -356,7 +354,7 @@ plot(x, y)
 qplot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24.png) 
+![plot of chunk qplot1](assets/fig/qplot1-1.png) 
 
 --- &twocol
 
@@ -369,7 +367,7 @@ qplot(x, y)
 plot(x, y, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-25](assets/fig/unnamed-chunk-25.png) 
+![plot of chunk plot2](assets/fig/plot2-1.png) 
 
 *** =right
 
@@ -378,7 +376,7 @@ plot(x, y, type = "l")
 qplot(x, y, geom = "line")
 ```
 
-![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26.png) 
+![plot of chunk qplot2](assets/fig/qplot2-1.png) 
 
 --- &twocol
 
@@ -391,7 +389,7 @@ qplot(x, y, geom = "line")
 plot(x, y, type = "s")
 ```
 
-![plot of chunk unnamed-chunk-27](assets/fig/unnamed-chunk-27.png) 
+![plot of chunk plot3](assets/fig/plot3-1.png) 
 
 *** =right
 
@@ -400,7 +398,7 @@ plot(x, y, type = "s")
 qplot(x, y, geom = "step")
 ```
 
-![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28.png) 
+![plot of chunk qplot3](assets/fig/qplot3-1.png) 
 
 --- &twocol
 
@@ -413,7 +411,7 @@ qplot(x, y, geom = "step")
 plot(x, y, type = "b")
 ```
 
-![plot of chunk unnamed-chunk-29](assets/fig/unnamed-chunk-29.png) 
+![plot of chunk plot4](assets/fig/plot4-1.png) 
 
 *** =right
 
@@ -422,7 +420,7 @@ plot(x, y, type = "b")
 qplot(x, y, geom = c("point", "line"))
 ```
 
-![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30.png) 
+![plot of chunk qplot4](assets/fig/qplot4-1.png) 
 
 --- .class #id
 
@@ -453,7 +451,7 @@ boxplot(wt~cyl,
 	    data=mtcars, col="lightgray")
 ```
 
-![plot of chunk unnamed-chunk-31](assets/fig/unnamed-chunk-31.png) 
+![plot of chunk boxplotcomp](assets/fig/boxplotcomp-1.png) 
 
 *** =right
 
@@ -463,7 +461,7 @@ qplot(factor(cyl), wt,
 	  data=mtcars, geom=c("boxplot", "jitter"))
 ```
 
-![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32.png) 
+![plot of chunk boxqplotcomp](assets/fig/boxqplotcomp-1.png) 
 
 --- &twocol
 
@@ -476,7 +474,7 @@ qplot(factor(cyl), wt,
 hist(mtcars$wt)
 ```
 
-![plot of chunk unnamed-chunk-33](assets/fig/unnamed-chunk-33.png) 
+![plot of chunk histplotcomp](assets/fig/histplotcomp-1.png) 
 
 *** =right
 
@@ -486,7 +484,7 @@ qplot(mtcars$wt, geom = "histogram",
 	  binwidth = 0.5, color = factor(0))
 ```
 
-![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34.png) 
+![plot of chunk histqplotcomp](assets/fig/histqplotcomp-1.png) 
 
 --- &twocol
 
@@ -499,7 +497,7 @@ qplot(mtcars$wt, geom = "histogram",
 cdplot(mtcars$wt, factor(mtcars$cyl))
 ```
 
-![plot of chunk unnamed-chunk-35](assets/fig/unnamed-chunk-35.png) 
+![plot of chunk cdplotcomp](assets/fig/cdplotcomp-1.png) 
 
 *** =right
 
@@ -509,7 +507,7 @@ qplot(mtcars$wt, fill=factor(mtcars$cyl),
 	  geom="density", position="fill")
 ```
 
-![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36.png) 
+![plot of chunk cdqplotcomp](assets/fig/cdqplotcomp-1.png) 
 
 --- .class #id
 
@@ -536,7 +534,7 @@ A dataset containing the prices and other attributes of almost 54,000 diamonds. 
 qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 ```
 
-![plot of chunk unnamed-chunk-37](assets/fig/unnamed-chunk-37.png) 
+![plot of chunk qplotex1](assets/fig/qplotex1-1.png) 
 
 --- .class #id
 
@@ -547,7 +545,7 @@ qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 qplot(factor(cyl), wt, data = mtcars, geom=c("boxplot", "jitter"))
 ```
 
-![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38.png) 
+![plot of chunk qplotex2](assets/fig/qplotex2-1.png) 
 
 --- .class #id
 
@@ -560,7 +558,7 @@ ggplot(data=diamonds) +
     facet_grid(. ~ clarity)
 ```
 
-![plot of chunk unnamed-chunk-39](assets/fig/unnamed-chunk-39.png) 
+![plot of chunk ggplotex](assets/fig/ggplotex-1.png) 
 
 --- .class #id
 
@@ -578,11 +576,53 @@ ggplot() +
 		          colour = 'red', width = 0.4)
 ```
 
-![plot of chunk unnamed-chunk-41](assets/fig/unnamed-chunk-41.png) 
+![plot of chunk ggplotlayer](assets/fig/ggplotlayer-1.png) 
+
+--- &twocol
+
+### ggplot Themes
+
+
+
+*** =left
+`theme_stata()`
+
+![plot of chunk ggthemesstata](assets/fig/ggthemesstata-1.png) 
+
+*** =right
+`theme_economist()`
+
+![plot of chunk ggthemeseconomist](assets/fig/ggthemeseconomist-1.png) 
+
+--- &twocol
+
+### ggplot Themes
+
+*** =left
+`theme_fivethirtyeight()`
+
+![plot of chunk ggthemesfivethirtyeight](assets/fig/ggthemesfivethirtyeight-1.png) 
+
+*** =right
+Tableau `theme_igray()`
+
+![plot of chunk ggthemesigray](assets/fig/ggthemesigray-1.png) 
 
 --- .class #id
 
 ### ggplot Themes
+
+
+
+
+```r
+source(file.path("demofiles", "scoreboard", "theme_scoreboard.R"))
+theme_set(theme_sb())
+hist_cut <- ggplot(dsamp, aes(x=price, fill=cut))
+hist_cut + geom_bar() + scale_fill_manual(values=pal.crN)
+```
+
+![plot of chunk ggthemescustom](assets/fig/ggthemescustom-1.png) 
 
 --- .class #id
 
@@ -5452,6 +5492,14 @@ p3$chart(zoomType = "xy"); p3$exporting(enabled = T); p3$print('chart3')
     })(jQuery);
 </script>
 
+--- &interactive
+
+### native D3.js
+
+<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>require(googleVis)
+M1 <- gvisMotionChart(Fruits, idvar = 'Fruit', timevar = 'Year')
+print(M1, tag = 'chart')</textarea>
+
 --- .class #id
 
 ## Reporting with `knitr`
@@ -5558,6 +5606,6 @@ the OECD average in 'r year'.
 
 ## References
 
-Murrell, P. (2005). R Graphics. Chapman & Hall/CRC Computer Science & Data Analysis. doi:10.1201/9781420035025
-
-Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
+- ggplot2 http://ggplot2.org/
+- ggthemes https://github.com/jrnold/ggthemes
+- julia gadfly http://gadflyjl.org/

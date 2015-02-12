@@ -13,7 +13,10 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
 <link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
 <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
@@ -46,6 +49,9 @@
     <h2>Generating graphics for statistical analysis using R</h2>
     <p>Bo Werth<br/>Statistician STI/EAS</p>
   </hgroup>
+    <a href="https://github.com/slidify/idocs/zipball/gh-pages" class="example">
+     Download
+    </a>
   <article></article>  
 </slide>
     
@@ -178,7 +184,7 @@
     <h3>traditional S-PLUS graphics: <code>example(plot)</code></h3>
   </hgroup>
   <article data-timings="">
-    <p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+    <p><img src="assets/fig/plotexample-1.png" alt="plot of chunk plotexample"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -334,13 +340,13 @@ par(op)
 <div style='float:left;width:48%;' class='centered'>
   <p>example(barplot)</p>
 
-<p><img src="assets/fig/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+<p><img src="assets/fig/barplot-1.png" alt="plot of chunk barplot"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <p>example(boxplot)</p>
 
-<p><img src="assets/fig/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+<p><img src="assets/fig/boxplotex-1.png" alt="plot of chunk boxplotex"> </p>
 
 </div>
   </article>
@@ -356,13 +362,13 @@ par(op)
 <div style='float:left;width:48%;' class='centered'>
   <p>example(pairs)</p>
 
-<p><img src="assets/fig/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8"> </p>
+<p><img src="assets/fig/pairplot-1.png" alt="plot of chunk pairplot"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <p>example(persp)</p>
 
-<p><img src="assets/fig/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9"> </p>
+<p><img src="assets/fig/perspplot-1.png" alt="plot of chunk perspplot"> </p>
 
 </div>
   </article>
@@ -376,11 +382,11 @@ par(op)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"> </p>
+  <p><img src="assets/fig/starsegment-1.png" alt="plot of chunk starsegment"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
-  <p><img src="assets/fig/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11"> </p>
+  <p><img src="assets/fig/starradar-1.png" alt="plot of chunk starradar"> </p>
 
 </div>
   </article>
@@ -394,11 +400,11 @@ par(op)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12"> </p>
+  <p><img src="assets/fig/mosaic1-1.png" alt="plot of chunk mosaic1"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
-  <p><img src="assets/fig/unnamed-chunk-13.png" alt="plot of chunk unnamed-chunk-13"> </p>
+  <p><img src="assets/fig/mosaic2-1.png" alt="plot of chunk mosaic2"> </p>
 
 </div>
   </article>
@@ -412,11 +418,11 @@ par(op)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14"> </p>
+  <p><img src="assets/fig/coplot1-1.png" alt="plot of chunk coplot1"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
-  <p><img src="assets/fig/unnamed-chunk-15.png" alt="plot of chunk unnamed-chunk-15"> </p>
+  <p><img src="assets/fig/coplot2-1.png" alt="plot of chunk coplot2"> </p>
 
 </div>
   </article>
@@ -428,7 +434,7 @@ par(op)
     <h3>traditional S-PLUS graphics: lm example</h3>
   </hgroup>
   <article data-timings="">
-    <p><img src="assets/fig/unnamed-chunk-16.png" alt="plot of chunk unnamed-chunk-16"> </p>
+    <p><img src="assets/fig/lmplot-1.png" alt="plot of chunk lmplot"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -439,7 +445,7 @@ par(op)
     <h3>traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)</h3>
   </hgroup>
   <article data-timings="">
-    <p><img src="assets/fig/unnamed-chunk-17.png" alt="plot of chunk unnamed-chunk-17"> </p>
+    <p><img src="assets/fig/agnesplot-1.png" alt="plot of chunk agnesplot"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -453,7 +459,7 @@ par(op)
     <pre><code class="r">plot(hclust(d = dist(USArrests), method = &quot;average&quot;), main=title)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-19.png" alt="plot of chunk unnamed-chunk-19"> </p>
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -466,7 +472,7 @@ par(op)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-20.png" alt="plot of chunk unnamed-chunk-20"> </p>
+  <p><img src="assets/fig/oztemp-1.png" alt="plot of chunk oztemp"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -487,7 +493,7 @@ par(op)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-21.png" alt="plot of chunk unnamed-chunk-21"> </p>
+  <p><img src="assets/fig/viewport-1.png" alt="plot of chunk viewport"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -546,14 +552,14 @@ par(op)
   <pre><code class="r">plot(x, y)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-23.png" alt="plot of chunk unnamed-chunk-23"> </p>
+<p><img src="assets/fig/plot1-1.png" alt="plot of chunk plot1"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <pre><code class="r">qplot(x, y)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-24.png" alt="plot of chunk unnamed-chunk-24"> </p>
+<p><img src="assets/fig/qplot1-1.png" alt="plot of chunk qplot1"> </p>
 
 </div>
   </article>
@@ -570,14 +576,14 @@ par(op)
   <pre><code class="r">plot(x, y, type = &quot;l&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-25.png" alt="plot of chunk unnamed-chunk-25"> </p>
+<p><img src="assets/fig/plot2-1.png" alt="plot of chunk plot2"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <pre><code class="r">qplot(x, y, geom = &quot;line&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-26.png" alt="plot of chunk unnamed-chunk-26"> </p>
+<p><img src="assets/fig/qplot2-1.png" alt="plot of chunk qplot2"> </p>
 
 </div>
   </article>
@@ -594,14 +600,14 @@ par(op)
   <pre><code class="r">plot(x, y, type = &quot;s&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-27.png" alt="plot of chunk unnamed-chunk-27"> </p>
+<p><img src="assets/fig/plot3-1.png" alt="plot of chunk plot3"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <pre><code class="r">qplot(x, y, geom = &quot;step&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-28.png" alt="plot of chunk unnamed-chunk-28"> </p>
+<p><img src="assets/fig/qplot3-1.png" alt="plot of chunk qplot3"> </p>
 
 </div>
   </article>
@@ -618,14 +624,14 @@ par(op)
   <pre><code class="r">plot(x, y, type = &quot;b&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-29.png" alt="plot of chunk unnamed-chunk-29"> </p>
+<p><img src="assets/fig/plot4-1.png" alt="plot of chunk plot4"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
   <pre><code class="r">qplot(x, y, geom = c(&quot;point&quot;, &quot;line&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-30.png" alt="plot of chunk unnamed-chunk-30"> </p>
+<p><img src="assets/fig/qplot4-1.png" alt="plot of chunk qplot4"> </p>
 
 </div>
   </article>
@@ -668,7 +674,7 @@ par(op)
         data=mtcars, col=&quot;lightgray&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-31.png" alt="plot of chunk unnamed-chunk-31"> </p>
+<p><img src="assets/fig/boxplotcomp-1.png" alt="plot of chunk boxplotcomp"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -676,7 +682,7 @@ par(op)
       data=mtcars, geom=c(&quot;boxplot&quot;, &quot;jitter&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-32.png" alt="plot of chunk unnamed-chunk-32"> </p>
+<p><img src="assets/fig/boxqplotcomp-1.png" alt="plot of chunk boxqplotcomp"> </p>
 
 </div>
   </article>
@@ -693,7 +699,7 @@ par(op)
   <pre><code class="r">hist(mtcars$wt)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-33.png" alt="plot of chunk unnamed-chunk-33"> </p>
+<p><img src="assets/fig/histplotcomp-1.png" alt="plot of chunk histplotcomp"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -701,7 +707,7 @@ par(op)
       binwidth = 0.5, color = factor(0))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-34.png" alt="plot of chunk unnamed-chunk-34"> </p>
+<p><img src="assets/fig/histqplotcomp-1.png" alt="plot of chunk histqplotcomp"> </p>
 
 </div>
   </article>
@@ -718,7 +724,7 @@ par(op)
   <pre><code class="r">cdplot(mtcars$wt, factor(mtcars$cyl))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-35.png" alt="plot of chunk unnamed-chunk-35"> </p>
+<p><img src="assets/fig/cdplotcomp-1.png" alt="plot of chunk cdplotcomp"> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -726,7 +732,7 @@ par(op)
       geom=&quot;density&quot;, position=&quot;fill&quot;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-36.png" alt="plot of chunk unnamed-chunk-36"> </p>
+<p><img src="assets/fig/cdqplotcomp-1.png" alt="plot of chunk cdqplotcomp"> </p>
 
 </div>
   </article>
@@ -765,7 +771,7 @@ par(op)
     <pre><code class="r">qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=(&quot;point&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-37.png" alt="plot of chunk unnamed-chunk-37"> </p>
+<p><img src="assets/fig/qplotex1-1.png" alt="plot of chunk qplotex1"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -779,7 +785,7 @@ par(op)
     <pre><code class="r">qplot(factor(cyl), wt, data = mtcars, geom=c(&quot;boxplot&quot;, &quot;jitter&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-38.png" alt="plot of chunk unnamed-chunk-38"> </p>
+<p><img src="assets/fig/qplotex2-1.png" alt="plot of chunk qplotex2"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -795,7 +801,7 @@ par(op)
     facet_grid(. ~ clarity)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-39.png" alt="plot of chunk unnamed-chunk-39"> </p>
+<p><img src="assets/fig/ggplotex-1.png" alt="plot of chunk ggplotex"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -814,8 +820,52 @@ par(op)
                   colour = &#39;red&#39;, width = 0.4)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-41.png" alt="plot of chunk unnamed-chunk-41"> </p>
+<p><img src="assets/fig/ggplotlayer-1.png" alt="plot of chunk ggplotlayer"> </p>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h3>ggplot Themes</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><code>theme_stata()</code></p>
+
+<p><img src="assets/fig/ggthemesstata-1.png" alt="plot of chunk ggthemesstata"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><code>theme_economist()</code></p>
+
+<p><img src="assets/fig/ggthemeseconomist-1.png" alt="plot of chunk ggthemeseconomist"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h3>ggplot Themes</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><code>theme_fivethirtyeight()</code></p>
+
+<p><img src="assets/fig/ggthemesfivethirtyeight-1.png" alt="plot of chunk ggthemesfivethirtyeight"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Tableau <code>theme_igray()</code></p>
+
+<p><img src="assets/fig/ggthemesigray-1.png" alt="plot of chunk ggthemesigray"> </p>
+
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -825,7 +875,14 @@ par(op)
     <h3>ggplot Themes</h3>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">source(file.path(&quot;demofiles&quot;, &quot;scoreboard&quot;, &quot;theme_scoreboard.R&quot;))
+theme_set(theme_sb())
+hist_cut &lt;- ggplot(dsamp, aes(x=price, fill=cut))
+hist_cut + geom_bar() + scale_fill_manual(values=pal.crN)
+</code></pre>
+
+<p><img src="assets/fig/ggthemescustom-1.png" alt="plot of chunk ggthemescustom"> </p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -852,7 +909,7 @@ par(op)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-40" style="background:;">
+<slide class="" id="slide-42" style="background:;">
   <hgroup>
     <h3>ggvis: <code>/demo/dynamic.r</code></h3>
   </hgroup>
@@ -5724,6 +5781,50 @@ p3$chart(zoomType = &quot;xy&quot;); p3$exporting(enabled = T); p3$print(&#39;ch
   <!-- Presenter Notes -->
 </slide>
 
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h3>native D3.js</h3>
+  </hgroup>
+  <article data-timings="">
+     
+<div class='row-fluid'>
+  <div class='span5'>
+    <form id="knitForm45" data-cell="45">
+      <p><textarea class='interactive' id='interactive45' data-cell='45' data-results='asis' style='display:none'>require(googleVis)
+M1 &lt;- gvisMotionChart(Fruits, idvar = &#39;Fruit&#39;, timevar = &#39;Year&#39;)
+print(M1, tag = &#39;chart&#39;)</textarea></p>
+
+      <div id='aceeditor45' style="height:px;"></div>
+      <div class='interactive btn-toolbar pull-left'>
+        <div class='btn-group'>
+          <a class='btn btn-small action-button' id='runCode45' data-action='runCode'
+            data-cell='45' rel='tooltip' data-title='Run Code'>
+            <i class='icon-play'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='testCode45' data-action='testCode'
+             data-cell='45' rel='tooltip' data-title='Test Code'>
+            <i class='icon-check'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='clearResult45' data-action='clearResult'
+             data-cell='45' rel='tooltip' data-title='Clear Output'>
+            <i class="icon-remove"></i>
+          </a>
+          <a class='btn  btn-small iBtn' id='getHint45' rel='tooltip' 
+            data-title="Get Hint" data-action='getHint'
+            data-cell='45' data-hint="">
+            <i class="icon-bookmark"></i>
+          </a>
+        </div>
+      </div>    </form>
+  </div>
+  <div class='span7'>
+    <iframe id="knitResult45" class='shiny-html-output'></iframe>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
 <slide class="class" id="id" style="background:;">
   <hgroup>
     <h2>Reporting with <code>knitr</code></h2>
@@ -5857,9 +5958,11 @@ the OECD average in &#39;r year&#39;.
     <h2>References</h2>
   </hgroup>
   <article data-timings="">
-    <p>Murrell, P. (2005). R Graphics. Chapman &amp; Hall/CRC Computer Science &amp; Data Analysis. doi:10.1201/9781420035025</p>
-
-<p>Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3</p>
+    <ul>
+<li>ggplot2 <a href="http://ggplot2.org/">http://ggplot2.org/</a></li>
+<li>ggthemes <a href="https://github.com/jrnold/ggthemes">https://github.com/jrnold/ggthemes</a></li>
+<li>julia gadfly <a href="http://gadflyjl.org/">http://gadflyjl.org/</a></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -6093,74 +6196,92 @@ the OECD average in &#39;r year&#39;.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='gridSVG: gapminder'>
+        data-slide=38 title='ggplot Themes'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='gridSVG: rnd'>
+        data-slide=39 title='ggplot Themes'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='ggvis: <code>/demo/dynamic.r</code>'>
+        data-slide=40 title='gridSVG: gapminder'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='rCharts: nvd3 Sparklines'>
+        data-slide=41 title='gridSVG: rnd'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='rCharts: highcharts'>
+        data-slide=42 title='ggvis: <code>/demo/dynamic.r</code>'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Reporting with <code>knitr</code>'>
+        data-slide=43 title='rCharts: nvd3 Sparklines'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Reporting with <code>knitr</code>'>
+        data-slide=44 title='rCharts: highcharts'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Reporting with <code>knitr</code>'>
+        data-slide=45 title='native D3.js'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Report Templates'>
+        data-slide=46 title='Reporting with <code>knitr</code>'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='<code>brew</code> template example'>
+        data-slide=47 title='Reporting with <code>knitr</code>'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Reporting Tools and Platforms'>
+        data-slide=48 title='Reporting with <code>knitr</code>'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='References'>
+        data-slide=49 title='Report Templates'>
          49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='<code>brew</code> template example'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Reporting Tools and Platforms'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='References'>
+         52
       </a>
     </li>
   </ul>
@@ -6172,6 +6293,26 @@ the OECD average in &#39;r year&#39;.
   <![endif]-->
 </body>
   <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
   
   <!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
