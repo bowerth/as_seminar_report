@@ -10,6 +10,7 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 knit        : slidify::knit2slides
 mode        : selfcontained # {standalone, draft}
 ext_widgets : {rCharts: [libraries/highcharts, libraries/nvd3]}
+github      : []
 
 --- &twocol
 
