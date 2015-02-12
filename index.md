@@ -6,10 +6,11 @@ job         : Statistician STI/EAS
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # {arta, ascetic, brown_paper, dark, default, far, github, googlecode, hemisu-light, idea, ir_black, magula, monokai, pojoaque, school_book, solarized_dark, solarized_light, sunburst, tomorrow_night, vs, xcode, zenburn}
-widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz, bootstrap}
+widgets     : []            # {mathjax, quiz, bootstrap}
+knit        : slidify::knit2slides
 mode        : selfcontained # {standalone, draft}
 ext_widgets : {rCharts: [libraries/highcharts, libraries/nvd3]}
-github      : {user: slidify, repo: idocs}
+github      : []
 
 --- &twocol
 
@@ -5492,14 +5493,6 @@ p3$chart(zoomType = "xy"); p3$exporting(enabled = T); p3$print('chart3')
     })(jQuery);
 </script>
 
---- &interactive
-
-### native D3.js
-
-<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>require(googleVis)
-M1 <- gvisMotionChart(Fruits, idvar = 'Fruit', timevar = 'Year')
-print(M1, tag = 'chart')</textarea>
-
 --- .class #id
 
 ## Reporting with `knitr`
@@ -5609,3 +5602,4 @@ the OECD average in 'r year'.
 - ggplot2 http://ggplot2.org/
 - ggthemes https://github.com/jrnold/ggthemes
 - julia gadfly http://gadflyjl.org/
+- CRAN Task View: Graphics http://cran.r-project.org/web/views/Graphics.html
