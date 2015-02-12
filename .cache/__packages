@@ -1,8 +1,17 @@
 base
+cluster
 devtools
 ggplot2
 ggvis
+gridBase
+httr
+knitcitations
+lattice
+maps
+oz
+plyr
 rCharts
+RGraphics
 shiny
 slidify
 slidifyLibraries

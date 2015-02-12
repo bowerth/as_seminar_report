@@ -1,6 +1,6 @@
 ---
-title       : R reports
-subtitle    : Generating reproducible reports with R
+title       : R Graphics
+subtitle    : Generating graphics for statistical analysis using R
 author      : Bo Werth
 job         : Statistician STI/EAS
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -9,75 +9,580 @@ hitheme     : tomorrow      # {arta, ascetic, brown_paper, dark, default, far, g
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-# ext_widgets : {rCharts: [libraries/nvd3]}
-# ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
 ext_widgets : {rCharts: [libraries/highcharts, libraries/nvd3]}
+bibliography: "references.bib"
+csl         : "ecology.csl"
 
 --- &twocol
 
-## Motivation
+
+
+## Graphics in statistical software
 
 *** =left
-### +
-- quality: reproducibility, calculations
-- efficiency gains: scaling
-- output flexibility: PDF, Word, HTML
+programming
+  - quality: reproducibility, calculations
+  - efficiency gains: scaling
+  - output flexibility: PDF, Word, HTML
 
 *** =right
-### -
-- development time
-- changing requirements
-- maintenance and transparency
+interactive creation (e.g. Excel, Tableau)
+  - development time
+  - changing requirements
+  - maintenance and transparency
+
+--- &twocol
+
+## `R` Graphics Systems
+
+*** =left
+traditional graphics
+  - graphics facilities of the S language
+  - fast, intuitive
+  - create plot with high-level function
+  - add elements with low-level functions
+
+*** =right
+grid graphics system
+  - produce complete plots
+  - ideal proportions
+  - facetting or multi-panel conditioning
+  - `trellis`, `lattice`, `ggplot`
 
 --- .class #id
 
-## About `R`
+## The organization of `R` graphics
 
-- statistical programming
-- open-source
-- object-oriented
-- steep learning curve
-- from user to developer
-- powerful graphics, e.g. `ggplot` package
-- reproducible reports, e.g. `knitr` package
-
-<p style="text-align:right"><img src="assets/img/RStudio-Ball.png" alt="RStudio logo" height="145px"/></p>
+<p style="text-align:center"><img src="assets/img/R_graphics_system.svg" alt="R graphics system" height="550px"/></p>
 
 --- .class #id
 
-### Graphics
+#### Publication quality graphics with `ggplot`
 
-- `ggplot`: implementation of Tufte's "grammar of graphics"
- - `qplot()`: single line of code
- - `ggplot()`: combine layers with '+'
-- `gridSVG`: animate ggplot objects
+- implementation of Leland Wilkinson's "grammar of graphics" (2005)  
+- independent components that can be composed in different ways
+- not limited to a set of pre-specified graphics
+- create new graphics that are precisely tailored
+
+#### Interactive Graphics using JavaScript
+
 - `ggvis`: `ggplot` for dynamic charts based on `vega.js`
-- `rCharts`: interface to various `d3.js` libraries
+- `rCharts`: interface to high-level js libraries building e.g. on `d3.js`
+  - `highcharts`, `polyplot`, `nvd3`, `ricksaw` for statistical charts
+  - `crosslet`, `datamaps`, `leaflet` etc. for map visualisations
 
 --- .class #id
 
-### ggplot2: `qplot()`
+### traditional S-PLUS graphics
+
+  - pen on paper model:
+    - can only draw on top of the plot
+    - cannot modify or delete existing content
+  - no (user accessible) representation of the graphics
+  - includes both tools for drawing primitives and entire plots
+  - generally fast, but have limited scope
 
 
+--- .class #id
+
+### traditional S-PLUS graphics: `example(plot)`
+
+![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
+
+--- &twocol
+
+### traditional S-PLUS graphics: plot regions
+
+*** =left
+Single plot regions
+
+![Single Plot Regions](assets/img/single_plot_regions.svg)
+
+*** =right
+Multiple plot regions
+
+![Multi Plot Regions](assets/img/multi_plot_regions.svg)
+
+--- .class #id
+
+### traditional S-PLUS graphics: plot regions
+
+
+```r
+op <- par(mfrow = c(2, 2),
+	      mar = c(3, 0, 0, 0))
+plot(...); plot(...); plot(...); plot(...)
+## At end of plotting, reset to previous settings:
+par(op)
+```
+
+- the documentation can be looked up with `?par()`
+- margins are measured in multiples of lines of text
+- modifying traditional graphics state settings via `par()` has a persistent effect
+
+--- &twocol
+
+### traditional S-PLUS graphics: plot regions
+
+
+```r
+op <- par(mfrow = c(2, 2),
+	      mar = c(3, 0, 0, 0))
+plot(...); plot(...); plot(...); plot(...)
+## At end of plotting, reset to previous settings:
+par(op)
+```
+
+- `mfrow` and `mfcol` control the number of figure regions on a page
+
+*** =left
+
+![par mfrow](assets/img/par_mfrow.svg)
+
+*** =right
+
+![par mfcol](assets/img/par_mfcol.svg)
+
+--- &twocol
+
+### traditional S-PLUS graphics: controlling plot regions
+
+*** =left
+
+![Graphics state settings controlling plot regions](assets/img/graphic_state_setting_controlling_plot_regions.svg)
+
+*** =right
+- diagram for controlling widths and horizontal locations
+- plot region = figure region - figure margins
+- `plt`: location of the plot region (l, r, b, t)
+- `pin`: size of the plot region, (width, height)
+- `pty`: `m`: use all available space, `s`: preserve square format
+
+--- .class #id
+
+### traditional S-PLUS graphics: colors and colours
+
+
+```r
+colours()[1:4] # 657 color names
+```
+
+```
+## [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
+```
+
+```r
+col2rgb("transparent") # see the RGB values for a particular color name
+```
+
+```
+##       [,1]
+## red    255
+## green  255
+## blue   255
+```
+
+```r
+rgb(1, 0, 0) # Red-Green-Blue triplet of intensities, format #RRGGBB, FF = 255
+```
+
+```
+## [1] "#FF0000"
+```
+
+--- .class #id
+
+### traditional S-PLUS graphics: `pch` point symbols
+
+![pch symbols](assets/img/pch_symbols.png)
+
+A particular data symbol is selected by specifying an integer between 0 and 25 or a single character for the `pch` graphical setting. In the diagram, the relevant integer or character `pch` value is shown in grey to the left of the relevant symbol.
+
+Source: http://vis.supstat.com/2013/04/plotting-symbols-and-color-palettes/
+
+--- &twocol
+
+### traditional S-PLUS graphics
+
+*** =left
+example(barplot)
+
+![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6.png) 
+
+*** =right
+example(boxplot)
+
+![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7.png) 
+
+--- &twocol
+
+### traditional S-PLUS graphics
+
+*** =left
+example(pairs)
+
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8.png) 
+
+*** =right
+example(persp)
+
+![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9.png) 
+
+--- &twocol
+
+### traditional S-PLUS graphics: `example(stars)`
+
+*** =left
+
+![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10.png) 
+
+*** =right
+
+![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11.png) 
+
+--- &twocol
+
+### traditional S-PLUS graphics: `example(mosaicplot)`
+
+*** =left
+
+![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12.png) 
+
+*** =right
+
+![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13.png) 
+
+--- &twocol
+
+### traditional S-PLUS graphics: conditioning plot, `example(coplot)`
+
+*** =left
+
+![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14.png) 
+
+*** =right
+
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15.png) 
+
+--- .class #id
+
+### traditional S-PLUS graphics: lm example
+
+![plot of chunk unnamed-chunk-16](assets/fig/unnamed-chunk-16.png) 
+
+--- .class #id
+
+### traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)
+
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17.png) 
+
+--- .class #id
+
+### traditional S-PLUS graphics
+
+
+
+
+```r
+plot(hclust(d = dist(USArrests), method = "average"), main=title)
+```
+
+![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19.png) 
+
+--- &twocol
+
+### lattice / grid graphics: pre and post drawing
+
+*** =left
+
+![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20.png) 
+
+*** =right
+- draw map of Australia
+- draw average monthly temperatures for six cities
+
+--- &twocol
+
+### lattice / grid graphics: embedding plots in grid viewports
+
+*** =left
+
+![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21.png) 
+
+*** =right
+- create dendrogram object and cut it into four subtrees
+- define lattice panel function to draw the dendrograms
+- make base plot region correspond to the created viewport
+- use traditional `plot()` function to draw the dendrogram
+
+--- .class #id
+
+### Layered Grammar of Graphics
+
+A statistical graphic is a mapping from data to 
+  - geometric objects (points, lines, bars)
+  - with aesthetic attributes (colour, shape, size)
+  - in a coordinate system (cartesian, polar, map projection)
+
+and optionally entails
+  - statistical transformations of the data (binning, counting)
+  - faceting to generate the same graphic for different subsets of the dataset
+
+ggplot2 attempts to produce any kind of statistical graphic using
+ - a compact syntax and independent components to facilitate extensions 
+ - the `grid` package to exercise low-level control over the appearance of the plot
+
+Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+
+
+*** =left
+
+
+```r
+plot(x, y)
+```
+
+![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23.png) 
+
+*** =right
+
+
+```r
+qplot(x, y)
+```
+
+![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24.png) 
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+plot(x, y, type = "l")
+```
+
+![plot of chunk unnamed-chunk-25](assets/fig/unnamed-chunk-25.png) 
+
+*** =right
+
+
+```r
+qplot(x, y, geom = "line")
+```
+
+![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26.png) 
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+plot(x, y, type = "s")
+```
+
+![plot of chunk unnamed-chunk-27](assets/fig/unnamed-chunk-27.png) 
+
+*** =right
+
+
+```r
+qplot(x, y, geom = "step")
+```
+
+![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28.png) 
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+plot(x, y, type = "b")
+```
+
+![plot of chunk unnamed-chunk-29](assets/fig/unnamed-chunk-29.png) 
+
+*** =right
+
+
+```r
+qplot(x, y, geom = c("point", "line"))
+```
+
+![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30.png) 
+
+--- .class #id
+
+### `mtcars` dataset
+
+Data from the 1974 _Motor Trend_ US magazine for 32 automobiles (1973-74 models). The variables are the following:
+  - `mpg` Miles/(US) gallon                        
+  - `cyl` Number of cylinders                      
+  - `disp` Displacement (cu.in.)                    
+  - `hp` Gross horsepower                         
+  - `drat` Rear axle ratio                          
+  - `wt` Weight (lb/1000)                         
+  - `qsec` 1/4 mile time                            
+  - `vs` V/S                                      
+  - `am` Transmission (0 = automatic, 1 = manual) 
+  - `gear` Number of forward gears                  
+  - `carb` Number of carburetors     
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+boxplot(wt~cyl, 
+	    data=mtcars, col="lightgray")
+```
+
+![plot of chunk unnamed-chunk-31](assets/fig/unnamed-chunk-31.png) 
+
+*** =right
+
+
+```r
+qplot(factor(cyl), wt, 
+	  data=mtcars, geom=c("boxplot", "jitter"))
+```
+
+![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32.png) 
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+hist(mtcars$wt)
+```
+
+![plot of chunk unnamed-chunk-33](assets/fig/unnamed-chunk-33.png) 
+
+*** =right
+
+
+```r
+qplot(mtcars$wt, geom = "histogram", 
+	  binwidth = 0.5, color = factor(0))
+```
+
+![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34.png) 
+
+--- &twocol
+
+### Comparison `plot()` and `qplot()`
+
+*** =left
+
+
+```r
+cdplot(mtcars$wt, factor(mtcars$cyl))
+```
+
+![plot of chunk unnamed-chunk-35](assets/fig/unnamed-chunk-35.png) 
+
+*** =right
+
+
+```r
+qplot(mtcars$wt, fill=factor(mtcars$cyl), 
+	  geom="density", position="fill")
+```
+
+![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36.png) 
+
+--- .class #id
+
+### `diamonds` dataset
+
+A dataset containing the prices and other attributes of almost 54,000 diamonds. The variables are as follows:
+  - `price` price in US dollars ($326-$18,823)
+  - `carat` weight of the diamond (0.2-5.01)
+  - `cut` quality of the cut (Fair, Good, Very Good, Premium, Ideal)
+  - `colour` diamond colour, from J (worst) to D (best)
+  - `clarity` a measurement of how clear the diamond is (I1 (worst), SI1, SI2, VS1, VS2, VVS1, VVS2, IF (best))
+  - `x` length in mm (0-10.74)
+  - `y` width in mm (0-58.9)
+  - `z` depth in mm (0-31.8)
+  - `depth` total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43-79)
+  - `table` width of top of diamond relative to widest point (43-95)
+
+--- .class #id
+
+### ggplot2 `qplot()`: single line of code
 
 
 ```r
 qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
 ```
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
+![plot of chunk unnamed-chunk-37](assets/fig/unnamed-chunk-37.png) 
 
 --- .class #id
 
-### ggplot2: `ggplot()`
+### ggplot2 `qplot()`: single line of code
 
 
 ```r
-ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color)) + 
-       facet_grid(. ~ clarity)
+qplot(factor(cyl), wt, data = mtcars, geom=c("boxplot", "jitter"))
 ```
 
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3.png) 
+![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38.png) 
+
+--- .class #id
+
+### ggplot2 `ggplot()`: add layers for more control using `+`
+
+
+```r
+ggplot(data=diamonds) + 
+	geom_point(aes(x=price, y=carat, colour=color)) + 
+    facet_grid(. ~ clarity)
+```
+
+![plot of chunk unnamed-chunk-39](assets/fig/unnamed-chunk-39.png) 
+
+--- .class #id
+
+### ggplot2 `ggplot()`: add layers for more control using `+`
+
+
+     
+
+```r
+ggplot() +
+	geom_point(data = df, aes(x = gp, y = y)) +
+	geom_point(data = ds, aes(x = gp, y = mean), colour = 'red', size = 3) +
+	geom_errorbar(data = ds, aes(x = gp, y = mean, 
+		                         ymin = mean - sd, ymax = mean + sd),
+		          colour = 'red', width = 0.4)
+```
+
+![plot of chunk unnamed-chunk-41](assets/fig/unnamed-chunk-41.png) 
+
+--- .class #id
+
+### ggplot Themes
 
 --- .class #id
 
@@ -106,8 +611,6 @@ ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color)) +
 --- .class #id
 
 ### rCharts: nvd3 Sparklines
-
-
 
 
 ```r
@@ -5050,3 +5553,11 @@ the OECD average in 'r year'.
 <p style="text-align:left"><img src="assets/img/rapporter_logo.png" alt="rapporter logo"/></p>
 
 [jekyll](http://jekyllrb.com/): ruby on rails framework to generate static homepages from `rmd` files (i.e. evaluate R code with `knitr`, see http://10.101.26.220, http://r-pkgs.had.co.nz/ or http://adv-r.had.co.nz)
+
+--- .class #id
+
+## References
+
+Murrell, P. (2005). R Graphics. Chapman & Hall/CRC Computer Science & Data Analysis. doi:10.1201/9781420035025
+
+Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3

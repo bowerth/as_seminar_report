@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>R reports</title>
+  <title>R Graphics</title>
   <meta charset="utf-8">
-  <meta name="description" content="R reports">
+  <meta name="description" content="R Graphics">
   <meta name="author" content="Bo Werth">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -42,8 +42,8 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>R reports</h1>
-    <h2>Generating reproducible reports with R</h2>
+    <h1>R Graphics</h1>
+    <h2>Generating graphics for statistical analysis using R</h2>
     <p>Bo Werth<br/>Statistician STI/EAS</p>
   </hgroup>
   <article></article>  
@@ -53,12 +53,12 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Motivation</h2>
+    <h2>Graphics in statistical software</h2>
   </hgroup>
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <h3>+</h3>
+  <p>programming</p>
 
 <ul>
 <li>quality: reproducibility, calculations</li>
@@ -68,7 +68,7 @@
 
 </div>
 <div style='float:right;width:48%;'>
-  <h3>-</h3>
+  <p>interactive creation (e.g. Excel, Tableau)</p>
 
 <ul>
 <li>development time</li>
@@ -81,42 +81,71 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>About <code>R</code></h2>
+    <h2><code>R</code> Graphics Systems</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>statistical programming</li>
-<li>open-source</li>
-<li>object-oriented</li>
-<li>steep learning curve</li>
-<li>from user to developer</li>
-<li>powerful graphics, e.g. <code>ggplot</code> package</li>
-<li>reproducible reports, e.g. <code>knitr</code> package</li>
-</ul>
-
-<p style="text-align:right"><img src="assets/img/RStudio-Ball.png" alt="RStudio logo" height="145px"/></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h3>Graphics</h3>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li><code>ggplot</code>: implementation of Tufte&#39;s &quot;grammar of graphics&quot;
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>traditional graphics</p>
 
 <ul>
-<li><code>qplot()</code>: single line of code</li>
-<li><code>ggplot()</code>: combine layers with &#39;+&#39;</li>
-</ul></li>
-<li><code>gridSVG</code>: animate ggplot objects</li>
+<li>graphics facilities of the S language</li>
+<li>fast, intuitive</li>
+<li>create plot with high-level function</li>
+<li>add elements with low-level functions</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>grid graphics system</p>
+
+<ul>
+<li>produce complete plots</li>
+<li>ideal proportions</li>
+<li>facetting or multi-panel conditioning</li>
+<li><code>trellis</code>, <code>lattice</code>, <code>ggplot</code></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The organization of <code>R</code> graphics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p style="text-align:center"><img src="assets/img/R_graphics_system.svg" alt="R graphics system" height="550px"/></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h4>Publication quality graphics with <code>ggplot</code></h4>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>implementation of Leland Wilkinson&#39;s &quot;grammar of graphics&quot; (2005)<br></li>
+<li>independent components that can be composed in different ways</li>
+<li>not limited to a set of pre-specified graphics</li>
+<li>create new graphics that are precisely tailored</li>
+</ul>
+
+<h4>Interactive Graphics using JavaScript</h4>
+
+<ul>
 <li><code>ggvis</code>: <code>ggplot</code> for dynamic charts based on <code>vega.js</code></li>
-<li><code>rCharts</code>: interface to various <code>d3.js</code> libraries</li>
+<li><code>rCharts</code>: interface to high-level js libraries building e.g. on <code>d3.js</code>
+
+<ul>
+<li><code>highcharts</code>, <code>polyplot</code>, <code>nvd3</code>, <code>ricksaw</code> for statistical charts</li>
+<li><code>crosslet</code>, <code>datamaps</code>, <code>leaflet</code> etc. for map visualisations</li>
+</ul></li>
 </ul>
 
   </article>
@@ -125,13 +154,618 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h3>ggplot2: <code>qplot()</code></h3>
+    <h3>traditional S-PLUS graphics</h3>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>pen on paper model:
+
+<ul>
+<li>can only draw on top of the plot</li>
+<li>cannot modify or delete existing content</li>
+</ul></li>
+<li>no (user accessible) representation of the graphics</li>
+<li>includes both tools for drawing primitives and entire plots</li>
+<li>generally fast, but have limited scope</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: <code>example(plot)</code></h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: plot regions</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Single plot regions</p>
+
+<p><img src="assets/img/single_plot_regions.svg" alt="Single Plot Regions"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Multiple plot regions</p>
+
+<p><img src="assets/img/multi_plot_regions.svg" alt="Multi Plot Regions"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: plot regions</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">op &lt;- par(mfrow = c(2, 2),
+          mar = c(3, 0, 0, 0))
+plot(...); plot(...); plot(...); plot(...)
+## At end of plotting, reset to previous settings:
+par(op)
+</code></pre>
+
+<ul>
+<li>the documentation can be looked up with <code>?par()</code></li>
+<li>margins are measured in multiples of lines of text</li>
+<li>modifying traditional graphics state settings via <code>par()</code> has a persistent effect</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: plot regions</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">op &lt;- par(mfrow = c(2, 2),
+          mar = c(3, 0, 0, 0))
+plot(...); plot(...); plot(...); plot(...)
+## At end of plotting, reset to previous settings:
+par(op)
+</code></pre>
+
+<ul>
+<li><code>mfrow</code> and <code>mfcol</code> control the number of figure regions on a page</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/par_mfrow.svg" alt="par mfrow"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/img/par_mfcol.svg" alt="par mfcol"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: controlling plot regions</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/graphic_state_setting_controlling_plot_regions.svg" alt="Graphics state settings controlling plot regions"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>diagram for controlling widths and horizontal locations</li>
+<li>plot region = figure region - figure margins</li>
+<li><code>plt</code>: location of the plot region (l, r, b, t)</li>
+<li><code>pin</code>: size of the plot region, (width, height)</li>
+<li><code>pty</code>: <code>m</code>: use all available space, <code>s</code>: preserve square format</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: colors and colours</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">colours()[1:4] # 657 color names
+</code></pre>
+
+<pre><code>## [1] &quot;white&quot;         &quot;aliceblue&quot;     &quot;antiquewhite&quot;  &quot;antiquewhite1&quot;
+</code></pre>
+
+<pre><code class="r">col2rgb(&quot;transparent&quot;) # see the RGB values for a particular color name
+</code></pre>
+
+<pre><code>##       [,1]
+## red    255
+## green  255
+## blue   255
+</code></pre>
+
+<pre><code class="r">rgb(1, 0, 0) # Red-Green-Blue triplet of intensities, format #RRGGBB, FF = 255
+</code></pre>
+
+<pre><code>## [1] &quot;#FF0000&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: <code>pch</code> point symbols</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/pch_symbols.png" alt="pch symbols"></p>
+
+<p>A particular data symbol is selected by specifying an integer between 0 and 25 or a single character for the <code>pch</code> graphical setting. In the diagram, the relevant integer or character <code>pch</code> value is shown in grey to the left of the relevant symbol.</p>
+
+<p>Source: <a href="http://vis.supstat.com/2013/04/plotting-symbols-and-color-palettes/">http://vis.supstat.com/2013/04/plotting-symbols-and-color-palettes/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>example(barplot)</p>
+
+<p><img src="assets/fig/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>example(boxplot)</p>
+
+<p><img src="assets/fig/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>example(pairs)</p>
+
+<p><img src="assets/fig/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>example(persp)</p>
+
+<p><img src="assets/fig/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: <code>example(stars)</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: <code>example(mosaicplot)</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-13.png" alt="plot of chunk unnamed-chunk-13"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: conditioning plot, <code>example(coplot)</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-15.png" alt="plot of chunk unnamed-chunk-15"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: lm example</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-16.png" alt="plot of chunk unnamed-chunk-16"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-17.png" alt="plot of chunk unnamed-chunk-17"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>traditional S-PLUS graphics</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot(hclust(d = dist(USArrests), method = &quot;average&quot;), main=title)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-19.png" alt="plot of chunk unnamed-chunk-19"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h3>lattice / grid graphics: pre and post drawing</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-20.png" alt="plot of chunk unnamed-chunk-20"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>draw map of Australia</li>
+<li>draw average monthly temperatures for six cities</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h3>lattice / grid graphics: embedding plots in grid viewports</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-21.png" alt="plot of chunk unnamed-chunk-21"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>create dendrogram object and cut it into four subtrees</li>
+<li>define lattice panel function to draw the dendrograms</li>
+<li>make base plot region correspond to the created viewport</li>
+<li>use traditional <code>plot()</code> function to draw the dendrogram</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Layered Grammar of Graphics</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>A statistical graphic is a mapping from data to </p>
+
+<ul>
+<li>geometric objects (points, lines, bars)</li>
+<li>with aesthetic attributes (colour, shape, size)</li>
+<li>in a coordinate system (cartesian, polar, map projection)</li>
+</ul>
+
+<p>and optionally entails</p>
+
+<ul>
+<li>statistical transformations of the data (binning, counting)</li>
+<li>faceting to generate the same graphic for different subsets of the dataset</li>
+</ul>
+
+<p>ggplot2 attempts to produce any kind of statistical graphic using</p>
+
+<ul>
+<li>a compact syntax and independent components to facilitate extensions </li>
+<li>the <code>grid</code> package to exercise low-level control over the appearance of the plot</li>
+</ul>
+
+<p>Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(x, y)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-23.png" alt="plot of chunk unnamed-chunk-23"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(x, y)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-24.png" alt="plot of chunk unnamed-chunk-24"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(x, y, type = &quot;l&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-25.png" alt="plot of chunk unnamed-chunk-25"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(x, y, geom = &quot;line&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-26.png" alt="plot of chunk unnamed-chunk-26"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(x, y, type = &quot;s&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-27.png" alt="plot of chunk unnamed-chunk-27"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(x, y, geom = &quot;step&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-28.png" alt="plot of chunk unnamed-chunk-28"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(x, y, type = &quot;b&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-29.png" alt="plot of chunk unnamed-chunk-29"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(x, y, geom = c(&quot;point&quot;, &quot;line&quot;))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-30.png" alt="plot of chunk unnamed-chunk-30"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3><code>mtcars</code> dataset</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>Data from the 1974 <em>Motor Trend</em> US magazine for 32 automobiles (1973-74 models). The variables are the following:</p>
+
+<ul>
+<li><code>mpg</code> Miles/(US) gallon<br></li>
+<li><code>cyl</code> Number of cylinders<br></li>
+<li><code>disp</code> Displacement (cu.in.)<br></li>
+<li><code>hp</code> Gross horsepower<br></li>
+<li><code>drat</code> Rear axle ratio<br></li>
+<li><code>wt</code> Weight (lb/1000)<br></li>
+<li><code>qsec</code> 1/4 mile time<br></li>
+<li><code>vs</code> V/S<br></li>
+<li><code>am</code> Transmission (0 = automatic, 1 = manual) </li>
+<li><code>gear</code> Number of forward gears<br></li>
+<li><code>carb</code> Number of carburetors<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">boxplot(wt~cyl, 
+        data=mtcars, col=&quot;lightgray&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-31.png" alt="plot of chunk unnamed-chunk-31"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(factor(cyl), wt, 
+      data=mtcars, geom=c(&quot;boxplot&quot;, &quot;jitter&quot;))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-32.png" alt="plot of chunk unnamed-chunk-32"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">hist(mtcars$wt)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-33.png" alt="plot of chunk unnamed-chunk-33"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(mtcars$wt, geom = &quot;histogram&quot;, 
+      binwidth = 0.5, color = factor(0))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-34.png" alt="plot of chunk unnamed-chunk-34"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h3>Comparison <code>plot()</code> and <code>qplot()</code></h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">cdplot(mtcars$wt, factor(mtcars$cyl))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-35.png" alt="plot of chunk unnamed-chunk-35"> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qplot(mtcars$wt, fill=factor(mtcars$cyl), 
+      geom=&quot;density&quot;, position=&quot;fill&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-36.png" alt="plot of chunk unnamed-chunk-36"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3><code>diamonds</code> dataset</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>A dataset containing the prices and other attributes of almost 54,000 diamonds. The variables are as follows:</p>
+
+<ul>
+<li><code>price</code> price in US dollars ($326-$18,823)</li>
+<li><code>carat</code> weight of the diamond (0.2-5.01)</li>
+<li><code>cut</code> quality of the cut (Fair, Good, Very Good, Premium, Ideal)</li>
+<li><code>colour</code> diamond colour, from J (worst) to D (best)</li>
+<li><code>clarity</code> a measurement of how clear the diamond is (I1 (worst), SI1, SI2, VS1, VS2, VVS1, VVS2, IF (best))</li>
+<li><code>x</code> length in mm (0-10.74)</li>
+<li><code>y</code> width in mm (0-58.9)</li>
+<li><code>z</code> depth in mm (0-31.8)</li>
+<li><code>depth</code> total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43-79)</li>
+<li><code>table</code> width of top of diamond relative to widest point (43-95)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>ggplot2 <code>qplot()</code>: single line of code</h3>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=(&quot;point&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+<p><img src="assets/fig/unnamed-chunk-37.png" alt="plot of chunk unnamed-chunk-37"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -139,15 +773,59 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h3>ggplot2: <code>ggplot()</code></h3>
+    <h3>ggplot2 <code>qplot()</code>: single line of code</h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">ggplot(data=diamonds) + geom_point(aes(x=price, y=carat, colour=color)) + 
-       facet_grid(. ~ clarity)
+    <pre><code class="r">qplot(factor(cyl), wt, data = mtcars, geom=c(&quot;boxplot&quot;, &quot;jitter&quot;))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+<p><img src="assets/fig/unnamed-chunk-38.png" alt="plot of chunk unnamed-chunk-38"> </p>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>ggplot2 <code>ggplot()</code>: add layers for more control using <code>+</code></h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">ggplot(data=diamonds) + 
+    geom_point(aes(x=price, y=carat, colour=color)) + 
+    facet_grid(. ~ clarity)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-39.png" alt="plot of chunk unnamed-chunk-39"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>ggplot2 <code>ggplot()</code>: add layers for more control using <code>+</code></h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">ggplot() +
+    geom_point(data = df, aes(x = gp, y = y)) +
+    geom_point(data = ds, aes(x = gp, y = mean), colour = &#39;red&#39;, size = 3) +
+    geom_errorbar(data = ds, aes(x = gp, y = mean, 
+                                 ymin = mean - sd, ymax = mean + sd),
+                  colour = &#39;red&#39;, width = 0.4)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-41.png" alt="plot of chunk unnamed-chunk-41"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>ggplot Themes</h3>
+  </hgroup>
+  <article data-timings="">
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -174,7 +852,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-40" style="background:;">
   <hgroup>
     <h3>ggvis: <code>/demo/dynamic.r</code></h3>
   </hgroup>
@@ -5174,104 +5852,315 @@ the OECD average in &#39;r year&#39;.
   <!-- Presenter Notes -->
 </slide>
 
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Murrell, P. (2005). R Graphics. Chapman &amp; Hall/CRC Computer Science &amp; Data Analysis. doi:10.1201/9781420035025</p>
+
+<p>Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Motivation'>
+        data-slide=1 title='Graphics in statistical software'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='About <code>R</code>'>
+        data-slide=2 title='<code>R</code> Graphics Systems'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Graphics'>
+        data-slide=3 title='The organization of <code>R</code> graphics'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='ggplot2: <code>qplot()</code>'>
+        data-slide=4 title='Publication quality graphics with <code>ggplot</code>'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='ggplot2: <code>ggplot()</code>'>
+        data-slide=5 title='traditional S-PLUS graphics'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='gridSVG: gapminder'>
+        data-slide=6 title='traditional S-PLUS graphics: <code>example(plot)</code>'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='gridSVG: rnd'>
+        data-slide=7 title='traditional S-PLUS graphics: plot regions'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='ggvis: <code>/demo/dynamic.r</code>'>
+        data-slide=8 title='traditional S-PLUS graphics: plot regions'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='rCharts: nvd3 Sparklines'>
+        data-slide=9 title='traditional S-PLUS graphics: plot regions'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='rCharts: highcharts'>
+        data-slide=10 title='traditional S-PLUS graphics: controlling plot regions'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Reporting with <code>knitr</code>'>
+        data-slide=11 title='traditional S-PLUS graphics: colors and colours'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Reporting with <code>knitr</code>'>
+        data-slide=12 title='traditional S-PLUS graphics: <code>pch</code> point symbols'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Reporting with <code>knitr</code>'>
+        data-slide=13 title='traditional S-PLUS graphics'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Report Templates'>
+        data-slide=14 title='traditional S-PLUS graphics'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='<code>brew</code> template example'>
+        data-slide=15 title='traditional S-PLUS graphics: <code>example(stars)</code>'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Reporting Tools and Platforms'>
+        data-slide=16 title='traditional S-PLUS graphics: <code>example(mosaicplot)</code>'>
          16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='traditional S-PLUS graphics: conditioning plot, <code>example(coplot)</code>'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='traditional S-PLUS graphics: lm example'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='traditional S-PLUS graphics'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='lattice / grid graphics: pre and post drawing'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='lattice / grid graphics: embedding plots in grid viewports'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Layered Grammar of Graphics'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='<code>mtcars</code> dataset'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Comparison <code>plot()</code> and <code>qplot()</code>'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='<code>diamonds</code> dataset'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='ggplot2 <code>qplot()</code>: single line of code'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='ggplot2 <code>qplot()</code>: single line of code'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='ggplot2 <code>ggplot()</code>: add layers for more control using <code>+</code>'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='ggplot2 <code>ggplot()</code>: add layers for more control using <code>+</code>'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='ggplot Themes'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='gridSVG: gapminder'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='gridSVG: rnd'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='ggvis: <code>/demo/dynamic.r</code>'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='rCharts: nvd3 Sparklines'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='rCharts: highcharts'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Reporting with <code>knitr</code>'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Reporting with <code>knitr</code>'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Reporting with <code>knitr</code>'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Report Templates'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='<code>brew</code> template example'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Reporting Tools and Platforms'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='References'>
+         49
       </a>
     </li>
   </ul>
