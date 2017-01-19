@@ -21,18 +21,24 @@ github      : []
 *** =left
 programming
   - quality: reproducibility, calculations
+
   - efficiency gains: scaling
+
   - output flexibility: PDF, Word, HTML
 
 *** =right
 interactive creation (e.g. Excel, Tableau)
   - development time
+
   - changing requirements
+
   - maintenance and transparency
 
 --- &twocol
 
 ## `R` Graphics Systems
+
+[google trends: python, r, ggplot](https://www.google.com/trends/explore?date=all&q=python%20programming,r%20programming,ggplot)
 
 *** =left
 traditional graphics
@@ -58,7 +64,7 @@ grid graphics system
 
 #### Publication quality graphics with `ggplot`
 
-- implementation of Leland Wilkinson's "grammar of graphics" (2005)  
+- implementation of Leland Wilkinson's "grammar of graphics" (2005)
 - independent components that can be composed in different ways
 - not limited to a set of pre-specified graphics
 - create new graphics that are precisely tailored
@@ -86,7 +92,7 @@ grid graphics system
 
 ### traditional S-PLUS graphics: `example(plot)`
 
-![plot of chunk plotexample](assets/fig/plotexample-1.png) 
+![plot of chunk plotexample](assets/fig/plotexample-1.png)
 
 --- &twocol
 
@@ -206,12 +212,12 @@ Source: http://vis.supstat.com/2013/04/plotting-symbols-and-color-palettes/
 *** =left
 example(barplot)
 
-![plot of chunk barplot](assets/fig/barplot-1.png) 
+![plot of chunk barplot](assets/fig/barplot-1.png)
 
 *** =right
 example(boxplot)
 
-![plot of chunk boxplotex](assets/fig/boxplotex-1.png) 
+![plot of chunk boxplotex](assets/fig/boxplotex-1.png)
 
 --- &twocol
 
@@ -220,12 +226,12 @@ example(boxplot)
 *** =left
 example(pairs)
 
-![plot of chunk pairplot](assets/fig/pairplot-1.png) 
+![plot of chunk pairplot](assets/fig/pairplot-1.png)
 
 *** =right
 example(persp)
 
-![plot of chunk perspplot](assets/fig/perspplot-1.png) 
+![plot of chunk perspplot](assets/fig/perspplot-1.png)
 
 --- &twocol
 
@@ -233,11 +239,11 @@ example(persp)
 
 *** =left
 
-![plot of chunk starsegment](assets/fig/starsegment-1.png) 
+![plot of chunk starsegment](assets/fig/starsegment-1.png)
 
 *** =right
 
-![plot of chunk starradar](assets/fig/starradar-1.png) 
+![plot of chunk starradar](assets/fig/starradar-1.png)
 
 --- &twocol
 
@@ -245,11 +251,11 @@ example(persp)
 
 *** =left
 
-![plot of chunk mosaic1](assets/fig/mosaic1-1.png) 
+![plot of chunk mosaic1](assets/fig/mosaic1-1.png)
 
 *** =right
 
-![plot of chunk mosaic2](assets/fig/mosaic2-1.png) 
+![plot of chunk mosaic2](assets/fig/mosaic2-1.png)
 
 --- &twocol
 
@@ -257,23 +263,23 @@ example(persp)
 
 *** =left
 
-![plot of chunk coplot1](assets/fig/coplot1-1.png) 
+![plot of chunk coplot1](assets/fig/coplot1-1.png)
 
 *** =right
 
-![plot of chunk coplot2](assets/fig/coplot2-1.png) 
+![plot of chunk coplot2](assets/fig/coplot2-1.png)
 
 --- .class #id
 
 ### traditional S-PLUS graphics: lm example
 
-![plot of chunk lmplot](assets/fig/lmplot-1.png) 
+![plot of chunk lmplot](assets/fig/lmplot-1.png)
 
 --- .class #id
 
 ### traditional S-PLUS graphics: Agglomerative Nesting (Hierarchical Clustering)
 
-![plot of chunk agnesplot](assets/fig/agnesplot-1.png) 
+![plot of chunk agnesplot](assets/fig/agnesplot-1.png)
 
 --- .class #id
 
@@ -286,7 +292,7 @@ example(persp)
 plot(hclust(d = dist(USArrests), method = "average"), main=title)
 ```
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
 
 --- &twocol
 
@@ -294,7 +300,7 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 
 *** =left
 
-![plot of chunk oztemp](assets/fig/oztemp-1.png) 
+![plot of chunk oztemp](assets/fig/oztemp-1.png)
 
 *** =right
 - draw map of Australia
@@ -306,7 +312,7 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 
 *** =left
 
-![plot of chunk viewport](assets/fig/viewport-1.png) 
+![plot of chunk viewport](assets/fig/viewport-1.png)
 
 *** =right
 - create dendrogram object and cut it into four subtrees
@@ -318,7 +324,7 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 
 ### Layered Grammar of Graphics
 
-A statistical graphic is a mapping from data to 
+A statistical graphic is a mapping from data to
   - geometric objects (points, lines, bars)
   - with aesthetic attributes (colour, shape, size)
   - in a coordinate system (cartesian, polar, map projection)
@@ -328,7 +334,7 @@ and optionally entails
   - faceting to generate the same graphic for different subsets of the dataset
 
 ggplot2 attempts to produce any kind of statistical graphic using
- - a compact syntax and independent components to facilitate extensions 
+ - a compact syntax and independent components to facilitate extensions
  - the `grid` package to exercise low-level control over the appearance of the plot
 
 Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
@@ -346,7 +352,7 @@ Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
 plot(x, y)
 ```
 
-![plot of chunk plot1](assets/fig/plot1-1.png) 
+![plot of chunk plot1](assets/fig/plot1-1.png)
 
 *** =right
 
@@ -355,7 +361,7 @@ plot(x, y)
 qplot(x, y)
 ```
 
-![plot of chunk qplot1](assets/fig/qplot1-1.png) 
+![plot of chunk qplot1](assets/fig/qplot1-1.png)
 
 --- &twocol
 
@@ -368,7 +374,7 @@ qplot(x, y)
 plot(x, y, type = "l")
 ```
 
-![plot of chunk plot2](assets/fig/plot2-1.png) 
+![plot of chunk plot2](assets/fig/plot2-1.png)
 
 *** =right
 
@@ -377,7 +383,7 @@ plot(x, y, type = "l")
 qplot(x, y, geom = "line")
 ```
 
-![plot of chunk qplot2](assets/fig/qplot2-1.png) 
+![plot of chunk qplot2](assets/fig/qplot2-1.png)
 
 --- &twocol
 
@@ -390,7 +396,7 @@ qplot(x, y, geom = "line")
 plot(x, y, type = "s")
 ```
 
-![plot of chunk plot3](assets/fig/plot3-1.png) 
+![plot of chunk plot3](assets/fig/plot3-1.png)
 
 *** =right
 
@@ -399,7 +405,7 @@ plot(x, y, type = "s")
 qplot(x, y, geom = "step")
 ```
 
-![plot of chunk qplot3](assets/fig/qplot3-1.png) 
+![plot of chunk qplot3](assets/fig/qplot3-1.png)
 
 --- &twocol
 
@@ -412,7 +418,7 @@ qplot(x, y, geom = "step")
 plot(x, y, type = "b")
 ```
 
-![plot of chunk plot4](assets/fig/plot4-1.png) 
+![plot of chunk plot4](assets/fig/plot4-1.png)
 
 *** =right
 
@@ -421,24 +427,24 @@ plot(x, y, type = "b")
 qplot(x, y, geom = c("point", "line"))
 ```
 
-![plot of chunk qplot4](assets/fig/qplot4-1.png) 
+![plot of chunk qplot4](assets/fig/qplot4-1.png)
 
 --- .class #id
 
 ### `mtcars` dataset
 
 Data from the 1974 _Motor Trend_ US magazine for 32 automobiles (1973-74 models). The variables are the following:
-  - `mpg` Miles/(US) gallon                        
-  - `cyl` Number of cylinders                      
-  - `disp` Displacement (cu.in.)                    
-  - `hp` Gross horsepower                         
-  - `drat` Rear axle ratio                          
-  - `wt` Weight (lb/1000)                         
-  - `qsec` 1/4 mile time                            
-  - `vs` V/S                                      
-  - `am` Transmission (0 = automatic, 1 = manual) 
-  - `gear` Number of forward gears                  
-  - `carb` Number of carburetors     
+  - `mpg` Miles/(US) gallon
+  - `cyl` Number of cylinders
+  - `disp` Displacement (cu.in.)
+  - `hp` Gross horsepower
+  - `drat` Rear axle ratio
+  - `wt` Weight (lb/1000)
+  - `qsec` 1/4 mile time
+  - `vs` V/S
+  - `am` Transmission (0 = automatic, 1 = manual)
+  - `gear` Number of forward gears
+  - `carb` Number of carburetors
 
 --- &twocol
 
@@ -448,21 +454,21 @@ Data from the 1974 _Motor Trend_ US magazine for 32 automobiles (1973-74 models)
 
 
 ```r
-boxplot(wt~cyl, 
+boxplot(wt~cyl,
 	    data=mtcars, col="lightgray")
 ```
 
-![plot of chunk boxplotcomp](assets/fig/boxplotcomp-1.png) 
+![plot of chunk boxplotcomp](assets/fig/boxplotcomp-1.png)
 
 *** =right
 
 
 ```r
-qplot(factor(cyl), wt, 
+qplot(factor(cyl), wt,
 	  data=mtcars, geom=c("boxplot", "jitter"))
 ```
 
-![plot of chunk boxqplotcomp](assets/fig/boxqplotcomp-1.png) 
+![plot of chunk boxqplotcomp](assets/fig/boxqplotcomp-1.png)
 
 --- &twocol
 
@@ -475,17 +481,17 @@ qplot(factor(cyl), wt,
 hist(mtcars$wt)
 ```
 
-![plot of chunk histplotcomp](assets/fig/histplotcomp-1.png) 
+![plot of chunk histplotcomp](assets/fig/histplotcomp-1.png)
 
 *** =right
 
 
 ```r
-qplot(mtcars$wt, geom = "histogram", 
+qplot(mtcars$wt, geom = "histogram",
 	  binwidth = 0.5, color = factor(0))
 ```
 
-![plot of chunk histqplotcomp](assets/fig/histqplotcomp-1.png) 
+![plot of chunk histqplotcomp](assets/fig/histqplotcomp-1.png)
 
 --- &twocol
 
@@ -498,17 +504,17 @@ qplot(mtcars$wt, geom = "histogram",
 cdplot(mtcars$wt, factor(mtcars$cyl))
 ```
 
-![plot of chunk cdplotcomp](assets/fig/cdplotcomp-1.png) 
+![plot of chunk cdplotcomp](assets/fig/cdplotcomp-1.png)
 
 *** =right
 
 
 ```r
-qplot(mtcars$wt, fill=factor(mtcars$cyl), 
-	  geom="density", position="fill")
+qplot(mtcars$wt, fill=factor(mtcars$cyl),
+	  geom="density")
 ```
 
-![plot of chunk cdqplotcomp](assets/fig/cdqplotcomp-1.png) 
+![plot of chunk cdqplotcomp](assets/fig/cdqplotcomp-1.png)
 
 --- .class #id
 
@@ -526,58 +532,62 @@ A dataset containing the prices and other attributes of almost 54,000 diamonds. 
   - `depth` total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43-79)
   - `table` width of top of diamond relative to widest point (43-95)
 
---- .class #id
+--- &twocol
 
 ### ggplot2 `qplot()`: single line of code
 
+*** =left
+
 
 ```r
-qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
+qplot(x=carat, y=price, colour=clarity,
+  data=diamonds, geom=("point"))
 ```
 
-![plot of chunk qplotex1](assets/fig/qplotex1-1.png) 
+![plot of chunk qplotex1](assets/fig/qplotex1-1.png)
+
+*** =right
+
+
+```r
+qplot(carat, price,
+  data = diamonds, geom = c("point", "smooth"))
+```
+
+![plot of chunk qplotex2](assets/fig/qplotex2-1.png)
 
 --- .class #id
 
-### ggplot2 `qplot()`: single line of code
+### ggplot2 `ggplot()`: add layers for more control using "`+`"
 
 
 ```r
-qplot(factor(cyl), wt, data = mtcars, geom=c("boxplot", "jitter"))
-```
-
-![plot of chunk qplotex2](assets/fig/qplotex2-1.png) 
-
---- .class #id
-
-### ggplot2 `ggplot()`: add layers for more control using `+`
-
-
-```r
-ggplot(data=diamonds) + 
-	geom_point(aes(x=price, y=carat, colour=color)) + 
+ggplot(data=diamonds) +
+	geom_point(aes(x=price, y=carat, colour=color)) +
     facet_grid(. ~ clarity)
 ```
 
-![plot of chunk ggplotex](assets/fig/ggplotex-1.png) 
+![plot of chunk ggplotex](assets/fig/ggplotex-1.png)
 
 --- .class #id
 
-### ggplot2 `ggplot()`: add layers for more control using `+`
+### ggplot2 `ggplot()`: add layers for more control using "`+`"
 
 
-     
+
+
+
+
+
 
 ```r
-ggplot() +
-	geom_point(data = df, aes(x = gp, y = y)) +
-	geom_point(data = ds, aes(x = gp, y = mean), colour = 'red', size = 3) +
-	geom_errorbar(data = ds, aes(x = gp, y = mean, 
-		                         ymin = mean - sd, ymax = mean + sd),
-		          colour = 'red', width = 0.4)
+ggplot(data = df,aes(x = x,y = y)) + # source: https://plot.ly/ggplot2/geom_errorbar/
+    geom_errorbar(aes(ymin = ymin,ymax = ymax), colour = 'steelblue', width = 0.2) +
+    geom_errorbarh(aes(xmin = xmin,xmax = xmax), colour = 'steelblue', height = 0.4) +
+    geom_point(color = "black", size = 3)
 ```
 
-![plot of chunk ggplotlayer](assets/fig/ggplotlayer-1.png) 
+![plot of chunk ggplotlayer](assets/fig/ggplotlayer-1.png)
 
 --- &twocol
 
@@ -588,12 +598,12 @@ ggplot() +
 *** =left
 `theme_stata()`
 
-![plot of chunk ggthemesstata](assets/fig/ggthemesstata-1.png) 
+![plot of chunk ggthemesstata](assets/fig/ggthemesstata-1.png)
 
 *** =right
 `theme_economist()`
 
-![plot of chunk ggthemeseconomist](assets/fig/ggthemeseconomist-1.png) 
+![plot of chunk ggthemeseconomist](assets/fig/ggthemeseconomist-1.png)
 
 --- &twocol
 
@@ -602,40 +612,66 @@ ggplot() +
 *** =left
 `theme_fivethirtyeight()`
 
-![plot of chunk ggthemesfivethirtyeight](assets/fig/ggthemesfivethirtyeight-1.png) 
+![plot of chunk ggthemesfivethirtyeight](assets/fig/ggthemesfivethirtyeight-1.png)
 
 *** =right
 Tableau `theme_igray()`
 
-![plot of chunk ggthemesigray](assets/fig/ggthemesigray-1.png) 
+![plot of chunk ggthemesigray](assets/fig/ggthemesigray-1.png)
 
 --- .class #id
 
-### ggplot Themes
+### ggplot Themes: `ggthemr`
 
 
 
 
 ```r
-source(file.path("demofiles", "scoreboard", "theme_scoreboard.R"))
-theme_set(theme_sb())
-hist_cut <- ggplot(dsamp, aes(x=price, fill=cut))
-hist_cut + geom_bar() + scale_fill_manual(values=pal.crN)
+pal.crN <- c('#95B3D7','#F79646','#8064A2','#4BACC6','#9BBB59','#C0504D')
+ugly <- define_palette(
+  swatch = pal.crN, gradient = c(lower = pal.crN[1L], upper = pal.crN[2L]))
+ggthemr(ugly)
+ggplot(dsamp, aes(x=price, fill=cut)) + geom_bar(binwidth = 500)
 ```
 
-![plot of chunk ggthemescustom](assets/fig/ggthemescustom-1.png) 
+![plot of chunk ggthemr](assets/fig/ggthemr-1.png)
 
---- .class #id
+```r
+ggthemr_reset()
+```
+
+--- &twocol
 
 ### gridSVG: gapminder
 
+*** =left
+
 <p style="text-align:center"><img src="assets/img/gapminderOnePanel.svg" alt="gapminder animation" height="550px"/></p>
 
---- .class #id
+*** =right
 
-### gridSVG: rnd
+- `gridSVG` animates a ggplot object before the output is flattened for export
+  to a graphics device
+- the animation is obtained from mapping to the time dimension (annual since
+  1950)
+- `size` = population
+- `color` = continent
+    - `blue`: Europe
+    - `red`: Asia
+    - `green`: Africa
+    - `yellow`: America
+
+--- &twocol
+
+### gridSVG: R&D Expendidures
+
+*** =left
 
 <p style="text-align:center"><img src="assets/img/RDplotOnePanel.svg" alt="rnd animation" height="550px"/></p>
+
+*** =right
+
+- 
 
 --- &twocol
 
@@ -678,3828 +714,4596 @@ p2$print('chart2')
 },
         data = [
  {
- "date":           -916,
-"pce":          507.8,
+ "date": -915,
+"pce":          507.4,
 "pop": 198712,
-"psavert":            9.8,
+"psavert":           12.5,
 "uempmed":            4.5,
 "unemploy": 2944 
 },
 {
- "date":           -885,
-"pce":          510.9,
+ "date": -884,
+"pce":          510.5,
 "pop": 198911,
-"psavert":            9.8,
+"psavert":           12.5,
 "uempmed":            4.7,
 "unemploy": 2945 
 },
 {
- "date":           -854,
-"pce":          516.7,
+ "date": -853,
+"pce":          516.3,
 "pop": 199113,
-"psavert":              9,
+"psavert":           11.7,
 "uempmed":            4.6,
 "unemploy": 2958 
 },
 {
- "date":           -824,
-"pce":          513.3,
+ "date": -823,
+"pce":          512.9,
 "pop": 199311,
-"psavert":            9.8,
+"psavert":           12.5,
 "uempmed":            4.9,
 "unemploy": 3143 
 },
 {
- "date":           -793,
-"pce":          518.5,
+ "date": -792,
+"pce":          518.1,
 "pop": 199498,
-"psavert":            9.7,
+"psavert":           12.5,
 "uempmed":            4.7,
 "unemploy": 3066 
 },
 {
- "date":           -763,
-"pce":          526.2,
+ "date": -762,
+"pce":          525.8,
 "pop": 199657,
-"psavert":            9.4,
+"psavert":           12.1,
 "uempmed":            4.8,
 "unemploy": 3018 
 },
 {
- "date":           -732,
-"pce":            532,
+ "date": -731,
+"pce":          531.5,
 "pop": 199808,
-"psavert":              9,
+"psavert":           11.7,
 "uempmed":            5.1,
 "unemploy": 2878 
 },
 {
- "date":           -701,
-"pce":          534.7,
+ "date": -700,
+"pce":          534.2,
 "pop": 199920,
-"psavert":            9.5,
+"psavert":           12.2,
 "uempmed":            4.5,
 "unemploy": 3001 
 },
 {
- "date":           -672,
-"pce":          545.4,
+ "date": -671,
+"pce":          544.9,
 "pop": 200056,
-"psavert":            8.9,
+"psavert":           11.6,
 "uempmed":            4.1,
 "unemploy": 2877 
 },
 {
- "date":           -641,
-"pce":          545.1,
+ "date": -640,
+"pce":          544.6,
 "pop": 200208,
-"psavert":            9.6,
+"psavert":           12.2,
 "uempmed":            4.6,
 "unemploy": 2709 
 },
 {
- "date":           -611,
-"pce":          550.9,
+ "date": -610,
+"pce":          550.4,
 "pop": 200361,
-"psavert":            9.3,
+"psavert":             12,
 "uempmed":            4.4,
 "unemploy": 2740 
 },
 {
- "date":           -580,
-"pce":          557.4,
+ "date": -579,
+"pce":          556.8,
 "pop": 200536,
-"psavert":            8.9,
+"psavert":           11.6,
 "uempmed":            4.4,
 "unemploy": 2938 
 },
 {
- "date":           -550,
-"pce":          564.4,
+ "date": -549,
+"pce":          563.8,
 "pop": 200706,
-"psavert":            7.8,
+"psavert":           10.6,
 "uempmed":            4.5,
 "unemploy": 2883 
 },
 {
- "date":           -519,
-"pce":          568.2,
+ "date": -518,
+"pce":          567.6,
 "pop": 200898,
-"psavert":            7.6,
+"psavert":           10.4,
 "uempmed":            4.2,
 "unemploy": 2768 
 },
 {
- "date":           -488,
-"pce":          569.5,
+ "date": -487,
+"pce":          568.8,
 "pop": 201095,
-"psavert":            7.6,
+"psavert":           10.4,
 "uempmed":            4.6,
 "unemploy": 2686 
 },
 {
- "date":           -458,
-"pce":          572.9,
+ "date": -457,
+"pce":          572.3,
 "pop": 201290,
-"psavert":            7.8,
+"psavert":           10.6,
 "uempmed":            4.8,
 "unemploy": 2689 
 },
 {
- "date":           -427,
-"pce":            578,
+ "date": -426,
+"pce":          577.4,
 "pop": 201466,
-"psavert":            7.6,
+"psavert":           10.4,
 "uempmed":            4.4,
 "unemploy": 2715 
 },
 {
- "date":           -397,
-"pce":          577.9,
+ "date": -396,
+"pce":          577.2,
 "pop": 201621,
-"psavert":            8.1,
+"psavert":           10.9,
 "uempmed":            4.4,
 "unemploy": 2685 
 },
 {
- "date":           -366,
-"pce":          584.9,
+ "date": -365,
+"pce":          584.2,
 "pop": 201760,
-"psavert":            7.1,
+"psavert":             10,
 "uempmed":            4.4,
 "unemploy": 2718 
 },
 {
- "date":           -335,
-"pce":          590.2,
+ "date": -334,
+"pce":          589.5,
 "pop": 201881,
-"psavert":            6.5,
+"psavert":            9.4,
 "uempmed":            4.9,
 "unemploy": 2692 
 },
 {
- "date":           -307,
-"pce":          590.4,
+ "date": -306,
+"pce":          589.7,
 "pop": 202023,
-"psavert":              7,
+"psavert":            9.9,
 "uempmed":              4,
 "unemploy": 2712 
 },
 {
- "date":           -276,
-"pce":          595.4,
+ "date": -275,
+"pce":          594.7,
 "pop": 202161,
-"psavert":            6.6,
+"psavert":            9.5,
 "uempmed":              4,
 "unemploy": 2758 
 },
 {
- "date":           -246,
-"pce":          601.8,
+ "date": -245,
+"pce":          601.1,
 "pop": 202331,
-"psavert":              7,
+"psavert":             10,
 "uempmed":            4.2,
 "unemploy": 2713 
 },
 {
- "date":           -215,
-"pce":          602.4,
+ "date": -214,
+"pce":          601.7,
 "pop": 202507,
-"psavert":            7.9,
+"psavert":           10.9,
 "uempmed":            4.4,
 "unemploy": 2816 
 },
 {
- "date":           -185,
-"pce":          604.3,
+ "date": -184,
+"pce":          603.5,
 "pop": 202677,
-"psavert":            8.7,
+"psavert":           11.7,
 "uempmed":            4.4,
 "unemploy": 2868 
 },
 {
- "date":           -154,
-"pce":          611.5,
+ "date": -153,
+"pce":          610.8,
 "pop": 202877,
-"psavert":            8.5,
+"psavert":           11.5,
 "uempmed":            4.4,
 "unemploy": 2856 
 },
 {
- "date":           -123,
-"pce":          614.9,
+ "date": -122,
+"pce":          614.1,
 "pop": 203090,
-"psavert":            8.5,
+"psavert":           11.5,
 "uempmed":            4.7,
 "unemploy": 3040 
 },
 {
- "date":            -93,
-"pce":          620.2,
+ "date": -92,
+"pce":          619.4,
 "pop": 203302,
-"psavert":            8.3,
+"psavert":           11.3,
 "uempmed":            4.5,
 "unemploy": 3049 
 },
 {
- "date":            -62,
-"pce":          622.1,
+ "date": -61,
+"pce":          621.4,
 "pop": 203500,
-"psavert":            8.5,
+"psavert":           11.5,
 "uempmed":            4.8,
 "unemploy": 2856 
 },
 {
- "date":            -32,
-"pce":          624.4,
+ "date": -31,
+"pce":          623.7,
 "pop": 203675,
-"psavert":            8.6,
+"psavert":           11.7,
 "uempmed":            4.6,
 "unemploy": 2884 
 },
 {
- "date":             -1,
-"pce":          630.4,
+ "date": 0,
+"pce":          629.6,
 "pop": 203849,
-"psavert":            8.3,
+"psavert":           11.7,
 "uempmed":            4.6,
 "unemploy": 3201 
 },
 {
- "date":             30,
-"pce":          635.7,
+ "date": 31,
+"pce":          634.9,
 "pop": 204008,
-"psavert":            8.1,
+"psavert":           11.6,
 "uempmed":            4.5,
 "unemploy": 3453 
 },
 {
- "date":             58,
-"pce":            634,
+ "date": 59,
+"pce":          633.2,
 "pop": 204156,
-"psavert":            8.8,
+"psavert":           12.3,
 "uempmed":            4.6,
 "unemploy": 3635 
 },
 {
- "date":             89,
-"pce":          637.7,
+ "date": 90,
+"pce":            637,
 "pop": 204401,
-"psavert":           10.5,
+"psavert":           13.3,
 "uempmed":            4.1,
 "unemploy": 3797 
 },
 {
- "date":            119,
-"pce":          644.1,
+ "date": 120,
+"pce":          643.4,
 "pop": 204607,
-"psavert":            9.4,
+"psavert":           12.3,
 "uempmed":            4.7,
 "unemploy": 3919 
 },
 {
- "date":            150,
-"pce":            648,
+ "date": 151,
+"pce":          647.2,
 "pop": 204830,
-"psavert":            8.7,
+"psavert":           11.7,
 "uempmed":            4.9,
 "unemploy": 4071 
 },
 {
- "date":            180,
-"pce":          650.2,
+ "date": 181,
+"pce":          649.5,
 "pop": 205052,
-"psavert":             10,
+"psavert":           13.2,
 "uempmed":            5.1,
 "unemploy": 4175 
 },
 {
- "date":            211,
-"pce":          654.7,
+ "date": 212,
+"pce":          653.9,
 "pop": 205295,
-"psavert":             10,
+"psavert":           13.1,
 "uempmed":            5.4,
 "unemploy": 4256 
 },
 {
- "date":            242,
-"pce":          660.9,
+ "date": 243,
+"pce":          660.1,
 "pop": 205540,
-"psavert":            9.8,
+"psavert":           12.9,
 "uempmed":            5.2,
 "unemploy": 4456 
 },
 {
- "date":            272,
-"pce":          660.1,
+ "date": 273,
+"pce":          659.3,
 "pop": 205788,
-"psavert":            9.8,
+"psavert":             13,
 "uempmed":            5.2,
 "unemploy": 4591 
 },
 {
- "date":            303,
-"pce":          658.4,
+ "date": 304,
+"pce":          657.6,
 "pop": 206024,
-"psavert":           10.1,
+"psavert":           13.3,
 "uempmed":            5.6,
 "unemploy": 4898 
 },
 {
- "date":            333,
-"pce":          667.4,
+ "date": 334,
+"pce":          666.6,
 "pop": 206238,
-"psavert":            9.7,
+"psavert":           12.9,
 "uempmed":            5.9,
 "unemploy": 5076 
 },
 {
- "date":            364,
-"pce":            678,
+ "date": 365,
+"pce":          677.2,
 "pop": 206466,
-"psavert":             10,
+"psavert":           13.1,
 "uempmed":            6.2,
 "unemploy": 4986 
 },
 {
- "date":            395,
-"pce":          681.3,
+ "date": 396,
+"pce":          680.4,
 "pop": 206668,
-"psavert":            9.9,
+"psavert":           13.1,
 "uempmed":            6.3,
 "unemploy": 4903 
 },
 {
- "date":            423,
-"pce":          683.9,
+ "date": 424,
+"pce":            683,
 "pop": 206855,
-"psavert":           10.2,
+"psavert":           13.3,
 "uempmed":            6.4,
 "unemploy": 4987 
 },
 {
- "date":            454,
-"pce":          690.6,
+ "date": 455,
+"pce":          689.8,
 "pop": 207065,
-"psavert":            9.9,
+"psavert":             13,
 "uempmed":            6.5,
 "unemploy": 4959 
 },
 {
- "date":            484,
-"pce":            693,
+ "date": 485,
+"pce":          692.2,
 "pop": 207260,
-"psavert":           10.2,
+"psavert":           13.4,
 "uempmed":            6.7,
 "unemploy": 4996 
 },
 {
- "date":            515,
-"pce":          701.7,
+ "date": 516,
+"pce":          700.8,
 "pop": 207462,
-"psavert":           11.4,
+"psavert":           14.4,
 "uempmed":            5.7,
 "unemploy": 4949 
 },
 {
- "date":            545,
-"pce":          700.8,
+ "date": 546,
+"pce":          699.9,
 "pop": 207661,
-"psavert":           10.4,
+"psavert":           13.6,
 "uempmed":            6.2,
 "unemploy": 5035 
 },
 {
- "date":            576,
-"pce":          706.8,
+ "date": 577,
+"pce":            706,
 "pop": 207881,
-"psavert":           10.3,
+"psavert":           13.6,
 "uempmed":            6.4,
 "unemploy": 5134 
 },
 {
- "date":            607,
-"pce":            715,
+ "date": 608,
+"pce":          714.1,
 "pop": 208114,
-"psavert":            9.7,
+"psavert":           12.9,
 "uempmed":            5.8,
 "unemploy": 5042 
 },
 {
- "date":            637,
-"pce":          717.8,
+ "date": 638,
+"pce":          716.9,
 "pop": 208345,
-"psavert":            9.6,
+"psavert":             13,
 "uempmed":            6.5,
 "unemploy": 4954 
 },
 {
- "date":            668,
-"pce":            723,
+ "date": 669,
+"pce":          722.1,
 "pop": 208555,
-"psavert":            9.5,
+"psavert":           12.8,
 "uempmed":            6.4,
 "unemploy": 5161 
 },
 {
- "date":            698,
-"pce":          730.5,
+ "date": 699,
+"pce":          729.6,
 "pop": 208740,
-"psavert":            9.5,
+"psavert":           12.9,
 "uempmed":            6.2,
 "unemploy": 5154 
 },
 {
- "date":            729,
-"pce":          733.7,
+ "date": 730,
+"pce":          732.6,
 "pop": 208917,
-"psavert":            9.1,
+"psavert":           12.4,
 "uempmed":            6.2,
 "unemploy": 5019 
 },
 {
- "date":            760,
-"pce":          738.4,
+ "date": 761,
+"pce":          737.3,
 "pop": 209061,
-"psavert":            9.4,
+"psavert":           12.6,
 "uempmed":            6.6,
 "unemploy": 4928 
 },
 {
- "date":            789,
-"pce":          751.5,
+ "date": 790,
+"pce":          750.4,
 "pop": 209212,
-"psavert":            8.2,
+"psavert":           11.5,
 "uempmed":            6.6,
 "unemploy": 5038 
 },
 {
- "date":            820,
-"pce":          754.9,
+ "date": 821,
+"pce":          753.8,
 "pop": 209386,
-"psavert":            8.3,
+"psavert":           11.3,
 "uempmed":            6.7,
 "unemploy": 4959 
 },
 {
- "date":            850,
-"pce":          760.4,
+ "date": 851,
+"pce":          759.2,
 "pop": 209545,
-"psavert":            8.5,
+"psavert":           11.5,
 "uempmed":            6.6,
 "unemploy": 4922 
 },
 {
- "date":            881,
-"pce":            764,
+ "date": 882,
+"pce":          762.9,
 "pop": 209725,
-"psavert":            7.2,
+"psavert":           11.4,
 "uempmed":            5.4,
 "unemploy": 4923 
 },
 {
- "date":            911,
-"pce":          772.4,
+ "date": 912,
+"pce":          771.2,
 "pop": 209896,
-"psavert":            8.2,
+"psavert":           11.4,
 "uempmed":            6.1,
 "unemploy": 4913 
 },
 {
- "date":            942,
-"pce":          778.9,
+ "date": 943,
+"pce":          777.7,
 "pop": 210075,
-"psavert":            8.6,
+"psavert":           11.8,
 "uempmed":              6,
 "unemploy": 4939 
 },
 {
- "date":            973,
-"pce":          783.7,
+ "date": 974,
+"pce":          782.5,
 "pop": 210278,
-"psavert":            8.8,
+"psavert":             12,
 "uempmed":            5.6,
 "unemploy": 4849 
 },
 {
- "date":           1003,
-"pce":          797.5,
+ "date": 1004,
+"pce":          796.3,
 "pop": 210479,
-"psavert":            9.5,
+"psavert":           12.7,
 "uempmed":            5.7,
 "unemploy": 4875 
 },
 {
- "date":           1034,
-"pce":          803.1,
+ "date": 1035,
+"pce":          801.8,
 "pop": 210656,
-"psavert":           10.2,
+"psavert":           13.4,
 "uempmed":            5.7,
 "unemploy": 4602 
 },
 {
- "date":           1064,
-"pce":          808.8,
+ "date": 1065,
+"pce":          807.5,
 "pop": 210821,
-"psavert":           10.3,
+"psavert":           13.4,
 "uempmed":            6.1,
 "unemploy": 4543 
 },
 {
- "date":           1095,
-"pce":          819.1,
+ "date": 1096,
+"pce":          817.9,
 "pop": 210985,
-"psavert":            9.1,
+"psavert":           12.1,
 "uempmed":            5.7,
 "unemploy": 4326 
 },
 {
- "date":           1126,
-"pce":          828.5,
+ "date": 1127,
+"pce":          827.2,
 "pop": 211120,
-"psavert":            9.5,
+"psavert":           12.2,
 "uempmed":            5.2,
 "unemploy": 4452 
 },
 {
- "date":           1154,
-"pce":          835.5,
+ "date": 1155,
+"pce":          834.2,
 "pop": 211254,
-"psavert":            9.7,
+"psavert":           12.4,
 "uempmed":            5.5,
 "unemploy": 4394 
 },
 {
- "date":           1185,
-"pce":          838.5,
+ "date": 1186,
+"pce":          837.2,
 "pop": 211420,
-"psavert":             10,
+"psavert":           12.8,
 "uempmed":              5,
 "unemploy": 4459 
 },
 {
- "date":           1215,
-"pce":          844.3,
+ "date": 1216,
+"pce":          843.1,
 "pop": 211577,
-"psavert":           10.2,
+"psavert":           12.8,
 "uempmed":            4.9,
 "unemploy": 4329 
 },
 {
- "date":           1246,
-"pce":          847.1,
+ "date": 1247,
+"pce":          845.8,
 "pop": 211746,
-"psavert":           10.7,
+"psavert":           13.2,
 "uempmed":              5,
 "unemploy": 4363 
 },
 {
- "date":           1276,
-"pce":            857,
+ "date": 1277,
+"pce":          855.7,
 "pop": 211909,
-"psavert":           10.2,
+"psavert":           12.8,
 "uempmed":            5.2,
 "unemploy": 4305 
 },
 {
- "date":           1307,
-"pce":          856.1,
+ "date": 1308,
+"pce":          854.9,
 "pop": 212092,
-"psavert":             11,
+"psavert":           13.6,
 "uempmed":            4.9,
 "unemploy": 4305 
 },
 {
- "date":           1338,
-"pce":          872.2,
+ "date": 1339,
+"pce":          870.9,
 "pop": 212289,
-"psavert":           10.2,
+"psavert":           12.8,
 "uempmed":            5.4,
 "unemploy": 4350 
 },
 {
- "date":           1368,
-"pce":          871.2,
+ "date": 1369,
+"pce":          869.8,
 "pop": 212475,
-"psavert":           11.5,
+"psavert":             14,
 "uempmed":            5.5,
 "unemploy": 4144 
 },
 {
- "date":           1399,
-"pce":          879.9,
+ "date": 1400,
+"pce":          878.6,
 "pop": 212634,
-"psavert":           11.6,
+"psavert":             14,
 "uempmed":            5.1,
 "unemploy": 4396 
 },
 {
- "date":           1429,
-"pce":          879.7,
+ "date": 1430,
+"pce":          878.4,
 "pop": 212785,
-"psavert":             12,
+"psavert":           14.4,
 "uempmed":            4.7,
 "unemploy": 4489 
 },
 {
- "date":           1460,
-"pce":          887.7,
+ "date": 1461,
+"pce":          886.4,
 "pop": 212932,
-"psavert":           11.6,
+"psavert":             14,
 "uempmed":              5,
 "unemploy": 4644 
 },
 {
- "date":           1491,
-"pce":          892.9,
+ "date": 1492,
+"pce":          891.6,
 "pop": 213074,
-"psavert":           11.4,
+"psavert":           13.8,
 "uempmed":            5.1,
 "unemploy": 4731 
 },
 {
- "date":           1519,
-"pce":          904.7,
+ "date": 1520,
+"pce":          903.3,
 "pop": 213211,
-"psavert":           10.6,
+"psavert":             13,
 "uempmed":            4.8,
 "unemploy": 4634 
 },
 {
- "date":           1550,
-"pce":          914.1,
+ "date": 1551,
+"pce":          912.7,
 "pop": 213361,
-"psavert":           10.2,
+"psavert":           12.7,
 "uempmed":              5,
 "unemploy": 4618 
 },
 {
- "date":           1580,
-"pce":          925.7,
+ "date": 1581,
+"pce":          924.3,
 "pop": 213513,
-"psavert":             10,
+"psavert":           12.3,
 "uempmed":            4.6,
 "unemploy": 4705 
 },
 {
- "date":           1611,
-"pce":          931.3,
+ "date": 1612,
+"pce":          929.9,
 "pop": 213686,
-"psavert":           10.2,
+"psavert":           12.5,
 "uempmed":            5.3,
 "unemploy": 4927 
 },
 {
- "date":           1641,
-"pce":          941.2,
+ "date": 1642,
+"pce":          939.8,
 "pop": 213854,
-"psavert":           10.6,
+"psavert":           12.7,
 "uempmed":            5.7,
 "unemploy": 5063 
 },
 {
- "date":           1672,
-"pce":            958,
+ "date": 1673,
+"pce":          956.6,
 "pop": 214042,
-"psavert":            9.5,
+"psavert":           11.6,
 "uempmed":              5,
 "unemploy": 5022 
 },
 {
- "date":           1703,
-"pce":          958.3,
+ "date": 1704,
+"pce":          956.8,
 "pop": 214246,
-"psavert":           10.2,
+"psavert":           12.3,
 "uempmed":            5.3,
 "unemploy": 5437 
 },
 {
- "date":           1733,
-"pce":          962.5,
+ "date": 1734,
+"pce":            961,
 "pop": 214451,
-"psavert":           10.7,
+"psavert":             13,
 "uempmed":            5.5,
 "unemploy": 5523 
 },
 {
- "date":           1764,
-"pce":          959.5,
+ "date": 1765,
+"pce":            958,
 "pop": 214625,
-"psavert":           11.1,
+"psavert":           13.4,
 "uempmed":            5.2,
 "unemploy": 6140 
 },
 {
- "date":           1794,
-"pce":          965.1,
+ "date": 1795,
+"pce":          963.6,
 "pop": 214782,
-"psavert":           11.1,
+"psavert":           13.6,
 "uempmed":            5.7,
 "unemploy": 6636 
 },
 {
- "date":           1825,
-"pce":          978.9,
+ "date": 1826,
+"pce":          977.4,
 "pop": 214931,
-"psavert":           10.3,
+"psavert":           12.8,
 "uempmed":            6.3,
 "unemploy": 7501 
 },
 {
- "date":           1856,
-"pce":          992.8,
+ "date": 1857,
+"pce":          991.3,
 "pop": 215065,
-"psavert":            9.5,
+"psavert":           12.1,
 "uempmed":            7.1,
 "unemploy": 7520 
 },
 {
- "date":           1884,
-"pce":          994.1,
+ "date": 1885,
+"pce":          992.6,
 "pop": 215198,
-"psavert":            9.7,
+"psavert":           12.3,
 "uempmed":            7.2,
 "unemploy": 7978 
 },
 {
- "date":           1915,
-"pce":          998.8,
+ "date": 1916,
+"pce":          997.2,
 "pop": 215353,
-"psavert":           11.3,
+"psavert":           13.9,
 "uempmed":            8.7,
 "unemploy": 8210 
 },
 {
- "date":           1945,
-"pce":         1022.8,
+ "date": 1946,
+"pce":         1021.2,
 "pop": 215523,
-"psavert":           14.6,
+"psavert":             17,
 "uempmed":            9.4,
 "unemploy": 8433 
 },
 {
- "date":           1976,
-"pce":         1030.7,
+ "date": 1977,
+"pce":         1029.1,
 "pop": 215768,
-"psavert":           11.4,
+"psavert":           13.9,
 "uempmed":            8.8,
 "unemploy": 8220 
 },
 {
- "date":           2006,
-"pce":         1043.8,
+ "date": 2007,
+"pce":         1042.2,
 "pop": 215973,
-"psavert":            9.7,
+"psavert":           12.3,
 "uempmed":            8.6,
 "unemploy": 8127 
 },
 {
- "date":           2037,
-"pce":           1051,
+ "date": 2038,
+"pce":         1049.4,
 "pop": 216195,
-"psavert":           10.1,
+"psavert":           12.6,
 "uempmed":            9.2,
 "unemploy": 7928 
 },
 {
- "date":           2068,
-"pce":         1058.9,
+ "date": 2069,
+"pce":         1057.2,
 "pop": 216393,
-"psavert":           10.2,
+"psavert":           12.6,
 "uempmed":            9.2,
 "unemploy": 7923 
 },
 {
- "date":           2098,
-"pce":         1064.8,
+ "date": 2099,
+"pce":         1063.2,
 "pop": 216587,
-"psavert":           10.7,
+"psavert":             13,
 "uempmed":            8.6,
 "unemploy": 7897 
 },
 {
- "date":           2129,
-"pce":         1079.7,
+ "date": 2130,
+"pce":           1078,
 "pop": 216771,
-"psavert":             10,
+"psavert":           12.3,
 "uempmed":            9.5,
 "unemploy": 7794 
 },
 {
- "date":           2159,
-"pce":           1096,
+ "date": 2160,
+"pce":         1094.4,
 "pop": 216931,
-"psavert":            9.3,
+"psavert":           11.5,
 "uempmed":              9,
 "unemploy": 7744 
 },
 {
- "date":           2190,
-"pce":         1111.2,
+ "date": 2191,
+"pce":         1109.5,
 "pop": 217095,
-"psavert":            9.2,
+"psavert":           11.3,
 "uempmed":              9,
 "unemploy": 7534 
 },
 {
- "date":           2221,
-"pce":         1111.8,
+ "date": 2222,
+"pce":         1110.1,
 "pop": 217249,
-"psavert":            9.9,
+"psavert":           11.9,
 "uempmed":            8.2,
 "unemploy": 7326 
 },
 {
- "date":           2250,
-"pce":           1119,
+ "date": 2251,
+"pce":         1117.3,
 "pop": 217381,
-"psavert":            9.8,
+"psavert":           11.8,
 "uempmed":            8.7,
 "unemploy": 7230 
 },
 {
- "date":           2281,
-"pce":         1129.6,
+ "date": 2282,
+"pce":         1127.8,
 "pop": 217528,
-"psavert":            9.4,
+"psavert":           11.2,
 "uempmed":            8.2,
 "unemploy": 7330 
 },
 {
- "date":           2311,
-"pce":         1126.8,
+ "date": 2312,
+"pce":         1125.1,
 "pop": 217685,
-"psavert":           10.1,
+"psavert":           11.8,
 "uempmed":            8.3,
 "unemploy": 7053 
 },
 {
- "date":           2342,
-"pce":         1144.7,
+ "date": 2343,
+"pce":         1142.9,
 "pop": 217861,
-"psavert":            9.2,
+"psavert":           10.9,
 "uempmed":            7.8,
 "unemploy": 7322 
 },
 {
- "date":           2372,
-"pce":         1153.8,
+ "date": 2373,
+"pce":         1152.1,
 "pop": 218035,
-"psavert":            9.5,
+"psavert":           11.2,
 "uempmed":            7.7,
 "unemploy": 7490 
 },
 {
- "date":           2403,
-"pce":         1162.3,
+ "date": 2404,
+"pce":         1160.5,
 "pop": 218233,
-"psavert":            9.6,
+"psavert":           11.2,
 "uempmed":            7.9,
 "unemploy": 7518 
 },
 {
- "date":           2434,
-"pce":         1173.2,
+ "date": 2435,
+"pce":         1171.4,
 "pop": 218440,
-"psavert":            9.3,
+"psavert":           10.8,
 "uempmed":            7.8,
 "unemploy": 7380 
 },
 {
- "date":           2464,
-"pce":         1181.2,
+ "date": 2465,
+"pce":         1179.5,
 "pop": 218644,
-"psavert":              9,
+"psavert":           10.6,
 "uempmed":            7.7,
 "unemploy": 7430 
 },
 {
- "date":           2495,
-"pce":         1193.5,
+ "date": 2496,
+"pce":         1191.7,
 "pop": 218834,
-"psavert":            9.4,
+"psavert":           10.9,
 "uempmed":            8.4,
 "unemploy": 7620 
 },
 {
- "date":           2525,
-"pce":           1216,
+ "date": 2526,
+"pce":         1214.1,
 "pop": 219006,
-"psavert":            8.4,
+"psavert":            9.9,
 "uempmed":              8,
 "unemploy": 7545 
 },
 {
- "date":           2556,
-"pce":         1219.3,
+ "date": 2557,
+"pce":         1217.4,
 "pop": 219179,
-"psavert":            8.5,
+"psavert":            9.8,
 "uempmed":            7.5,
 "unemploy": 7280 
 },
 {
- "date":           2587,
-"pce":         1235.6,
+ "date": 2588,
+"pce":         1233.7,
 "pop": 219344,
-"psavert":            7.1,
+"psavert":            8.5,
 "uempmed":            7.2,
 "unemploy": 7443 
 },
 {
- "date":           2615,
-"pce":         1242.6,
+ "date": 2616,
+"pce":         1240.7,
 "pop": 219504,
-"psavert":            8.4,
+"psavert":            9.8,
 "uempmed":            7.2,
 "unemploy": 7307 
 },
 {
- "date":           2646,
-"pce":         1251.6,
+ "date": 2647,
+"pce":         1249.7,
 "pop": 219684,
-"psavert":            8.4,
+"psavert":            9.9,
 "uempmed":            7.3,
 "unemploy": 7059 
 },
 {
- "date":           2676,
-"pce":         1261.5,
+ "date": 2677,
+"pce":         1259.6,
 "pop": 219859,
-"psavert":            8.3,
+"psavert":            9.8,
 "uempmed":            7.9,
 "unemploy": 6911 
 },
 {
- "date":           2707,
-"pce":         1268.2,
+ "date": 2708,
+"pce":         1266.3,
 "pop": 220046,
-"psavert":            8.7,
+"psavert":           10.2,
 "uempmed":            6.2,
 "unemploy": 7134 
 },
 {
- "date":           2737,
-"pce":         1285.2,
+ "date": 2738,
+"pce":         1283.2,
 "pop": 220239,
-"psavert":            8.6,
+"psavert":           10.1,
 "uempmed":            7.1,
 "unemploy": 6829 
 },
 {
- "date":           2768,
-"pce":         1290.4,
+ "date": 2769,
+"pce":         1288.5,
 "pop": 220458,
-"psavert":              9,
+"psavert":           10.5,
 "uempmed":              7,
 "unemploy": 6925 
 },
 {
- "date":           2799,
-"pce":         1299.4,
+ "date": 2800,
+"pce":         1297.4,
 "pop": 220688,
-"psavert":            9.3,
+"psavert":           10.7,
 "uempmed":            6.7,
 "unemploy": 6751 
 },
 {
- "date":           2829,
-"pce":         1316.3,
+ "date": 2830,
+"pce":         1314.3,
 "pop": 220904,
-"psavert":            9.4,
+"psavert":           10.7,
 "uempmed":            6.9,
 "unemploy": 6763 
 },
 {
- "date":           2860,
-"pce":           1332,
+ "date": 2861,
+"pce":           1330,
 "pop": 221109,
-"psavert":            9.4,
+"psavert":           10.8,
 "uempmed":              7,
 "unemploy": 6815 
 },
 {
- "date":           2890,
-"pce":         1341.3,
+ "date": 2891,
+"pce":         1339.3,
 "pop": 221303,
-"psavert":            9.4,
+"psavert":             11,
 "uempmed":            6.8,
 "unemploy": 6386 
 },
 {
- "date":           2921,
-"pce":         1335.2,
+ "date": 2922,
+"pce":           1333,
 "pop": 221477,
-"psavert":            9.9,
+"psavert":           11.4,
 "uempmed":            6.5,
 "unemploy": 6489 
 },
 {
- "date":           2952,
-"pce":           1361,
+ "date": 2953,
+"pce":         1358.9,
 "pop": 221629,
-"psavert":            9.1,
+"psavert":           10.7,
 "uempmed":            6.7,
 "unemploy": 6318 
 },
 {
- "date":           2980,
-"pce":         1383.6,
+ "date": 2981,
+"pce":         1381.4,
 "pop": 221792,
-"psavert":            9.1,
+"psavert":           10.5,
 "uempmed":            6.2,
 "unemploy": 6337 
 },
 {
- "date":           3011,
-"pce":         1402.5,
+ "date": 3012,
+"pce":         1400.2,
 "pop": 221991,
-"psavert":            8.9,
+"psavert":           10.3,
 "uempmed":            6.1,
 "unemploy": 6180 
 },
 {
- "date":           3041,
-"pce":         1418.2,
+ "date": 3042,
+"pce":         1415.9,
 "pop": 222176,
-"psavert":            8.5,
+"psavert":            9.8,
 "uempmed":            5.7,
 "unemploy": 6127 
 },
 {
- "date":           3072,
-"pce":         1432.1,
+ "date": 3073,
+"pce":         1429.8,
 "pop": 222379,
-"psavert":            8.1,
+"psavert":            9.5,
 "uempmed":              6,
 "unemploy": 6028 
 },
 {
- "date":           3102,
-"pce":         1433.2,
+ "date": 3103,
+"pce":         1430.8,
 "pop": 222585,
-"psavert":            9.1,
+"psavert":           10.3,
 "uempmed":            5.8,
 "unemploy": 6309 
 },
 {
- "date":           3133,
-"pce":         1453.4,
+ "date": 3134,
+"pce":           1451,
 "pop": 222805,
-"psavert":            8.5,
+"psavert":            9.9,
 "uempmed":            5.8,
 "unemploy": 6080 
 },
 {
- "date":           3164,
-"pce":         1459.4,
+ "date": 3165,
+"pce":         1456.9,
 "pop": 223053,
-"psavert":            8.8,
+"psavert":             10,
 "uempmed":            5.6,
 "unemploy": 6125 
 },
 {
- "date":           3194,
-"pce":         1473.5,
+ "date": 3195,
+"pce":           1471,
 "pop": 223271,
-"psavert":            8.9,
+"psavert":           10.2,
 "uempmed":            5.9,
 "unemploy": 5947 
 },
 {
- "date":           3225,
-"pce":         1487.1,
+ "date": 3226,
+"pce":         1484.7,
 "pop": 223477,
-"psavert":            8.8,
+"psavert":             10,
 "uempmed":            5.5,
 "unemploy": 6077 
 },
 {
- "date":           3255,
-"pce":           1503,
+ "date": 3256,
+"pce":         1500.5,
 "pop": 223670,
-"psavert":            8.7,
+"psavert":             10,
 "uempmed":            5.6,
 "unemploy": 6228 
 },
 {
- "date":           3286,
-"pce":         1508.9,
+ "date": 3287,
+"pce":         1506.3,
 "pop": 223865,
-"psavert":            9.4,
+"psavert":           10.6,
 "uempmed":            5.9,
 "unemploy": 6109 
 },
 {
- "date":           3317,
-"pce":         1524.4,
+ "date": 3318,
+"pce":         1521.6,
 "pop": 224053,
-"psavert":            9.3,
+"psavert":           10.5,
 "uempmed":            5.9,
 "unemploy": 6173 
 },
 {
- "date":           3345,
-"pce":         1537.7,
+ "date": 3346,
+"pce":           1535,
 "pop": 224235,
-"psavert":            9.5,
+"psavert":           10.7,
 "uempmed":            5.9,
 "unemploy": 6109 
 },
 {
- "date":           3376,
-"pce":         1545.1,
+ "date": 3377,
+"pce":         1542.3,
 "pop": 224438,
-"psavert":            9.2,
+"psavert":           10.4,
 "uempmed":            5.4,
 "unemploy": 6069 
 },
 {
- "date":           3406,
-"pce":         1565.5,
+ "date": 3407,
+"pce":         1562.7,
 "pop": 224632,
-"psavert":            8.8,
+"psavert":            9.8,
 "uempmed":            5.6,
 "unemploy": 5840 
 },
 {
- "date":           3437,
-"pce":         1582.3,
+ "date": 3438,
+"pce":         1579.6,
 "pop": 224843,
-"psavert":            8.4,
+"psavert":            9.3,
 "uempmed":            5.6,
 "unemploy": 5959 
 },
 {
- "date":           3467,
-"pce":         1592.6,
+ "date": 3468,
+"pce":         1590.1,
 "pop": 225055,
-"psavert":            9.1,
+"psavert":             10,
 "uempmed":            5.9,
 "unemploy": 5996 
 },
 {
- "date":           3498,
-"pce":         1622.3,
+ "date": 3499,
+"pce":         1619.7,
 "pop": 225295,
-"psavert":            8.3,
+"psavert":            9.2,
 "uempmed":            4.8,
 "unemploy": 6320 
 },
 {
- "date":           3529,
-"pce":         1640.8,
+ "date": 3530,
+"pce":         1638.1,
 "pop": 225547,
-"psavert":            7.9,
+"psavert":            8.9,
 "uempmed":            5.5,
 "unemploy": 6190 
 },
 {
- "date":           3559,
-"pce":         1648.7,
+ "date": 3560,
+"pce":           1646,
 "pop": 225801,
-"psavert":            8.7,
+"psavert":            9.3,
 "uempmed":            5.5,
 "unemploy": 6296 
 },
 {
- "date":           3590,
-"pce":         1664.5,
+ "date": 3591,
+"pce":         1661.7,
 "pop": 226027,
-"psavert":            8.8,
+"psavert":            9.4,
 "uempmed":            5.3,
 "unemploy": 6238 
 },
 {
- "date":           3620,
-"pce":         1673.5,
+ "date": 3621,
+"pce":         1670.7,
 "pop": 226243,
-"psavert":            9.3,
+"psavert":            9.8,
 "uempmed":            5.7,
 "unemploy": 6325 
 },
 {
- "date":           3651,
-"pce":         1704.1,
+ "date": 3652,
+"pce":         1701.6,
 "pop": 226451,
-"psavert":            9.3,
+"psavert":            9.6,
 "uempmed":            5.3,
 "unemploy": 6683 
 },
 {
- "date":           3682,
-"pce":         1708.2,
+ "date": 3683,
+"pce":         1705.6,
 "pop": 226656,
-"psavert":            9.6,
+"psavert":            9.8,
 "uempmed":            5.8,
 "unemploy": 6702 
 },
 {
- "date":           3711,
-"pce":         1714.9,
+ "date": 3712,
+"pce":         1712.4,
 "pop": 226849,
-"psavert":            9.7,
+"psavert":            9.8,
 "uempmed":              6,
 "unemploy": 6729 
 },
 {
- "date":           3742,
-"pce":         1701.8,
+ "date": 3743,
+"pce":         1699.5,
 "pop": 227061,
-"psavert":           10.1,
+"psavert":           10.5,
 "uempmed":            5.8,
 "unemploy": 7358 
 },
 {
- "date":           3772,
-"pce":         1706.6,
+ "date": 3773,
+"pce":         1704.3,
 "pop": 227251,
-"psavert":             10,
+"psavert":           10.6,
 "uempmed":            5.7,
 "unemploy": 7984 
 },
 {
- "date":           3803,
-"pce":         1725.3,
+ "date": 3804,
+"pce":           1723,
 "pop": 227522,
-"psavert":            9.7,
+"psavert":           10.4,
 "uempmed":            6.4,
 "unemploy": 8098 
 },
 {
- "date":           3833,
-"pce":         1753.6,
+ "date": 3834,
+"pce":         1751.2,
 "pop": 227726,
-"psavert":            9.8,
+"psavert":           10.5,
 "uempmed":              7,
 "unemploy": 8363 
 },
 {
- "date":           3864,
-"pce":         1770.1,
+ "date": 3865,
+"pce":         1767.7,
 "pop": 227953,
-"psavert":            9.8,
+"psavert":           10.6,
 "uempmed":            7.5,
 "unemploy": 8281 
 },
 {
- "date":           3895,
-"pce":         1786.6,
+ "date": 3896,
+"pce":         1784.1,
 "pop": 228186,
-"psavert":           10.3,
+"psavert":           11.1,
 "uempmed":            7.7,
 "unemploy": 8021 
 },
 {
- "date":           3925,
-"pce":           1823,
+ "date": 3926,
+"pce":         1820.4,
 "pop": 228417,
-"psavert":           10.4,
+"psavert":             11,
 "uempmed":            7.5,
 "unemploy": 8088 
 },
 {
- "date":           3956,
-"pce":           1833,
+ "date": 3957,
+"pce":         1830.2,
 "pop": 228612,
-"psavert":           10.9,
+"psavert":           11.5,
 "uempmed":            7.7,
 "unemploy": 8023 
 },
 {
- "date":           3986,
-"pce":         1858.3,
+ "date": 3987,
+"pce":         1855.5,
 "pop": 228779,
-"psavert":           10.7,
+"psavert":           11.2,
 "uempmed":            7.5,
 "unemploy": 7718 
 },
 {
- "date":           4017,
-"pce":         1877.7,
+ "date": 4018,
+"pce":         1874.7,
 "pop": 228937,
-"psavert":            9.9,
+"psavert":           10.5,
 "uempmed":            7.4,
 "unemploy": 8071 
 },
 {
- "date":           4048,
-"pce":         1892.2,
+ "date": 4049,
+"pce":         1889.4,
 "pop": 229071,
-"psavert":            9.8,
+"psavert":           10.4,
 "uempmed":            7.1,
 "unemploy": 8051 
 },
 {
- "date":           4076,
-"pce":         1911.3,
+ "date": 4077,
+"pce":         1908.1,
 "pop": 229224,
-"psavert":            9.7,
+"psavert":           10.3,
 "uempmed":            7.1,
 "unemploy": 7982 
 },
 {
- "date":           4107,
-"pce":         1912.6,
+ "date": 4108,
+"pce":         1909.1,
 "pop": 229403,
-"psavert":            9.8,
+"psavert":           10.3,
 "uempmed":            7.4,
 "unemploy": 7869 
 },
 {
- "date":           4137,
-"pce":         1921.7,
+ "date": 4138,
+"pce":         1918.2,
 "pop": 229575,
-"psavert":             10,
+"psavert":           10.4,
 "uempmed":            6.9,
 "unemploy": 8174 
 },
 {
- "date":           4168,
-"pce":         1942.3,
+ "date": 4169,
+"pce":         1938.5,
 "pop": 229761,
-"psavert":            9.9,
+"psavert":           10.2,
 "uempmed":            6.6,
 "unemploy": 8098 
 },
 {
- "date":           4198,
-"pce":         1949.6,
+ "date": 4199,
+"pce":         1945.7,
 "pop": 229966,
-"psavert":           11.4,
+"psavert":           11.7,
 "uempmed":            7.1,
 "unemploy": 7863 
 },
 {
- "date":           4229,
-"pce":         1973.7,
+ "date": 4230,
+"pce":         1969.8,
 "pop": 230187,
-"psavert":           11.2,
+"psavert":           11.4,
 "uempmed":            7.2,
 "unemploy": 8036 
 },
 {
- "date":           4260,
-"pce":         1972.1,
+ "date": 4261,
+"pce":         1968.2,
 "pop": 230412,
-"psavert":           11.7,
+"psavert":           11.9,
 "uempmed":            6.8,
 "unemploy": 8230 
 },
 {
- "date":           4290,
-"pce":           1970,
+ "date": 4291,
+"pce":         1966.2,
 "pop": 230641,
 "psavert":           12.5,
 "uempmed":            6.8,
 "unemploy": 8646 
 },
 {
- "date":           4321,
-"pce":           1976,
+ "date": 4322,
+"pce":         1972.4,
 "pop": 230822,
-"psavert":           12.5,
+"psavert":           12.7,
 "uempmed":            6.9,
 "unemploy": 9029 
 },
 {
- "date":           4351,
-"pce":         1993.6,
+ "date": 4352,
+"pce":         1989.9,
 "pop": 230989,
-"psavert":           11.7,
+"psavert":             12,
 "uempmed":            6.9,
 "unemploy": 9267 
 },
 {
- "date":           4382,
-"pce":         2001.1,
+ "date": 4383,
+"pce":         1997.4,
 "pop": 231157,
-"psavert":           11.9,
+"psavert":           12.2,
 "uempmed":            7.1,
 "unemploy": 9397 
 },
 {
- "date":           4413,
-"pce":         2024.9,
+ "date": 4414,
+"pce":         2021.4,
 "pop": 231313,
-"psavert":           11.3,
+"psavert":           11.6,
 "uempmed":            7.5,
 "unemploy": 9705 
 },
 {
- "date":           4441,
-"pce":         2028.1,
+ "date": 4442,
+"pce":         2024.4,
 "pop": 231470,
-"psavert":           11.5,
+"psavert":           11.7,
 "uempmed":            7.7,
 "unemploy": 9895 
 },
 {
- "date":           4472,
-"pce":         2030.5,
+ "date": 4473,
+"pce":         2027.2,
 "pop": 231645,
-"psavert":           12.2,
+"psavert":           12.4,
 "uempmed":            8.1,
 "unemploy": 10244 
 },
 {
- "date":           4502,
-"pce":         2049.3,
+ "date": 4503,
+"pce":         2045.9,
 "pop": 231809,
-"psavert":           11.6,
+"psavert":           11.7,
 "uempmed":            8.5,
 "unemploy": 10335 
 },
 {
- "date":           4533,
-"pce":         2053.5,
+ "date": 4534,
+"pce":         2050.2,
 "pop": 231992,
-"psavert":           11.5,
+"psavert":           11.6,
 "uempmed":            9.5,
 "unemploy": 10538 
 },
 {
- "date":           4563,
-"pce":         2078.3,
+ "date": 4564,
+"pce":         2075.1,
 "pop": 232188,
-"psavert":           11.9,
+"psavert":             12,
 "uempmed":            8.5,
 "unemploy": 10849 
 },
 {
- "date":           4594,
-"pce":         2086.9,
+ "date": 4595,
+"pce":         2083.7,
 "pop": 232392,
-"psavert":           11.7,
+"psavert":           11.9,
 "uempmed":            8.7,
 "unemploy": 10881 
 },
 {
- "date":           4625,
-"pce":           2112,
+ "date": 4626,
+"pce":         2108.9,
 "pop": 232599,
-"psavert":           10.8,
+"psavert":           11.1,
 "uempmed":            9.5,
 "unemploy": 11217 
 },
 {
- "date":           4655,
-"pce":         2133.8,
+ "date": 4656,
+"pce":         2130.7,
 "pop": 232816,
-"psavert":           10.3,
+"psavert":           10.7,
 "uempmed":            9.7,
 "unemploy": 11529 
 },
 {
- "date":           4686,
-"pce":         2158.1,
+ "date": 4687,
+"pce":         2154.7,
 "pop": 232993,
-"psavert":            9.9,
+"psavert":           10.3,
 "uempmed":             10,
 "unemploy": 11938 
 },
 {
- "date":           4716,
-"pce":         2170.8,
+ "date": 4717,
+"pce":         2167.4,
 "pop": 233160,
-"psavert":            9.7,
+"psavert":           10.3,
 "uempmed":           10.2,
 "unemploy": 12051 
 },
 {
- "date":           4747,
-"pce":         2183.6,
+ "date": 4748,
+"pce":         2180.1,
 "pop": 233322,
-"psavert":            9.9,
+"psavert":           10.4,
 "uempmed":           11.1,
 "unemploy": 11534 
 },
 {
- "date":           4778,
-"pce":         2186.5,
+ "date": 4779,
+"pce":         2183.1,
 "pop": 233473,
-"psavert":             10,
+"psavert":           10.5,
 "uempmed":            9.8,
 "unemploy": 11545 
 },
 {
- "date":           4806,
-"pce":         2212.2,
+ "date": 4807,
+"pce":         2208.6,
 "pop": 233613,
-"psavert":            9.5,
+"psavert":             10,
 "uempmed":           10.4,
 "unemploy": 11408 
 },
 {
- "date":           4837,
-"pce":         2235.3,
+ "date": 4838,
+"pce":         2231.8,
 "pop": 233781,
-"psavert":            9.1,
+"psavert":            9.6,
 "uempmed":           10.9,
 "unemploy": 11268 
 },
 {
- "date":           4867,
-"pce":         2254.7,
+ "date": 4868,
+"pce":           2251,
 "pop": 233922,
-"psavert":            8.9,
+"psavert":            9.4,
 "uempmed":           12.3,
 "unemploy": 11154 
 },
 {
- "date":           4898,
-"pce":         2284.7,
+ "date": 4899,
+"pce":         2280.8,
 "pop": 234118,
-"psavert":            8.1,
+"psavert":            8.5,
 "uempmed":           11.3,
 "unemploy": 11246 
 },
 {
- "date":           4928,
-"pce":         2313.2,
+ "date": 4929,
+"pce":           2309,
 "pop": 234307,
-"psavert":            8.6,
+"psavert":              9,
 "uempmed":           10.1,
 "unemploy": 10548 
 },
 {
- "date":           4959,
-"pce":         2329.2,
+ "date": 4960,
+"pce":         2324.8,
 "pop": 234501,
-"psavert":              8,
+"psavert":            8.7,
 "uempmed":            9.3,
 "unemploy": 10623 
 },
 {
- "date":           4990,
-"pce":         2343.4,
+ "date": 4991,
+"pce":         2339.1,
 "pop": 234701,
-"psavert":            8.5,
+"psavert":              9,
 "uempmed":            9.3,
 "unemploy": 10282 
 },
 {
- "date":           5020,
-"pce":         2366.2,
+ "date": 5021,
+"pce":         2361.8,
 "pop": 234907,
-"psavert":            8.6,
+"psavert":            9.1,
 "uempmed":            9.4,
 "unemploy": 9887 
 },
 {
- "date":           5051,
-"pce":           2375,
+ "date": 5052,
+"pce":         2370.4,
 "pop": 235078,
-"psavert":            9.2,
+"psavert":            9.7,
 "uempmed":            9.3,
 "unemploy": 9499 
 },
 {
- "date":           5081,
-"pce":         2402.7,
+ "date": 5082,
+"pce":         2397.9,
 "pop": 235235,
-"psavert":            9.1,
+"psavert":            9.5,
 "uempmed":            8.7,
 "unemploy": 9331 
 },
 {
- "date":           5112,
-"pce":         2428.6,
+ "date": 5113,
+"pce":         2423.8,
 "pop": 235385,
 "psavert":            9.4,
 "uempmed":            9.1,
 "unemploy": 9008 
 },
 {
- "date":           5143,
-"pce":         2412.8,
+ "date": 5144,
+"pce":         2408.1,
 "pop": 235527,
-"psavert":           10.8,
+"psavert":           11.1,
 "uempmed":            8.3,
 "unemploy": 8791 
 },
 {
- "date":           5172,
-"pce":         2441.3,
+ "date": 5173,
+"pce":         2436.4,
 "pop": 235675,
-"psavert":           10.6,
+"psavert":           10.9,
 "uempmed":            8.3,
 "unemploy": 8746 
 },
 {
- "date":           5203,
-"pce":         2467.6,
+ "date": 5204,
+"pce":         2462.6,
 "pop": 235839,
-"psavert":           10.8,
+"psavert":           10.9,
 "uempmed":            8.2,
 "unemploy": 8762 
 },
 {
- "date":           5233,
-"pce":           2485,
+ "date": 5234,
+"pce":         2479.8,
 "pop": 235993,
 "psavert":           10.5,
 "uempmed":            9.1,
 "unemploy": 8456 
 },
 {
- "date":           5264,
-"pce":         2506.5,
+ "date": 5265,
+"pce":         2501.2,
 "pop": 236160,
-"psavert":           10.6,
+"psavert":           10.5,
 "uempmed":            7.5,
 "unemploy": 8226 
 },
 {
- "date":           5294,
-"pce":         2505.7,
+ "date": 5295,
+"pce":         2500.5,
 "pop": 236348,
-"psavert":           11.4,
+"psavert":             11,
 "uempmed":            7.5,
 "unemploy": 8537 
 },
 {
- "date":           5325,
-"pce":         2523.8,
+ "date": 5326,
+"pce":         2518.4,
 "pop": 236549,
-"psavert":           11.3,
+"psavert":           11.2,
 "uempmed":            7.3,
 "unemploy": 8519 
 },
 {
- "date":           5356,
-"pce":         2545.4,
+ "date": 5357,
+"pce":         2540.3,
 "pop": 236760,
 "psavert":           11.2,
 "uempmed":            7.6,
 "unemploy": 8367 
 },
 {
- "date":           5386,
-"pce":         2543.6,
+ "date": 5387,
+"pce":         2538.2,
 "pop": 236976,
-"psavert":           11.4,
+"psavert":           11.2,
 "uempmed":            7.2,
 "unemploy": 8381 
 },
 {
- "date":           5417,
-"pce":           2584,
+ "date": 5418,
+"pce":         2578.6,
 "pop": 237159,
-"psavert":           10.6,
+"psavert":           10.3,
 "uempmed":            7.2,
 "unemploy": 8198 
 },
 {
- "date":           5447,
-"pce":         2595.3,
+ "date": 5448,
+"pce":           2590,
 "pop": 237316,
-"psavert":             11,
+"psavert":           10.6,
 "uempmed":            7.3,
 "unemploy": 8358 
 },
 {
- "date":           5478,
-"pce":         2629.6,
+ "date": 5479,
+"pce":         2626.3,
 "pop": 237468,
-"psavert":           10.3,
+"psavert":            9.7,
 "uempmed":            6.8,
 "unemploy": 8423 
 },
 {
- "date":           5509,
-"pce":         2650.5,
+ "date": 5510,
+"pce":         2648.6,
 "pop": 237602,
-"psavert":            9.1,
+"psavert":            8.5,
 "uempmed":            7.1,
 "unemploy": 8321 
 },
 {
- "date":           5537,
-"pce":         2657.1,
+ "date": 5538,
+"pce":         2656.8,
 "pop": 237732,
-"psavert":            8.7,
+"psavert":            8.1,
 "uempmed":            7.1,
 "unemploy": 8339 
 },
 {
- "date":           5568,
-"pce":         2668.8,
+ "date": 5569,
+"pce":         2668.4,
 "pop": 237900,
-"psavert":           10.1,
+"psavert":            9.4,
 "uempmed":            6.9,
 "unemploy": 8395 
 },
 {
- "date":           5598,
-"pce":           2705,
+ "date": 5599,
+"pce":         2705.9,
 "pop": 238074,
-"psavert":           11.1,
+"psavert":           10.5,
 "uempmed":            6.9,
 "unemploy": 8302 
 },
 {
- "date":           5629,
-"pce":         2696.4,
+ "date": 5630,
+"pce":         2699.3,
 "pop": 238270,
-"psavert":            9.5,
+"psavert":              9,
 "uempmed":            6.6,
 "unemploy": 8460 
 },
 {
- "date":           5659,
-"pce":         2720.5,
+ "date": 5660,
+"pce":         2725.9,
 "pop": 238466,
-"psavert":            8.9,
+"psavert":            8.5,
 "uempmed":            6.9,
 "unemploy": 8513 
 },
 {
- "date":           5690,
-"pce":           2756,
+ "date": 5691,
+"pce":         2762.7,
 "pop": 238679,
-"psavert":              8,
+"psavert":            7.5,
 "uempmed":            7.1,
 "unemploy": 8196 
 },
 {
- "date":           5721,
-"pce":         2799.7,
+ "date": 5722,
+"pce":         2805.6,
 "pop": 238898,
-"psavert":            6.8,
+"psavert":            6.7,
 "uempmed":            6.9,
 "unemploy": 8248 
 },
 {
- "date":           5751,
-"pce":         2762.3,
+ "date": 5752,
+"pce":         2767.1,
 "pop": 239113,
-"psavert":            8.9,
+"psavert":            8.5,
 "uempmed":            7.1,
 "unemploy": 8298 
 },
 {
- "date":           5782,
-"pce":         2778.7,
+ "date": 5783,
+"pce":         2782.7,
 "pop": 239307,
-"psavert":            8.5,
+"psavert":            8.4,
 "uempmed":              7,
 "unemploy": 8128 
 },
 {
- "date":           5812,
-"pce":         2819.1,
+ "date": 5813,
+"pce":         2822.8,
 "pop": 239477,
-"psavert":            8.3,
+"psavert":              8,
 "uempmed":            6.8,
 "unemploy": 8138 
 },
 {
- "date":           5843,
-"pce":         2833.5,
+ "date": 5844,
+"pce":         2838.3,
 "pop": 239638,
-"psavert":            8.2,
+"psavert":              8,
 "uempmed":            6.7,
 "unemploy": 7795 
 },
 {
- "date":           5874,
-"pce":         2826.7,
+ "date": 5875,
+"pce":         2831.2,
 "pop": 239788,
-"psavert":            8.9,
+"psavert":            8.7,
 "uempmed":            6.9,
 "unemploy": 8402 
 },
 {
- "date":           5902,
-"pce":         2830.7,
+ "date": 5903,
+"pce":         2834.7,
 "pop": 239928,
-"psavert":            9.5,
+"psavert":            9.3,
 "uempmed":            6.8,
 "unemploy": 8383 
 },
 {
- "date":           5933,
-"pce":         2843.8,
+ "date": 5934,
+"pce":         2846.5,
 "pop": 240094,
 "psavert":            9.1,
 "uempmed":            6.7,
 "unemploy": 8364 
 },
 {
- "date":           5963,
-"pce":         2867.8,
+ "date": 5964,
+"pce":           2869,
 "pop": 240271,
-"psavert":            8.7,
+"psavert":            8.6,
 "uempmed":            6.8,
 "unemploy": 8439 
 },
 {
- "date":           5994,
-"pce":         2874.2,
+ "date": 5995,
+"pce":         2873.5,
 "pop": 240459,
-"psavert":            8.9,
+"psavert":            8.8,
 "uempmed":              7,
 "unemploy": 8508 
 },
 {
- "date":           6024,
-"pce":         2895.9,
+ "date": 6025,
+"pce":         2893.4,
 "pop": 240651,
-"psavert":            8.6,
+"psavert":            8.7,
 "uempmed":            6.9,
 "unemploy": 8319 
 },
 {
- "date":           6055,
-"pce":         2914.8,
+ "date": 6056,
+"pce":         2911.1,
 "pop": 240854,
-"psavert":            8.3,
+"psavert":            8.4,
 "uempmed":            7.1,
 "unemploy": 8135 
 },
 {
- "date":           6086,
-"pce":         2989.8,
+ "date": 6087,
+"pce":         2984.6,
 "pop": 241068,
-"psavert":            6.4,
+"psavert":            6.6,
 "uempmed":            7.4,
 "unemploy": 8310 
 },
 {
- "date":           6116,
-"pce":         2951.6,
+ "date": 6117,
+"pce":         2945.9,
 "pop": 241274,
-"psavert":            7.5,
+"psavert":            7.8,
 "uempmed":              7,
 "unemploy": 8243 
 },
 {
- "date":           6147,
-"pce":         2948.5,
+ "date": 6148,
+"pce":         2941.7,
 "pop": 241467,
-"psavert":            8.1,
+"psavert":            8.2,
 "uempmed":            7.1,
 "unemploy": 8159 
 },
 {
- "date":           6177,
-"pce":         3019.5,
+ "date": 6178,
+"pce":         3010.8,
 "pop": 241620,
-"psavert":            5.9,
+"psavert":            6.4,
 "uempmed":            7.1,
 "unemploy": 7883 
 },
 {
- "date":           6208,
-"pce":         2959.7,
+ "date": 6209,
+"pce":         2949.9,
 "pop": 241784,
-"psavert":            8.8,
+"psavert":            9.1,
 "uempmed":            6.9,
 "unemploy": 7892 
 },
 {
- "date":           6239,
-"pce":         3026.7,
+ "date": 6240,
+"pce":         3016.5,
 "pop": 241930,
-"psavert":            7.6,
+"psavert":            7.9,
 "uempmed":            6.6,
 "unemploy": 7865 
 },
 {
- "date":           6267,
-"pce":         3037.6,
+ "date": 6268,
+"pce":         3028.4,
 "pop": 242079,
-"psavert":            7.7,
+"psavert":            7.9,
 "uempmed":            6.6,
 "unemploy": 7862 
 },
 {
- "date":           6298,
-"pce":         3061.2,
+ "date": 6299,
+"pce":         3054.1,
 "pop": 242252,
-"psavert":            3.5,
+"psavert":            3.8,
 "uempmed":            7.1,
 "unemploy": 7542 
 },
 {
- "date":           6328,
-"pce":         3070.1,
+ "date": 6329,
+"pce":         3063.9,
 "pop": 242423,
-"psavert":            7.2,
+"psavert":            7.5,
 "uempmed":            6.6,
 "unemploy": 7574 
 },
 {
- "date":           6359,
-"pce":         3094.8,
+ "date": 6360,
+"pce":         3088.4,
 "pop": 242608,
-"psavert":            6.7,
+"psavert":              7,
 "uempmed":            6.5,
 "unemploy": 7398 
 },
 {
- "date":           6389,
-"pce":         3118.2,
+ "date": 6390,
+"pce":         3110.7,
 "pop": 242804,
-"psavert":            6.5,
+"psavert":            6.8,
 "uempmed":            6.5,
 "unemploy": 7268 
 },
 {
- "date":           6420,
-"pce":         3155.2,
+ "date": 6421,
+"pce":           3147,
 "pop": 243012,
-"psavert":            6.2,
+"psavert":            6.5,
 "uempmed":            6.4,
 "unemploy": 7261 
 },
 {
- "date":           6451,
-"pce":         3151.3,
+ "date": 6452,
+"pce":         3142.9,
 "pop": 243223,
-"psavert":            6.7,
+"psavert":              7,
 "uempmed":              6,
 "unemploy": 7102 
 },
 {
- "date":           6481,
-"pce":         3159.6,
+ "date": 6482,
+"pce":         3151.1,
 "pop": 243446,
-"psavert":            7.4,
+"psavert":            7.6,
 "uempmed":            6.3,
 "unemploy": 7227 
 },
 {
- "date":           6512,
-"pce":         3169.3,
+ "date": 6513,
+"pce":         3160.9,
 "pop": 243639,
-"psavert":            7.6,
+"psavert":            7.9,
 "uempmed":            6.2,
 "unemploy": 7035 
 },
 {
- "date":           6542,
-"pce":           3199,
+ "date": 6543,
+"pce":         3190.9,
 "pop": 243809,
-"psavert":            7.7,
+"psavert":              8,
 "uempmed":              6,
 "unemploy": 6936 
 },
 {
- "date":           6573,
-"pce":         3238.6,
+ "date": 6574,
+"pce":         3230.7,
 "pop": 243981,
-"psavert":              7,
+"psavert":            7.5,
 "uempmed":            6.2,
 "unemploy": 6953 
 },
 {
- "date":           6604,
-"pce":         3246.2,
+ "date": 6605,
+"pce":         3238.5,
 "pop": 244131,
-"psavert":            7.5,
+"psavert":            7.9,
 "uempmed":            6.3,
 "unemploy": 6929 
 },
 {
- "date":           6633,
-"pce":         3285.5,
+ "date": 6634,
+"pce":         3277.8,
 "pop": 244279,
-"psavert":            7.2,
+"psavert":            7.5,
 "uempmed":            6.4,
 "unemploy": 6876 
 },
 {
- "date":           6664,
-"pce":           3288,
+ "date": 6665,
+"pce":         3280.4,
 "pop": 244445,
-"psavert":            7.6,
+"psavert":            8.1,
 "uempmed":            5.9,
 "unemploy": 6601 
 },
 {
- "date":           6694,
-"pce":         3318.5,
+ "date": 6695,
+"pce":           3311,
 "pop": 244610,
-"psavert":            7.2,
+"psavert":            7.7,
 "uempmed":            5.9,
 "unemploy": 6779 
 },
 {
- "date":           6725,
-"pce":         3342.7,
+ "date": 6726,
+"pce":         3335.6,
 "pop": 244806,
-"psavert":            7.3,
+"psavert":            7.8,
 "uempmed":            5.8,
 "unemploy": 6546 
 },
 {
- "date":           6755,
-"pce":         3365.6,
+ "date": 6756,
+"pce":         3359.3,
 "pop": 245021,
-"psavert":            7.5,
+"psavert":            7.9,
 "uempmed":            6.1,
 "unemploy": 6605 
 },
 {
- "date":           6786,
-"pce":           3390,
+ "date": 6787,
+"pce":         3384.3,
 "pop": 245240,
-"psavert":            7.2,
+"psavert":            7.8,
 "uempmed":            5.9,
 "unemploy": 6843 
 },
 {
- "date":           6817,
-"pce":         3396.6,
+ "date": 6818,
+"pce":         3391.4,
 "pop": 245464,
-"psavert":            7.5,
+"psavert":            8.2,
 "uempmed":            5.7,
 "unemploy": 6604 
 },
 {
- "date":           6847,
-"pce":         3436.3,
+ "date": 6848,
+"pce":         3430.4,
 "pop": 245693,
-"psavert":            7.2,
+"psavert":              8,
 "uempmed":            5.6,
 "unemploy": 6568 
 },
 {
- "date":           6878,
-"pce":         3452.4,
+ "date": 6879,
+"pce":           3447,
 "pop": 245884,
-"psavert":              7,
+"psavert":            7.7,
 "uempmed":            5.7,
 "unemploy": 6537 
 },
 {
- "date":           6908,
-"pce":         3482.8,
+ "date": 6909,
+"pce":         3476.3,
 "pop": 246056,
-"psavert":            7.2,
+"psavert":            7.7,
 "uempmed":            5.9,
 "unemploy": 6518 
 },
 {
- "date":           6939,
-"pce":         3505.3,
+ "date": 6940,
+"pce":         3499.9,
 "pop": 246224,
-"psavert":            7.6,
+"psavert":              8,
 "uempmed":            5.6,
 "unemploy": 6682 
 },
 {
- "date":           6970,
-"pce":         3509.3,
+ "date": 6971,
+"pce":         3503.9,
 "pop": 246378,
-"psavert":            7.9,
+"psavert":            8.4,
 "uempmed":            5.4,
 "unemploy": 6359 
 },
 {
- "date":           6998,
-"pce":         3519.3,
+ "date": 6999,
+"pce":         3514.5,
 "pop": 246530,
-"psavert":            8.3,
+"psavert":            8.9,
 "uempmed":            5.4,
 "unemploy": 6205 
 },
 {
- "date":           7029,
-"pce":         3563.2,
+ "date": 7030,
+"pce":         3558.6,
 "pop": 246721,
-"psavert":            7.3,
+"psavert":            7.9,
 "uempmed":            5.4,
 "unemploy": 6468 
 },
 {
- "date":           7059,
-"pce":         3571.8,
+ "date": 7060,
+"pce":         3567.5,
 "pop": 246906,
-"psavert":              7,
+"psavert":            7.6,
 "uempmed":            5.3,
 "unemploy": 6375 
 },
 {
- "date":           7090,
-"pce":         3586.7,
+ "date": 7091,
+"pce":         3582.4,
 "pop": 247114,
-"psavert":            7.1,
+"psavert":            7.6,
 "uempmed":            5.4,
 "unemploy": 6577 
 },
 {
- "date":           7120,
-"pce":         3606.4,
+ "date": 7121,
+"pce":         3601.7,
 "pop": 247342,
-"psavert":            7.1,
+"psavert":            7.7,
 "uempmed":            5.6,
 "unemploy": 6495 
 },
 {
- "date":           7151,
-"pce":         3642.2,
+ "date": 7152,
+"pce":         3636.8,
 "pop": 247573,
-"psavert":            6.4,
+"psavert":            7.1,
 "uempmed":              5,
 "unemploy": 6511 
 },
 {
- "date":           7182,
-"pce":         3644.2,
+ "date": 7183,
+"pce":         3638.1,
 "pop": 247816,
-"psavert":            6.6,
+"psavert":            7.5,
 "uempmed":            4.9,
 "unemploy": 6590 
 },
 {
- "date":           7212,
-"pce":           3657,
+ "date": 7213,
+"pce":           3650,
 "pop": 248067,
-"psavert":            6.8,
+"psavert":            7.9,
 "uempmed":            4.9,
 "unemploy": 6630 
 },
 {
- "date":           7243,
-"pce":         3667.6,
+ "date": 7244,
+"pce":         3659.7,
 "pop": 248281,
-"psavert":            7.2,
+"psavert":              8,
 "uempmed":            4.8,
 "unemploy": 6725 
 },
 {
- "date":           7273,
-"pce":         3708.9,
+ "date": 7274,
+"pce":         3700.7,
 "pop": 248479,
-"psavert":            6.5,
+"psavert":            7.2,
 "uempmed":            4.9,
 "unemploy": 6667 
 },
 {
- "date":           7304,
-"pce":         3754.5,
+ "date": 7305,
+"pce":         3747.2,
 "pop": 248659,
-"psavert":            6.6,
+"psavert":            7.4,
 "uempmed":            5.1,
 "unemploy": 6752 
 },
 {
- "date":           7335,
-"pce":         3752.2,
+ "date": 7336,
+"pce":         3744.8,
 "pop": 248827,
-"psavert":            7.3,
+"psavert":            8.1,
 "uempmed":            5.3,
 "unemploy": 6651 
 },
 {
- "date":           7363,
-"pce":           3781,
+ "date": 7364,
+"pce":         3771.5,
 "pop": 249012,
-"psavert":              7,
+"psavert":            7.8,
 "uempmed":            5.1,
 "unemploy": 6598 
 },
 {
- "date":           7394,
-"pce":         3800.5,
+ "date": 7395,
+"pce":         3786.7,
 "pop": 249306,
-"psavert":            7.3,
+"psavert":            8.2,
 "uempmed":            4.8,
 "unemploy": 6797 
 },
 {
- "date":           7424,
-"pce":         3808.6,
+ "date": 7425,
+"pce":         3792.5,
 "pop": 249565,
-"psavert":            7.2,
+"psavert":              8,
 "uempmed":            5.2,
 "unemploy": 6742 
 },
 {
- "date":           7455,
-"pce":         3838.5,
+ "date": 7456,
+"pce":         3821.3,
 "pop": 249849,
-"psavert":            7.1,
+"psavert":            7.9,
 "uempmed":            5.2,
 "unemploy": 6590 
 },
 {
- "date":           7485,
-"pce":         3855.1,
+ "date": 7486,
+"pce":         3838.5,
 "pop": 250132,
-"psavert":            7.2,
+"psavert":              8,
 "uempmed":            5.4,
 "unemploy": 6922 
 },
 {
- "date":           7516,
-"pce":           3881,
+ "date": 7517,
+"pce":           3865,
 "pop": 250439,
-"psavert":            6.7,
+"psavert":            7.5,
 "uempmed":            5.4,
 "unemploy": 7188 
 },
 {
- "date":           7547,
-"pce":         3902.7,
+ "date": 7548,
+"pce":         3886.7,
 "pop": 250751,
-"psavert":            6.7,
+"psavert":            7.5,
 "uempmed":            5.6,
 "unemploy": 7368 
 },
 {
- "date":           7577,
-"pce":         3902.9,
+ "date": 7578,
+"pce":         3887.1,
 "pop": 251057,
-"psavert":            6.6,
+"psavert":            7.3,
 "uempmed":            5.8,
 "unemploy": 7459 
 },
 {
- "date":           7608,
-"pce":         3905.6,
+ "date": 7609,
+"pce":         3888.4,
 "pop": 251346,
-"psavert":            6.7,
+"psavert":            7.4,
 "uempmed":            5.7,
 "unemploy": 7764 
 },
 {
- "date":           7638,
-"pce":         3896.6,
+ "date": 7639,
+"pce":         3877.8,
 "pop": 251626,
-"psavert":            7.3,
+"psavert":            8.2,
 "uempmed":            5.9,
 "unemploy": 7901 
 },
 {
- "date":           7669,
-"pce":         3879.3,
+ "date": 7670,
+"pce":         3857.6,
 "pop": 251889,
-"psavert":            7.9,
+"psavert":            8.7,
 "uempmed":              6,
 "unemploy": 8015 
 },
 {
- "date":           7700,
-"pce":         3907.7,
+ "date": 7701,
+"pce":         3883.3,
 "pop": 252135,
-"psavert":            7.5,
+"psavert":            8.3,
 "uempmed":            6.2,
 "unemploy": 8265 
 },
 {
- "date":           7728,
-"pce":         3955.6,
+ "date": 7729,
+"pce":         3929.7,
 "pop": 252372,
-"psavert":            6.6,
+"psavert":            7.4,
 "uempmed":            6.7,
 "unemploy": 8586 
 },
 {
- "date":           7759,
-"pce":         3950.5,
+ "date": 7760,
+"pce":         3923.9,
 "pop": 252643,
-"psavert":            7.1,
+"psavert":              8,
 "uempmed":            6.6,
 "unemploy": 8439 
 },
 {
- "date":           7789,
-"pce":         3976.8,
+ "date": 7790,
+"pce":           3950,
 "pop": 252913,
-"psavert":            6.9,
+"psavert":            7.7,
 "uempmed":            6.4,
 "unemploy": 8736 
 },
 {
- "date":           7820,
-"pce":         3983.6,
+ "date": 7821,
+"pce":         3957.1,
 "pop": 253207,
-"psavert":            7.4,
+"psavert":            8.2,
 "uempmed":            6.9,
 "unemploy": 8692 
 },
 {
- "date":           7850,
-"pce":         4008.4,
+ "date": 7851,
+"pce":         3982.4,
 "pop": 253493,
-"psavert":            6.8,
+"psavert":            7.6,
 "uempmed":              7,
 "unemploy": 8586 
 },
 {
- "date":           7881,
-"pce":         4011.3,
+ "date": 7882,
+"pce":         3985.4,
 "pop": 253807,
-"psavert":              7,
+"psavert":            7.9,
 "uempmed":            7.3,
 "unemploy": 8666 
 },
 {
- "date":           7912,
-"pce":         4027.3,
+ "date": 7913,
+"pce":         4001.2,
 "pop": 254126,
-"psavert":            7.2,
+"psavert":            8.1,
 "uempmed":            6.8,
 "unemploy": 8722 
 },
 {
- "date":           7942,
-"pce":         4020.1,
+ "date": 7943,
+"pce":         3992.9,
 "pop": 254435,
-"psavert":            7.5,
+"psavert":            8.6,
 "uempmed":            7.2,
 "unemploy": 8842 
 },
 {
- "date":           7973,
-"pce":         4048.2,
+ "date": 7974,
+"pce":         4020.6,
 "pop": 254718,
-"psavert":            7.3,
+"psavert":            8.4,
 "uempmed":            7.5,
 "unemploy": 8931 
 },
 {
- "date":           8003,
-"pce":           4064,
+ "date": 8004,
+"pce":         4037.7,
 "pop": 254964,
-"psavert":            7.9,
+"psavert":            9.1,
 "uempmed":            7.8,
 "unemploy": 9198 
 },
 {
- "date":           8034,
-"pce":         4128.2,
+ "date": 8035,
+"pce":         4101.9,
 "pop": 255214,
-"psavert":            7.4,
+"psavert":            8.8,
 "uempmed":            8.1,
 "unemploy": 9283 
 },
 {
- "date":           8065,
-"pce":         4141.8,
+ "date": 8066,
+"pce":         4116.8,
 "pop": 255448,
-"psavert":            7.9,
+"psavert":            9.2,
 "uempmed":            8.2,
 "unemploy": 9454 
 },
 {
- "date":           8094,
-"pce":         4157.6,
+ "date": 8095,
+"pce":         4134.3,
 "pop": 255703,
-"psavert":            7.9,
+"psavert":            9.2,
 "uempmed":            8.3,
 "unemploy": 9460 
 },
 {
- "date":           8125,
-"pce":         4169.8,
+ "date": 8126,
+"pce":           4149,
 "pop": 255992,
-"psavert":              8,
+"psavert":            9.4,
 "uempmed":            8.5,
 "unemploy": 9415 
 },
 {
- "date":           8155,
-"pce":         4195.5,
+ "date": 8156,
+"pce":         4176.1,
 "pop": 256285,
-"psavert":            7.9,
+"psavert":            9.4,
 "uempmed":            8.8,
 "unemploy": 9744 
 },
 {
- "date":           8186,
-"pce":         4213.8,
+ "date": 8187,
+"pce":           4195,
 "pop": 256589,
-"psavert":            7.8,
+"psavert":            9.5,
 "uempmed":            8.7,
 "unemploy": 10040 
 },
 {
- "date":           8216,
-"pce":         4241.8,
+ "date": 8217,
+"pce":           4223,
 "pop": 256894,
-"psavert":            7.5,
+"psavert":            9.1,
 "uempmed":            8.6,
 "unemploy": 9850 
 },
 {
- "date":           8247,
-"pce":         4258.8,
+ "date": 8248,
+"pce":         4239.3,
 "pop": 257232,
-"psavert":            7.6,
+"psavert":            9.2,
 "uempmed":            8.8,
 "unemploy": 9787 
 },
 {
- "date":           8278,
-"pce":         4292.5,
+ "date": 8279,
+"pce":         4273.9,
 "pop": 257548,
-"psavert":            6.9,
+"psavert":            8.2,
 "uempmed":            8.6,
 "unemploy": 9781 
 },
 {
- "date":           8308,
-"pce":         4320.2,
+ "date": 8309,
+"pce":         4303.5,
 "pop": 257861,
-"psavert":            7.1,
+"psavert":            7.4,
 "uempmed":              9,
 "unemploy": 9398 
 },
 {
- "date":           8339,
-"pce":         4334.3,
+ "date": 8340,
+"pce":         4319.5,
 "pop": 258147,
-"psavert":              7,
+"psavert":            7.3,
 "uempmed":              9,
 "unemploy": 9565 
 },
 {
- "date":           8369,
-"pce":         4368.8,
+ "date": 8370,
+"pce":         4355.6,
 "pop": 258413,
-"psavert":            9.4,
+"psavert":            9.9,
 "uempmed":            9.3,
 "unemploy": 9557 
 },
 {
- "date":           8400,
-"pce":         4371.5,
+ "date": 8401,
+"pce":         4359.7,
 "pop": 258679,
-"psavert":            5.8,
+"psavert":            8.3,
 "uempmed":            8.6,
 "unemploy": 9325 
 },
 {
- "date":           8431,
-"pce":           4385,
+ "date": 8432,
+"pce":         4374.3,
 "pop": 258919,
-"psavert":            5.6,
+"psavert":            8.4,
 "uempmed":            8.5,
 "unemploy": 9183 
 },
 {
- "date":           8459,
-"pce":         4381.5,
+ "date": 8460,
+"pce":         4371.4,
 "pop": 259152,
-"psavert":            5.6,
+"psavert":            8.3,
 "uempmed":            8.5,
 "unemploy": 9056 
 },
 {
- "date":           8490,
-"pce":         4422.5,
+ "date": 8491,
+"pce":         4412.4,
 "pop": 259414,
-"psavert":            6.4,
+"psavert":            8.2,
 "uempmed":            8.4,
 "unemploy": 9110 
 },
 {
- "date":           8520,
-"pce":         4450.9,
+ "date": 8521,
+"pce":         4441.3,
 "pop": 259680,
-"psavert":            6.3,
+"psavert":            7.7,
 "uempmed":            8.1,
 "unemploy": 9149 
 },
 {
- "date":           8551,
-"pce":         4466.7,
+ "date": 8552,
+"pce":         4458.8,
 "pop": 259963,
-"psavert":            5.9,
+"psavert":            7.2,
 "uempmed":            8.3,
 "unemploy": 9121 
 },
 {
- "date":           8581,
-"pce":         4493.8,
+ "date": 8582,
+"pce":         4487.7,
 "pop": 260255,
-"psavert":            5.4,
+"psavert":              7,
 "uempmed":            8.2,
 "unemploy": 8930 
 },
 {
- "date":           8612,
-"pce":         4504.3,
+ "date": 8613,
+"pce":         4499.9,
 "pop": 260566,
-"psavert":            5.6,
+"psavert":            7.1,
 "uempmed":            8.2,
 "unemploy": 8763 
 },
 {
- "date":           8643,
-"pce":           4534,
+ "date": 8644,
+"pce":         4530.5,
 "pop": 260867,
-"psavert":              5,
+"psavert":            6.3,
 "uempmed":            8.3,
 "unemploy": 8714 
 },
 {
- "date":           8673,
-"pce":         4554.8,
+ "date": 8674,
+"pce":           4552,
 "pop": 261163,
-"psavert":              5,
+"psavert":            5.6,
 "uempmed":              8,
 "unemploy": 8750 
 },
 {
- "date":           8704,
-"pce":         4575.9,
+ "date": 8705,
+"pce":         4573.4,
 "pop": 261425,
-"psavert":              5,
+"psavert":            5.6,
 "uempmed":            8.3,
 "unemploy": 8542 
 },
 {
- "date":           8734,
-"pce":         4593.9,
+ "date": 8735,
+"pce":         4590.7,
 "pop": 261674,
-"psavert":            7.6,
+"psavert":            8.4,
 "uempmed":            8.3,
 "unemploy": 8477 
 },
 {
- "date":           8765,
-"pce":         4608.5,
+ "date": 8766,
+"pce":         4604.8,
 "pop": 261919,
-"psavert":              4,
+"psavert":            6.4,
 "uempmed":            8.6,
 "unemploy": 8630 
 },
 {
- "date":           8796,
-"pce":         4655.7,
+ "date": 8797,
+"pce":         4652.3,
 "pop": 262123,
-"psavert":            3.9,
+"psavert":            5.9,
 "uempmed":            9.2,
 "unemploy": 8583 
 },
 {
- "date":           8824,
-"pce":         4667.5,
+ "date": 8825,
+"pce":         4665.4,
 "pop": 262352,
-"psavert":            4.3,
+"psavert":            6.2,
 "uempmed":            9.3,
 "unemploy": 8470 
 },
 {
- "date":           8855,
-"pce":         4690.3,
+ "date": 8856,
+"pce":         4690.7,
 "pop": 262631,
-"psavert":            4.2,
+"psavert":            5.8,
 "uempmed":            9.1,
 "unemploy": 8331 
 },
 {
- "date":           8885,
-"pce":         4688.3,
+ "date": 8886,
+"pce":         4689.2,
 "pop": 262877,
-"psavert":            5.8,
+"psavert":            7.1,
 "uempmed":            9.2,
 "unemploy": 7915 
 },
 {
- "date":           8916,
-"pce":         4729.9,
+ "date": 8917,
+"pce":         4728.8,
 "pop": 263152,
-"psavert":            5.1,
+"psavert":            6.3,
 "uempmed":            9.3,
 "unemploy": 7927 
 },
 {
- "date":           8946,
-"pce":         4745.4,
+ "date": 8947,
+"pce":         4740.8,
 "pop": 263436,
-"psavert":            5.1,
+"psavert":            6.4,
 "uempmed":              9,
 "unemploy": 7946 
 },
 {
- "date":           8977,
-"pce":         4789.2,
+ "date": 8978,
+"pce":           4783,
 "pop": 263724,
-"psavert":            4.7,
+"psavert":            5.9,
 "uempmed":            8.9,
 "unemploy": 7933 
 },
 {
- "date":           9008,
-"pce":         4801.2,
+ "date": 9009,
+"pce":         4795.5,
 "pop": 264017,
-"psavert":              5,
+"psavert":            6.2,
 "uempmed":            9.2,
 "unemploy": 7734 
 },
 {
- "date":           9038,
-"pce":         4836.2,
+ "date": 9039,
+"pce":         4833.3,
 "pop": 264301,
-"psavert":            5.3,
+"psavert":            6.5,
 "uempmed":             10,
 "unemploy": 7632 
 },
 {
- "date":           9069,
-"pce":         4846.5,
+ "date": 9070,
+"pce":           4846,
 "pop": 264559,
-"psavert":            5.2,
+"psavert":            6.4,
 "uempmed":              9,
 "unemploy": 7375 
 },
 {
- "date":           9099,
-"pce":         4860.9,
+ "date": 9100,
+"pce":         4862.3,
 "pop": 264804,
-"psavert":            5.3,
+"psavert":            6.5,
 "uempmed":            8.7,
 "unemploy": 7230 
 },
 {
- "date":           9130,
-"pce":         4869.3,
+ "date": 9131,
+"pce":         4871.9,
 "pop": 265044,
-"psavert":            5.6,
+"psavert":            6.9,
 "uempmed":              8,
 "unemploy": 7375 
 },
 {
- "date":           9161,
-"pce":         4867.4,
+ "date": 9162,
+"pce":         4871.7,
 "pop": 265270,
-"psavert":            5.9,
+"psavert":            7.3,
 "uempmed":            8.1,
 "unemploy": 7187 
 },
 {
- "date":           9189,
-"pce":         4900.5,
+ "date": 9190,
+"pce":         4906.5,
 "pop": 265495,
-"psavert":            5.5,
+"psavert":              7,
 "uempmed":            8.3,
 "unemploy": 7153 
 },
 {
- "date":           9220,
-"pce":         4904.2,
+ "date": 9221,
+"pce":         4911.5,
 "pop": 265755,
-"psavert":            4.8,
+"psavert":            6.3,
 "uempmed":            8.3,
 "unemploy": 7645 
 },
 {
- "date":           9250,
-"pce":         4946.1,
+ "date": 9251,
+"pce":         4954.4,
 "pop": 265998,
-"psavert":            4.9,
+"psavert":            6.5,
 "uempmed":            9.1,
 "unemploy": 7430 
 },
 {
- "date":           9281,
-"pce":         4989.8,
+ "date": 9282,
+"pce":           4999,
 "pop": 266270,
-"psavert":            4.4,
+"psavert":            6.1,
 "uempmed":            7.9,
 "unemploy": 7427 
 },
 {
- "date":           9311,
-"pce":         4982.7,
+ "date": 9312,
+"pce":         4991.8,
 "pop": 266557,
-"psavert":            4.6,
+"psavert":            6.4,
 "uempmed":            8.5,
 "unemploy": 7527 
 },
 {
- "date":           9342,
-"pce":           5018,
+ "date": 9343,
+"pce":         5027.1,
 "pop": 266843,
-"psavert":            4.1,
+"psavert":            6.1,
 "uempmed":            8.3,
 "unemploy": 7484 
 },
 {
- "date":           9373,
-"pce":         5032.5,
+ "date": 9374,
+"pce":         5042.5,
 "pop": 267152,
-"psavert":            4.1,
+"psavert":            6.1,
 "uempmed":            7.9,
 "unemploy": 7478 
 },
 {
- "date":           9403,
-"pce":         5024.5,
+ "date": 9404,
+"pce":         5035.9,
 "pop": 267456,
-"psavert":            4.4,
+"psavert":            6.5,
 "uempmed":            8.2,
 "unemploy": 7328 
 },
 {
- "date":           9434,
-"pce":         5065.8,
+ "date": 9435,
+"pce":         5077.8,
 "pop": 267715,
-"psavert":            3.9,
+"psavert":              6,
 "uempmed":              8,
 "unemploy": 7426 
 },
 {
- "date":           9464,
-"pce":         5108.8,
+ "date": 9465,
+"pce":         5120.1,
 "pop": 267943,
-"psavert":            3.6,
+"psavert":            5.5,
 "uempmed":            8.3,
 "unemploy": 7423 
 },
 {
- "date":           9495,
-"pce":           5098,
+ "date": 9496,
+"pce":         5108.9,
 "pop": 268151,
-"psavert":            4.2,
+"psavert":            6.1,
 "uempmed":            8.3,
 "unemploy": 7491 
 },
 {
- "date":           9526,
-"pce":         5145.2,
+ "date": 9527,
+"pce":         5156.1,
 "pop": 268364,
-"psavert":            4.3,
+"psavert":            6.1,
 "uempmed":            7.8,
 "unemploy": 7313 
 },
 {
- "date":           9555,
-"pce":         5185.1,
+ "date": 9556,
+"pce":         5196.4,
 "pop": 268595,
-"psavert":            4.2,
+"psavert":              6,
 "uempmed":            8.3,
 "unemploy": 7318 
 },
 {
- "date":           9586,
-"pce":         5219.6,
+ "date": 9587,
+"pce":         5231.6,
 "pop": 268853,
-"psavert":            3.1,
+"psavert":              5,
 "uempmed":            8.6,
 "unemploy": 7415 
 },
 {
- "date":           9616,
-"pce":         5234.8,
+ "date": 9617,
+"pce":         5247.2,
 "pop": 269108,
-"psavert":            4.1,
+"psavert":            6.1,
 "uempmed":            8.6,
 "unemploy": 7423 
 },
 {
- "date":           9647,
-"pce":         5241.6,
+ "date": 9648,
+"pce":         5253.7,
 "pop": 269386,
-"psavert":            4.5,
+"psavert":            6.5,
 "uempmed":            8.3,
 "unemploy": 7095 
 },
 {
- "date":           9677,
-"pce":         5263.6,
+ "date": 9678,
+"pce":         5275.8,
 "pop": 269667,
-"psavert":            4.1,
+"psavert":            6.1,
 "uempmed":            8.3,
 "unemploy": 7337 
 },
 {
- "date":           9708,
-"pce":         5287.5,
+ "date": 9709,
+"pce":           5299,
 "pop": 269976,
-"psavert":            4.1,
+"psavert":            5.9,
 "uempmed":            8.4,
 "unemploy": 6882 
 },
 {
- "date":           9739,
-"pce":         5308.2,
+ "date": 9740,
+"pce":           5320,
 "pop": 270284,
-"psavert":            4.1,
+"psavert":              6,
 "uempmed":            8.5,
 "unemploy": 6979 
 },
 {
- "date":           9769,
-"pce":         5340.1,
+ "date": 9770,
+"pce":         5351.5,
 "pop": 270581,
-"psavert":            3.8,
+"psavert":            5.8,
 "uempmed":            8.3,
 "unemploy": 7031 
 },
 {
- "date":           9800,
-"pce":         5365.5,
+ "date": 9801,
+"pce":           5375,
 "pop": 270878,
-"psavert":            3.8,
+"psavert":            5.8,
 "uempmed":            7.7,
 "unemploy": 7236 
 },
 {
- "date":           9830,
-"pce":         5392.7,
+ "date": 9831,
+"pce":         5401.7,
 "pop": 271125,
-"psavert":            3.8,
+"psavert":            5.7,
 "uempmed":            7.8,
 "unemploy": 7253 
 },
 {
- "date":           9861,
-"pce":         5419.9,
+ "date": 9862,
+"pce":         5434.9,
 "pop": 271360,
-"psavert":            3.7,
+"psavert":            5.6,
 "uempmed":            7.8,
 "unemploy": 7158 
 },
 {
- "date":           9892,
-"pce":         5453.9,
+ "date": 9893,
+"pce":         5457.7,
 "pop": 271585,
-"psavert":            3.5,
+"psavert":            5.7,
 "uempmed":            8.1,
 "unemploy": 7102 
 },
 {
- "date":           9920,
-"pce":         5472.6,
+ "date": 9921,
+"pce":         5477.6,
 "pop": 271821,
-"psavert":            3.7,
+"psavert":            5.8,
 "uempmed":            7.9,
 "unemploy": 7000 
 },
 {
- "date":           9951,
-"pce":         5473.4,
+ "date": 9952,
+"pce":         5482.8,
 "pop": 272083,
-"psavert":            3.8,
+"psavert":            5.9,
 "uempmed":            8.3,
 "unemploy": 6873 
 },
 {
- "date":           9981,
-"pce":         5474.4,
+ "date": 9982,
+"pce":         5484.3,
 "pop": 272342,
-"psavert":              4,
+"psavert":            6.2,
 "uempmed":              8,
 "unemploy": 6655 
 },
 {
- "date":          10012,
-"pce":         5506.1,
+ "date": 10013,
+"pce":         5518.2,
 "pop": 272622,
-"psavert":            3.9,
+"psavert":              6,
 "uempmed":              8,
 "unemploy": 6799 
 },
 {
- "date":          10042,
-"pce":           5565,
+ "date": 10043,
+"pce":           5573,
 "pop": 272912,
-"psavert":            3.3,
+"psavert":            5.5,
 "uempmed":            8.3,
 "unemploy": 6655 
 },
 {
- "date":          10073,
-"pce":         5596.7,
+ "date": 10074,
+"pce":         5611.8,
 "pop": 273237,
-"psavert":            3.3,
+"psavert":            5.4,
 "uempmed":            7.8,
 "unemploy": 6608 
 },
 {
- "date":          10104,
-"pce":         5607.6,
+ "date": 10105,
+"pce":         5625.6,
 "pop": 273553,
-"psavert":            3.6,
+"psavert":            5.6,
 "uempmed":            8.2,
 "unemploy": 6656 
 },
 {
- "date":          10134,
-"pce":         5639.2,
+ "date": 10135,
+"pce":         5661.2,
 "pop": 273852,
-"psavert":            3.5,
+"psavert":            5.6,
 "uempmed":            7.7,
 "unemploy": 6454 
 },
 {
- "date":          10165,
-"pce":         5666.1,
+ "date": 10166,
+"pce":         5685.2,
 "pop": 274126,
-"psavert":            3.7,
+"psavert":            5.8,
 "uempmed":            7.6,
 "unemploy": 6308 
 },
 {
- "date":          10195,
-"pce":           5694,
+ "date": 10196,
+"pce":         5716.4,
 "pop": 274372,
-"psavert":            3.8,
+"psavert":            5.8,
 "uempmed":            7.5,
 "unemploy": 6476 
 },
 {
- "date":          10226,
-"pce":         5698.7,
+ "date": 10227,
+"pce":         5714.4,
 "pop": 274626,
-"psavert":            4.6,
+"psavert":            6.7,
 "uempmed":            7.4,
 "unemploy": 6368 
 },
 {
- "date":          10257,
-"pce":         5736.6,
+ "date": 10258,
+"pce":         5748.4,
 "pop": 274838,
-"psavert":            4.6,
+"psavert":            6.8,
 "uempmed":              7,
 "unemploy": 6306 
 },
 {
- "date":          10285,
-"pce":         5764.8,
+ "date": 10286,
+"pce":           5775,
 "pop": 275047,
-"psavert":            4.7,
+"psavert":            6.9,
 "uempmed":            6.8,
 "unemploy": 6422 
 },
 {
- "date":          10316,
-"pce":         5788.9,
+ "date": 10317,
+"pce":         5812.9,
 "pop": 275304,
-"psavert":            4.7,
+"psavert":            6.6,
 "uempmed":            6.7,
 "unemploy": 5941 
 },
 {
- "date":          10346,
-"pce":         5842.9,
+ "date": 10347,
+"pce":         5863.3,
 "pop": 275564,
-"psavert":            4.4,
+"psavert":            6.3,
 "uempmed":              6,
 "unemploy": 6047 
 },
 {
- "date":          10377,
-"pce":         5870.8,
+ "date": 10378,
+"pce":         5897.2,
 "pop": 275836,
-"psavert":            4.4,
+"psavert":            6.2,
 "uempmed":            6.9,
 "unemploy": 6212 
 },
 {
- "date":          10407,
-"pce":         5887.4,
+ "date": 10408,
+"pce":         5915.6,
 "pop": 276115,
-"psavert":            4.5,
+"psavert":            6.3,
 "uempmed":            6.7,
 "unemploy": 6259 
 },
 {
- "date":          10438,
-"pce":         5928.8,
+ "date": 10439,
+"pce":           5951,
 "pop": 276418,
-"psavert":            4.3,
+"psavert":            6.2,
 "uempmed":            6.8,
 "unemploy": 6179 
 },
 {
- "date":          10469,
-"pce":         5956.3,
+ "date": 10470,
+"pce":         5991.8,
 "pop": 276714,
-"psavert":            4.2,
+"psavert":            5.8,
 "uempmed":            6.7,
 "unemploy": 6300 
 },
 {
- "date":          10499,
-"pce":         5995.2,
+ "date": 10500,
+"pce":         6025.8,
 "pop": 277003,
-"psavert":            3.9,
+"psavert":            5.6,
 "uempmed":            5.8,
 "unemploy": 6280 
 },
 {
- "date":          10530,
-"pce":         6018.5,
+ "date": 10531,
+"pce":         6042.7,
 "pop": 277277,
-"psavert":              4,
+"psavert":            5.7,
 "uempmed":            6.6,
 "unemploy": 6100 
 },
 {
- "date":          10560,
-"pce":         6064.8,
+ "date": 10561,
+"pce":         6098.2,
 "pop": 277526,
-"psavert":            3.5,
+"psavert":            5.2,
 "uempmed":            6.8,
 "unemploy": 6032 
 },
 {
- "date":          10591,
-"pce":         6067.4,
+ "date": 10592,
+"pce":         6099.1,
 "pop": 277790,
-"psavert":              4,
+"psavert":            5.7,
 "uempmed":            6.9,
 "unemploy": 5976 
 },
 {
- "date":          10622,
-"pce":         6099.7,
+ "date": 10623,
+"pce":         6128.2,
 "pop": 277992,
-"psavert":            3.7,
+"psavert":            5.6,
 "uempmed":            6.8,
 "unemploy": 6111 
 },
 {
- "date":          10650,
-"pce":           6138,
+ "date": 10651,
+"pce":         6159.7,
 "pop": 278198,
-"psavert":            3.3,
+"psavert":            5.3,
 "uempmed":            6.8,
 "unemploy": 5783 
 },
 {
- "date":          10681,
-"pce":         6202.5,
+ "date": 10682,
+"pce":         6223.6,
 "pop": 278451,
-"psavert":            2.5,
+"psavert":            4.5,
 "uempmed":            6.2,
 "unemploy": 6004 
 },
 {
- "date":          10711,
-"pce":         6245.1,
+ "date": 10712,
+"pce":         6253.4,
 "pop": 278717,
-"psavert":            2.1,
+"psavert":            4.3,
 "uempmed":            6.5,
 "unemploy": 5796 
 },
 {
- "date":          10742,
-"pce":         6264.1,
+ "date": 10743,
+"pce":         6281.9,
 "pop": 279001,
-"psavert":            2.1,
+"psavert":            4.2,
 "uempmed":            6.3,
 "unemploy": 5951 
 },
 {
- "date":          10772,
-"pce":         6297.3,
+ "date": 10773,
+"pce":         6309.5,
 "pop": 279295,
-"psavert":            1.9,
+"psavert":            4.1,
 "uempmed":            5.8,
 "unemploy": 6025 
 },
 {
- "date":          10803,
-"pce":         6338.6,
+ "date": 10804,
+"pce":         6354.8,
 "pop": 279602,
-"psavert":            1.8,
+"psavert":              4,
 "uempmed":            6.5,
 "unemploy": 5838 
 },
 {
- "date":          10834,
-"pce":         6375.7,
+ "date": 10835,
+"pce":         6407.4,
 "pop": 279903,
-"psavert":            1.4,
+"psavert":            3.5,
 "uempmed":              6,
 "unemploy": 5915 
 },
 {
- "date":          10864,
-"pce":         6396.7,
+ "date": 10865,
+"pce":         6431.2,
 "pop": 280203,
-"psavert":              2,
+"psavert":            3.9,
 "uempmed":            6.1,
 "unemploy": 5778 
 },
 {
- "date":          10895,
-"pce":         6433.2,
+ "date": 10896,
+"pce":         6467.2,
 "pop": 280471,
-"psavert":            2.1,
+"psavert":            4.1,
 "uempmed":            6.2,
 "unemploy": 5716 
 },
 {
- "date":          10925,
-"pce":         6531.3,
+ "date": 10926,
+"pce":         6568.2,
 "pop": 280716,
-"psavert":            1.6,
+"psavert":            3.7,
 "uempmed":            5.8,
 "unemploy": 5653 
 },
 {
- "date":          10956,
-"pce":           6538,
+ "date": 10957,
+"pce":         6564.7,
 "pop": 280976,
-"psavert":            2.9,
+"psavert":            4.7,
 "uempmed":            5.8,
 "unemploy": 5708 
 },
 {
- "date":          10987,
-"pce":         6618.5,
+ "date": 10988,
+"pce":         6648.7,
 "pop": 281190,
-"psavert":            2.4,
+"psavert":            4.2,
 "uempmed":            6.1,
 "unemploy": 5858 
 },
 {
- "date":          11016,
-"pce":         6685.3,
+ "date": 11017,
+"pce":         6714.8,
 "pop": 281409,
-"psavert":              2,
+"psavert":            3.9,
 "uempmed":              6,
 "unemploy": 5733 
 },
 {
- "date":          11047,
-"pce":         6664.2,
+ "date": 11048,
+"pce":           6701,
 "pop": 281653,
-"psavert":            2.4,
+"psavert":            4.4,
 "uempmed":            6.1,
 "unemploy": 5481 
 },
 {
- "date":          11077,
-"pce":           6688,
-"pop": 281891,
-"psavert":            2.4,
+ "date": 11078,
+"pce":         6737.2,
+"pop": 281877,
+"psavert":            4.2,
 "uempmed":            5.8,
 "unemploy": 5758 
 },
 {
- "date":          11108,
-"pce":         6712.1,
-"pop": 282156,
-"psavert":            2.5,
+ "date": 11109,
+"pce":         6773.6,
+"pop": 282126,
+"psavert":            4.2,
 "uempmed":            5.7,
 "unemploy": 5651 
 },
 {
- "date":          11138,
-"pce":         6745.8,
-"pop": 282430,
-"psavert":            2.9,
+ "date": 11139,
+"pce":         6793.7,
+"pop": 282385,
+"psavert":            4.6,
 "uempmed":              6,
 "unemploy": 5747 
 },
 {
- "date":          11169,
-"pce":         6766.7,
-"pop": 282706,
-"psavert":            2.8,
+ "date": 11170,
+"pce":         6828.7,
+"pop": 282653,
+"psavert":            4.6,
 "uempmed":            6.3,
 "unemploy": 5853 
 },
 {
- "date":          11200,
-"pce":         6839.3,
-"pop": 282994,
-"psavert":            2.2,
+ "date": 11201,
+"pce":         6913.1,
+"pop": 282932,
+"psavert":            3.8,
 "uempmed":            5.2,
 "unemploy": 5625 
 },
 {
- "date":          11230,
-"pce":         6846.2,
-"pop": 283271,
-"psavert":            2.3,
+ "date": 11231,
+"pce":         6919.6,
+"pop": 283201,
+"psavert":              4,
 "uempmed":            6.1,
 "unemploy": 5534 
 },
 {
- "date":          11261,
-"pce":         6860.2,
-"pop": 283531,
-"psavert":            2.1,
+ "date": 11262,
+"pce":         6934.5,
+"pop": 283453,
+"psavert":            3.8,
 "uempmed":            6.1,
 "unemploy": 5639 
 },
 {
- "date":          11291,
-"pce":         6908.5,
-"pop": 283782,
-"psavert":            1.5,
+ "date": 11292,
+"pce":         6979.1,
+"pop": 283696,
+"psavert":            3.5,
 "uempmed":              6,
 "unemploy": 5634 
 },
 {
- "date":          11322,
-"pce":         6938.2,
-"pop": 284015,
-"psavert":            1.9,
+ "date": 11323,
+"pce":         7009.8,
+"pop": 283920,
+"psavert":              4,
 "uempmed":            5.8,
 "unemploy": 6023 
 },
 {
- "date":          11353,
-"pce":         6969.2,
-"pop": 284240,
-"psavert":            1.7,
+ "date": 11354,
+"pce":         7029.3,
+"pop": 284137,
+"psavert":            4.1,
 "uempmed":            6.1,
 "unemploy": 6089 
 },
 {
- "date":          11381,
-"pce":         6960.1,
-"pop": 284462,
-"psavert":              2,
+ "date": 11382,
+"pce":         7022.1,
+"pop": 284350,
+"psavert":            4.5,
 "uempmed":            6.6,
 "unemploy": 6141 
 },
 {
- "date":          11412,
-"pce":         6978.5,
-"pop": 284701,
-"psavert":            1.6,
+ "date": 11413,
+"pce":         7036.2,
+"pop": 284581,
+"psavert":            4.3,
 "uempmed":            5.9,
 "unemploy": 6271 
 },
 {
- "date":          11442,
-"pce":         7029.1,
-"pop": 284938,
-"psavert":              1,
+ "date": 11443,
+"pce":         7083.1,
+"pop": 284810,
+"psavert":            3.7,
 "uempmed":            6.3,
 "unemploy": 6226 
 },
 {
- "date":          11473,
-"pce":           7045,
-"pop": 285198,
-"psavert":            1.1,
+ "date": 11474,
+"pce":         7097.1,
+"pop": 285062,
+"psavert":            3.7,
 "uempmed":              6,
 "unemploy": 6484 
 },
 {
- "date":          11503,
-"pce":         7064.1,
-"pop": 285454,
-"psavert":            2.4,
+ "date": 11504,
+"pce":         7109.2,
+"pop": 285309,
+"psavert":              5,
 "uempmed":            6.8,
 "unemploy": 6583 
 },
 {
- "date":          11534,
-"pce":         7098.6,
-"pop": 285730,
-"psavert":            3.7,
+ "date": 11535,
+"pce":         7146.1,
+"pop": 285570,
+"psavert":            6.1,
 "uempmed":            6.9,
 "unemploy": 7042 
 },
 {
- "date":          11565,
-"pce":         7012.7,
-"pop": 286017,
-"psavert":            4.2,
+ "date": 11566,
+"pce":         7054.8,
+"pop": 285843,
+"psavert":            6.3,
 "uempmed":            7.2,
 "unemploy": 7142 
 },
 {
- "date":          11595,
-"pce":           7222,
-"pop": 286287,
-"psavert":           -0.2,
+ "date": 11596,
+"pce":         7250.2,
+"pop": 286098,
+"psavert":            2.7,
 "uempmed":            7.3,
 "unemploy": 7694 
 },
 {
- "date":          11626,
-"pce":         7177.2,
-"pop": 286545,
-"psavert":            0.7,
+ "date": 11627,
+"pce":         7209.6,
+"pop": 286341,
+"psavert":            3.4,
 "uempmed":            7.7,
 "unemploy": 8003 
 },
 {
- "date":          11656,
-"pce":         7165.9,
-"pop": 286788,
-"psavert":            1.1,
+ "date": 11657,
+"pce":           7190,
+"pop": 286570,
+"psavert":            3.8,
 "uempmed":            8.2,
 "unemploy": 8258 
 },
 {
- "date":          11687,
-"pce":         7196.5,
-"pop": 287021,
-"psavert":            2.9,
+ "date": 11688,
+"pce":         7217.7,
+"pop": 286788,
+"psavert":            5.6,
 "uempmed":            8.4,
 "unemploy": 8182 
 },
 {
- "date":          11718,
-"pce":           7242,
-"pop": 287242,
-"psavert":            2.8,
+ "date": 11719,
+"pce":         7259.7,
+"pop": 286994,
+"psavert":            5.3,
 "uempmed":            8.3,
 "unemploy": 8215 
 },
 {
- "date":          11746,
-"pce":         7252.3,
-"pop": 287453,
-"psavert":              3,
+ "date": 11747,
+"pce":         7276.7,
+"pop": 287190,
+"psavert":            5.3,
 "uempmed":            8.4,
 "unemploy": 8304 
 },
 {
- "date":          11777,
-"pce":         7330.2,
-"pop": 287675,
-"psavert":            2.6,
+ "date": 11778,
+"pce":         7345.6,
+"pop": 287397,
+"psavert":            5.1,
 "uempmed":            8.9,
 "unemploy": 8599 
 },
 {
- "date":          11807,
-"pce":         7296.2,
-"pop": 287916,
-"psavert":            3.1,
+ "date": 11808,
+"pce":         7321.8,
+"pop": 287623,
+"psavert":            5.6,
 "uempmed":            9.5,
 "unemploy": 8399 
 },
 {
- "date":          11838,
-"pce":         7342.6,
-"pop": 288171,
-"psavert":            2.8,
+ "date": 11839,
+"pce":         7366.1,
+"pop": 287864,
+"psavert":            5.4,
 "uempmed":             11,
 "unemploy": 8393 
 },
 {
- "date":          11868,
-"pce":         7396.4,
-"pop": 288427,
-"psavert":            1.9,
+ "date": 11869,
+"pce":         7424.2,
+"pop": 288105,
+"psavert":            4.6,
 "uempmed":            8.9,
 "unemploy": 8390 
 },
 {
- "date":          11899,
-"pce":           7411,
-"pop": 288694,
-"psavert":            1.7,
+ "date": 11900,
+"pce":           7449,
+"pop": 288360,
+"psavert":            4.4,
 "uempmed":              9,
 "unemploy": 8304 
 },
 {
- "date":          11930,
-"pce":         7382.3,
-"pop": 288965,
-"psavert":            2.2,
+ "date": 11931,
+"pce":         7426.1,
+"pop": 288618,
+"psavert":            4.9,
 "uempmed":            9.5,
 "unemploy": 8251 
 },
 {
- "date":          11960,
-"pce":         7414.3,
-"pop": 289229,
-"psavert":              2,
+ "date": 11961,
+"pce":         7469.3,
+"pop": 288870,
+"psavert":            4.7,
 "uempmed":            9.6,
 "unemploy": 8307 
 },
 {
- "date":          11991,
-"pce":         7443.6,
-"pop": 289477,
-"psavert":            1.8,
+ "date": 11992,
+"pce":         7499.8,
+"pop": 289106,
+"psavert":            4.7,
 "uempmed":            9.3,
 "unemploy": 8520 
 },
 {
- "date":          12021,
-"pce":         7501.3,
-"pop": 289696,
-"psavert":            1.5,
+ "date": 12022,
+"pce":         7552.6,
+"pop": 289313,
+"psavert":            4.5,
 "uempmed":            9.6,
 "unemploy": 8640 
 },
 {
- "date":          12052,
-"pce":         7522.1,
-"pop": 289913,
-"psavert":            1.8,
+ "date": 12053,
+"pce":         7579.5,
+"pop": 289518,
+"psavert":            4.5,
 "uempmed":            9.6,
-"unemploy": 8523 
+"unemploy": 8520 
 },
 {
- "date":          12083,
-"pce":         7532.8,
-"pop": 290122,
-"psavert":              2,
+ "date": 12084,
+"pce":         7573.6,
+"pop": 289714,
+"psavert":            4.7,
 "uempmed":            9.5,
-"unemploy": 8622 
+"unemploy": 8618 
 },
 {
- "date":          12111,
-"pce":         7589.5,
-"pop": 290331,
-"psavert":            1.7,
+ "date": 12112,
+"pce":         7627.5,
+"pop": 289911,
+"psavert":            4.6,
 "uempmed":            9.7,
+"unemploy": 8588 
+},
+{
+ "date": 12143,
+"pce":         7661.7,
+"pop": 290125,
+"psavert":            4.6,
+"uempmed":           10.2,
+"unemploy": 8842 
+},
+{
+ "date": 12173,
+"pce":         7669.2,
+"pop": 290346,
+"psavert":            5.1,
+"uempmed":            9.9,
+"unemploy": 8957 
+},
+{
+ "date": 12204,
+"pce":         7722.9,
+"pop": 290584,
+"psavert":            4.9,
+"uempmed":           11.5,
+"unemploy": 9266 
+},
+{
+ "date": 12234,
+"pce":         7783.8,
+"pop": 290820,
+"psavert":            5.5,
+"uempmed":           10.3,
+"unemploy": 9011 
+},
+{
+ "date": 12265,
+"pce":         7878.9,
+"pop": 291072,
+"psavert":            5.3,
+"uempmed":           10.1,
+"unemploy": 8896 
+},
+{
+ "date": 12296,
+"pce":           7874,
+"pop": 291321,
+"psavert":            4.5,
+"uempmed":           10.2,
+"unemploy": 8921 
+},
+{
+ "date": 12326,
+"pce":         7890.6,
+"pop": 291574,
+"psavert":            4.6,
+"uempmed":           10.4,
+"unemploy": 8732 
+},
+{
+ "date": 12357,
+"pce":         7950.4,
+"pop": 291807,
+"psavert":            4.7,
+"uempmed":           10.3,
 "unemploy": 8576 
 },
 {
- "date":          12142,
-"pce":         7597.2,
-"pop": 290557,
-"psavert":              2,
-"uempmed":           10.2,
-"unemploy": 8833 
-},
-{
- "date":          12172,
-"pce":         7619.2,
-"pop": 290791,
-"psavert":            2.3,
-"uempmed":            9.9,
-"unemploy": 8948 
-},
-{
- "date":          12203,
-"pce":         7668.8,
-"pop": 291041,
-"psavert":            2.1,
-"uempmed":           11.5,
-"unemploy": 9254 
-},
-{
- "date":          12233,
-"pce":         7723.3,
-"pop": 291289,
-"psavert":            2.8,
-"uempmed":           10.3,
-"unemploy": 9018 
-},
-{
- "date":          12264,
-"pce":         7820.9,
-"pop": 291552,
-"psavert":            2.5,
-"uempmed":           10.1,
-"unemploy": 8894 
-},
-{
- "date":          12295,
-"pce":         7803.7,
-"pop": 291811,
-"psavert":            1.7,
-"uempmed":           10.2,
-"unemploy": 8928 
-},
-{
- "date":          12325,
-"pce":         7812.3,
-"pop": 292074,
-"psavert":            2.1,
+ "date": 12387,
+"pce":         7974.3,
+"pop": 292008,
+"psavert":            4.8,
 "uempmed":           10.4,
-"unemploy": 8731 
+"unemploy": 8317 
 },
 {
- "date":          12356,
-"pce":         7868.5,
-"pop": 292318,
-"psavert":            2.2,
-"uempmed":           10.3,
-"unemploy": 8590 
-},
-{
- "date":          12386,
-"pce":         7885.3,
-"pop": 292529,
-"psavert":            2.4,
-"uempmed":           10.4,
-"unemploy": 8338 
-},
-{
- "date":          12417,
-"pce":         7977.7,
-"pop": 292723,
-"psavert":            2.1,
+ "date": 12418,
+"pce":         8037.3,
+"pop": 292192,
+"psavert":            4.5,
 "uempmed":           10.6,
-"unemploy": 8367 
+"unemploy": 8370 
 },
 {
- "date":          12448,
-"pce":         8005.9,
-"pop": 292909,
-"psavert":            2.3,
+ "date": 12449,
+"pce":         8072.1,
+"pop": 292368,
+"psavert":            4.5,
 "uempmed":           10.2,
-"unemploy": 8171 
+"unemploy": 8167 
 },
 {
- "date":          12477,
-"pce":         8070.5,
-"pop": 293112,
-"psavert":              2,
+ "date": 12478,
+"pce":           8121,
+"pop": 292561,
+"psavert":            4.5,
 "uempmed":           10.2,
-"unemploy": 8452 
+"unemploy": 8491 
 },
 {
- "date":          12508,
-"pce":         8086.6,
-"pop": 293340,
-"psavert":            2.2,
+ "date": 12509,
+"pce":         8141.6,
+"pop": 292779,
+"psavert":            4.7,
 "uempmed":            9.5,
-"unemploy": 8155 
+"unemploy": 8170 
 },
 {
- "date":          12538,
-"pce":         8196.5,
-"pop": 293569,
-"psavert":            1.5,
+ "date": 12539,
+"pce":         8212.9,
+"pop": 292997,
+"psavert":            4.7,
 "uempmed":            9.9,
-"unemploy": 8197 
+"unemploy": 8212 
 },
 {
- "date":          12569,
-"pce":         8161.3,
-"pop": 293805,
-"psavert":            2.1,
-"uempmed":           10.9,
-"unemploy": 8259 
+ "date": 12570,
+"pce":         8204.6,
+"pop": 293223,
+"psavert":              5,
+"uempmed":             11,
+"unemploy": 8286 
 },
 {
- "date":          12599,
-"pce":         8235.3,
-"pop": 294056,
-"psavert":            1.7,
+ "date": 12600,
+"pce":         8270.7,
+"pop": 293463,
+"psavert":            4.5,
 "uempmed":            8.9,
-"unemploy": 8163 
+"unemploy": 8136 
 },
 {
- "date":          12630,
-"pce":         8246.1,
-"pop": 294323,
-"psavert":              2,
-"uempmed":            9.3,
-"unemploy": 7993 
+ "date": 12631,
+"pce":         8294.4,
+"pop": 293719,
+"psavert":            4.6,
+"uempmed":            9.2,
+"unemploy": 7990 
 },
 {
- "date":          12661,
-"pce":         8313.7,
-"pop": 294587,
-"psavert":            1.2,
+ "date": 12662,
+"pce":           8373,
+"pop": 293971,
+"psavert":            3.9,
 "uempmed":            9.6,
-"unemploy": 7953 
+"unemploy": 7927 
 },
 {
- "date":          12691,
-"pce":         8371.6,
-"pop": 294857,
-"psavert":            1.4,
+ "date": 12692,
+"pce":         8417.9,
+"pop": 294230,
+"psavert":            3.8,
 "uempmed":            9.5,
-"unemploy": 8052 
+"unemploy": 8061 
 },
 {
- "date":          12722,
-"pce":         8410.8,
-"pop": 295105,
-"psavert":            1.2,
+ "date": 12723,
+"pce":         8458.4,
+"pop": 294466,
+"psavert":            3.4,
 "uempmed":            9.7,
-"unemploy": 7950 
+"unemploy": 7932 
 },
 {
- "date":          12752,
-"pce":           8462,
-"pop": 295344,
-"psavert":            4.3,
+ "date": 12753,
+"pce":         8516.5,
+"pop": 294694,
+"psavert":            6.3,
+"uempmed":            9.5,
+"unemploy": 7934 
+},
+{
+ "date": 12784,
+"pce":         8521.2,
+"pop": 294914,
+"psavert":            2.9,
 "uempmed":            9.4,
-"unemploy": 7997 
+"unemploy": 7784 
 },
 {
- "date":          12783,
-"pce":         8469.4,
-"pop": 295576,
-"psavert":            0.9,
-"uempmed":            9.4,
-"unemploy": 7756 
-},
-{
- "date":          12814,
-"pce":         8520.7,
-"pop": 295767,
-"psavert":            0.6,
-"uempmed":            9.1,
-"unemploy": 7966 
-},
-{
- "date":          12842,
-"pce":           8569,
-"pop": 295975,
-"psavert":            0.2,
+ "date": 12815,
+"pce":         8575.7,
+"pop": 295105,
+"psavert":            2.7,
 "uempmed":            9.2,
-"unemploy": 7683 
+"unemploy": 7980 
 },
 {
- "date":          12873,
-"pce":         8654.4,
-"pop": 296209,
-"psavert":           -0.4,
+ "date": 12843,
+"pce":         8622.5,
+"pop": 295287,
+"psavert":            2.7,
+"uempmed":            9.3,
+"unemploy": 7737 
+},
+{
+ "date": 12874,
+"pce":         8715.9,
+"pop": 295490,
+"psavert":            2.1,
 "uempmed":              9,
-"unemploy": 7657 
+"unemploy": 7672 
 },
 {
- "date":          12903,
-"pce":         8644.6,
-"pop": 296443,
-"psavert":           -0.1,
+ "date": 12904,
+"pce":         8680.6,
+"pop": 295704,
+"psavert":              3,
 "uempmed":            9.1,
-"unemploy": 7656 
+"unemploy": 7651 
 },
 {
- "date":          12934,
-"pce":         8724.8,
-"pop": 296684,
-"psavert":           -0.5,
-"uempmed":            9.2,
-"unemploy": 7507 
-},
-{
- "date":          12964,
-"pce":         8833.9,
-"pop": 296940,
-"psavert":           -0.9,
+ "date": 12935,
+"pce":         8775.3,
+"pop": 295936,
+"psavert":            2.2,
 "uempmed":              9,
-"unemploy": 7464 
+"unemploy": 7524 
 },
 {
- "date":          12995,
-"pce":         8825.5,
-"pop": 297207,
-"psavert":             -3,
+ "date": 12965,
+"pce":         8867.9,
+"pop": 296186,
+"psavert":            1.9,
+"uempmed":            8.8,
+"unemploy": 7406 
+},
+{
+ "date": 12996,
+"pce":         8872.6,
+"pop": 296440,
+"psavert":            2.4,
 "uempmed":            9.2,
-"unemploy": 7360 
+"unemploy": 7345 
 },
 {
- "date":          13026,
-"pce":         8882.5,
-"pop": 297471,
-"psavert":           -0.5,
-"uempmed":            8.5,
-"unemploy": 7606 
+ "date": 13027,
+"pce":         8923.6,
+"pop": 296707,
+"psavert":            2.3,
+"uempmed":            8.4,
+"unemploy": 7553 
 },
 {
- "date":          13056,
-"pce":         8911.6,
-"pop": 297740,
-"psavert":           -0.3,
+ "date": 13057,
+"pce":         8959.6,
+"pop": 296972,
+"psavert":            2.6,
 "uempmed":            8.6,
-"unemploy": 7436 
+"unemploy": 7453 
 },
 {
- "date":          13087,
-"pce":         8916.4,
-"pop": 297988,
-"psavert":           -0.3,
+ "date": 13088,
+"pce":         8987.7,
+"pop": 297207,
+"psavert":            2.7,
+"uempmed":            8.5,
+"unemploy": 7566 
+},
+{
+ "date": 13118,
+"pce":         9026.8,
+"pop": 297431,
+"psavert":            2.8,
+"uempmed":            8.7,
+"unemploy": 7279 
+},
+{
+ "date": 13149,
+"pce":         9100.1,
+"pop": 297647,
+"psavert":            3.7,
+"uempmed":            8.6,
+"unemploy": 7064 
+},
+{
+ "date": 13180,
+"pce":         9134.7,
+"pop": 297854,
+"psavert":            3.8,
+"uempmed":            9.1,
+"unemploy": 7184 
+},
+{
+ "date": 13208,
+"pce":         9168.1,
+"pop": 298060,
+"psavert":            3.7,
+"uempmed":            8.7,
+"unemploy": 7072 
+},
+{
+ "date": 13239,
+"pce":         9223.3,
+"pop": 298281,
+"psavert":            3.4,
 "uempmed":            8.4,
-"unemploy": 7548 
+"unemploy": 7120 
 },
 {
- "date":          13117,
-"pce":         8955.5,
-"pop": 298227,
-"psavert":           -0.3,
+ "date": 13269,
+"pce":         9254.1,
+"pop": 298496,
+"psavert":            3.2,
 "uempmed":            8.5,
-"unemploy": 7331 
+"unemploy": 6980 
 },
 {
- "date":          13148,
-"pce":         9034.4,
-"pop": 298458,
-"psavert":           -0.3,
-"uempmed":            8.5,
-"unemploy": 7023 
+ "date": 13300,
+"pce":         9283.8,
+"pop": 298739,
+"psavert":            3.4,
+"uempmed":            7.3,
+"unemploy": 7001 
 },
 {
- "date":          13179,
-"pce":         9079.2,
-"pop": 298645,
-"psavert":           -0.3,
-"uempmed":            8.9,
-"unemploy": 7158 
+ "date": 13330,
+"pce":         9360.4,
+"pop": 298996,
+"psavert":            2.9,
+"uempmed":              8,
+"unemploy": 7175 
 },
 {
- "date":          13207,
-"pce":         9123.8,
-"pop": 298849,
-"psavert":           -0.4,
-"uempmed":            8.5,
-"unemploy": 7009 
-},
-{
- "date":          13238,
-"pce":         9175.2,
-"pop": 299079,
-"psavert":             -1,
-"uempmed":            8.5,
-"unemploy": 7098 
-},
-{
- "date":          13268,
-"pce":         9238.6,
-"pop": 299310,
-"psavert":           -1.6,
-"uempmed":            8.5,
-"unemploy": 7006 
-},
-{
- "date":          13299,
-"pce":         9270.5,
-"pop": 299548,
-"psavert":           -1.5,
-"uempmed":            7.6,
-"unemploy": 6984 
-},
-{
- "date":          13329,
-"pce":         9338.9,
-"pop": 299801,
-"psavert":           -1.7,
-"uempmed":            8.2,
-"unemploy": 7228 
-},
-{
- "date":          13360,
-"pce":         9352.7,
-"pop": 300065,
-"psavert":           -1.5,
+ "date": 13361,
+"pce":         9368.6,
+"pop": 299263,
+"psavert":              3,
 "uempmed":            8.4,
+"unemploy": 7091 
+},
+{
+ "date": 13392,
+"pce":         9393.9,
+"pop": 299554,
+"psavert":              3,
+"uempmed":              8,
+"unemploy": 6847 
+},
+{
+ "date": 13422,
+"pce":         9413.3,
+"pop": 299835,
+"psavert":            3.1,
+"uempmed":            7.9,
+"unemploy": 6727 
+},
+{
+ "date": 13453,
+"pce":         9431.2,
+"pop": 300094,
+"psavert":            3.2,
+"uempmed":            8.3,
+"unemploy": 6872 
+},
+{
+ "date": 13483,
+"pce":         9516.5,
+"pop": 300340,
+"psavert":              3,
+"uempmed":            7.5,
+"unemploy": 6762 
+},
+{
+ "date": 13514,
+"pce":         9553.1,
+"pop": 300574,
+"psavert":              3,
+"uempmed":            8.3,
 "unemploy": 7116 
 },
 {
- "date":          13391,
-"pce":         9348.5,
-"pop": 300326,
-"psavert":             -1,
-"uempmed":            8.1,
-"unemploy": 6912 
-},
-{
- "date":          13421,
-"pce":           9376,
-"pop": 300592,
-"psavert":           -0.8,
-"uempmed":              8,
-"unemploy": 6715 
-},
-{
- "date":          13452,
-"pce":         9410.8,
-"pop": 300836,
-"psavert":           -0.9,
-"uempmed":            8.2,
-"unemploy": 6826 
-},
-{
- "date":          13482,
-"pce":         9478.5,
-"pop": 301070,
-"psavert":           -1.1,
-"uempmed":            7.3,
-"unemploy": 6849 
-},
-{
- "date":          13513,
-"pce":         9540.3,
-"pop": 301296,
-"psavert":           -0.9,
-"uempmed":            8.1,
-"unemploy": 7017 
-},
-{
- "date":          13544,
-"pce":         9610.6,
-"pop": 301481,
-"psavert":             -1,
-"uempmed":            8.1,
-"unemploy": 6865 
-},
-{
- "date":          13572,
-"pce":           9653,
-"pop": 301684,
-"psavert":           -0.7,
+ "date": 13545,
+"pce":         9590.8,
+"pop": 300802,
+"psavert":            3.3,
 "uempmed":            8.5,
-"unemploy": 6724 
+"unemploy": 6927 
 },
 {
- "date":          13603,
-"pce":           9705,
-"pop": 301913,
-"psavert":           -1.3,
+ "date": 13573,
+"pce":         9631.6,
+"pop": 301021,
+"psavert":            3.6,
+"uempmed":            9.1,
+"unemploy": 6731 
+},
+{
+ "date": 13604,
+"pce":         9670.6,
+"pop": 301254,
+"psavert":            3.2,
+"uempmed":            8.6,
+"unemploy": 6850 
+},
+{
+ "date": 13634,
+"pce":         9708.9,
+"pop": 301483,
+"psavert":              3,
+"uempmed":            8.2,
+"unemploy": 6766 
+},
+{
+ "date": 13665,
+"pce":         9723.3,
+"pop": 301739,
+"psavert":            2.8,
+"uempmed":            7.7,
+"unemploy": 6979 
+},
+{
+ "date": 13695,
+"pce":         9759.6,
+"pop": 302004,
+"psavert":            2.8,
 "uempmed":            8.7,
-"unemploy": 6801 
+"unemploy": 7149 
+},
+{
+ "date": 13726,
+"pce":         9800.6,
+"pop": 302267,
+"psavert":            2.6,
+"uempmed":            8.8,
+"unemploy": 7067 
+},
+{
+ "date": 13757,
+"pce":         9837.5,
+"pop": 302546,
+"psavert":            2.8,
+"uempmed":            8.7,
+"unemploy": 7170 
+},
+{
+ "date": 13787,
+"pce":         9853.9,
+"pop": 302807,
+"psavert":            2.8,
+"uempmed":            8.4,
+"unemploy": 7237 
+},
+{
+ "date": 13818,
+"pce":         9928.6,
+"pop": 303054,
+"psavert":            2.5,
+"uempmed":            8.6,
+"unemploy": 7240 
+},
+{
+ "date": 13848,
+"pce":         9947.6,
+"pop": 303287,
+"psavert":              3,
+"uempmed":            8.4,
+"unemploy": 7645 
+},
+{
+ "date": 13879,
+"pce":         9963.2,
+"pop": 303506,
+"psavert":            3.4,
+"uempmed":              9,
+"unemploy": 7685 
+},
+{
+ "date": 13910,
+"pce":         9955.7,
+"pop": 303711,
+"psavert":            3.9,
+"uempmed":            8.7,
+"unemploy": 7497 
+},
+{
+ "date": 13939,
+"pce":        10004.2,
+"pop": 303907,
+"psavert":              4,
+"uempmed":            8.7,
+"unemploy": 7822 
+},
+{
+ "date": 13970,
+"pce":        10044.6,
+"pop": 304117,
+"psavert":            3.5,
+"uempmed":            9.4,
+"unemploy": 7637 
+},
+{
+ "date": 14000,
+"pce":        10093.3,
+"pop": 304323,
+"psavert":            7.9,
+"uempmed":            7.9,
+"unemploy": 8395 
+},
+{
+ "date": 14031,
+"pce":        10149.4,
+"pop": 304556,
+"psavert":            5.6,
+"uempmed":              9,
+"unemploy": 8575 
+},
+{
+ "date": 14061,
+"pce":        10151.1,
+"pop": 304798,
+"psavert":            4.4,
+"uempmed":            9.7,
+"unemploy": 8937 
+},
+{
+ "date": 14092,
+"pce":        10140.3,
+"pop": 305045,
+"psavert":            3.7,
+"uempmed":            9.7,
+"unemploy": 9438 
+},
+{
+ "date": 14123,
+"pce":        10083.2,
+"pop": 305309,
+"psavert":            4.4,
+"uempmed":           10.2,
+"unemploy": 9494 
+},
+{
+ "date": 14153,
+"pce":         9983.3,
+"pop": 305554,
+"psavert":            5.4,
+"uempmed":           10.4,
+"unemploy": 10074 
+},
+{
+ "date": 14184,
+"pce":         9851.2,
+"pop": 305786,
+"psavert":            6.3,
+"uempmed":            9.8,
+"unemploy": 10538 
+},
+{
+ "date": 14214,
+"pce":         9744.2,
+"pop": 306004,
+"psavert":            6.5,
+"uempmed":           10.5,
+"unemploy": 11286 
+},
+{
+ "date": 14245,
+"pce":         9792.1,
+"pop": 306208,
+"psavert":            6.5,
+"uempmed":           10.7,
+"unemploy": 12058 
+},
+{
+ "date": 14276,
+"pce":         9775.7,
+"pop": 306402,
+"psavert":            5.9,
+"uempmed":           11.7,
+"unemploy": 12898 
+},
+{
+ "date": 14304,
+"pce":         9742.9,
+"pop": 306588,
+"psavert":            6.1,
+"uempmed":           12.3,
+"unemploy": 13426 
+},
+{
+ "date": 14335,
+"pce":         9741.9,
+"pop": 306787,
+"psavert":            6.7,
+"uempmed":           13.1,
+"unemploy": 13853 
+},
+{
+ "date": 14365,
+"pce":         9759.7,
+"pop": 306984,
+"psavert":            8.1,
+"uempmed":           14.2,
+"unemploy": 14499 
+},
+{
+ "date": 14396,
+"pce":         9807.6,
+"pop": 307206,
+"psavert":            6.7,
+"uempmed":           17.2,
+"unemploy": 14707 
+},
+{
+ "date": 14426,
+"pce":         9835.2,
+"pop": 307439,
+"psavert":              6,
+"uempmed":             16,
+"unemploy": 14601 
+},
+{
+ "date": 14457,
+"pce":         9961.9,
+"pop": 307685,
+"psavert":            4.9,
+"uempmed":           16.3,
+"unemploy": 14814 
+},
+{
+ "date": 14488,
+"pce":         9875.4,
+"pop": 307946,
+"psavert":            5.9,
+"uempmed":           17.8,
+"unemploy": 15009 
+},
+{
+ "date": 14518,
+"pce":         9924.6,
+"pop": 308189,
+"psavert":            5.4,
+"uempmed":           18.9,
+"unemploy": 15352 
+},
+{
+ "date": 14549,
+"pce":         9946.1,
+"pop": 308418,
+"psavert":            5.7,
+"uempmed":           19.8,
+"unemploy": 15219 
+},
+{
+ "date": 14579,
+"pce":        10000.6,
+"pop": 308633,
+"psavert":            5.7,
+"uempmed":           20.1,
+"unemploy": 15098 
+},
+{
+ "date": 14610,
+"pce":        10003.4,
+"pop": 308833,
+"psavert":            5.6,
+"uempmed":             20,
+"unemploy": 15046 
+},
+{
+ "date": 14641,
+"pce":        10034.7,
+"pop": 309027,
+"psavert":            5.2,
+"uempmed":           19.9,
+"unemploy": 15113 
+},
+{
+ "date": 14669,
+"pce":        10095.5,
+"pop": 309212,
+"psavert":              5,
+"uempmed":           20.4,
+"unemploy": 15202 
+},
+{
+ "date": 14700,
+"pce":        10106.9,
+"pop": 309191,
+"psavert":            5.6,
+"uempmed":           22.1,
+"unemploy": 15325 
+},
+{
+ "date": 14730,
+"pce":        10140.2,
+"pop": 309376,
+"psavert":              6,
+"uempmed":           22.3,
+"unemploy": 14849 
+},
+{
+ "date": 14761,
+"pce":        10165.9,
+"pop": 309562,
+"psavert":            5.9,
+"uempmed":           25.2,
+"unemploy": 14474 
+},
+{
+ "date": 14791,
+"pce":        10184.3,
+"pop": 309767,
+"psavert":            5.9,
+"uempmed":           22.3,
+"unemploy": 14512 
+},
+{
+ "date": 14822,
+"pce":        10247.1,
+"pop": 309989,
+"psavert":            5.8,
+"uempmed":             21,
+"unemploy": 14648 
+},
+{
+ "date": 14853,
+"pce":        10268.9,
+"pop": 310218,
+"psavert":            5.6,
+"uempmed":           20.3,
+"unemploy": 14579 
+},
+{
+ "date": 14883,
+"pce":        10343.7,
+"pop": 310451,
+"psavert":            5.4,
+"uempmed":           21.2,
+"unemploy": 14516 
+},
+{
+ "date": 14914,
+"pce":        10399.8,
+"pop": 310657,
+"psavert":            5.3,
+"uempmed":             21,
+"unemploy": 15081 
+},
+{
+ "date": 14944,
+"pce":        10436.1,
+"pop": 310853,
+"psavert":            5.9,
+"uempmed":           21.9,
+"unemploy": 14348 
+},
+{
+ "date": 14975,
+"pce":        10474.7,
+"pop": 311042,
+"psavert":            6.2,
+"uempmed":           21.6,
+"unemploy": 14046 
+},
+{
+ "date": 15006,
+"pce":        10512.4,
+"pop": 311205,
+"psavert":            6.4,
+"uempmed":           21.1,
+"unemploy": 13828 
+},
+{
+ "date": 15034,
+"pce":        10583.5,
+"pop": 311367,
+"psavert":              6,
+"uempmed":           21.5,
+"unemploy": 13728 
+},
+{
+ "date": 15065,
+"pce":        10624.6,
+"pop": 311548,
+"psavert":            5.9,
+"uempmed":           20.9,
+"unemploy": 13956 
+},
+{
+ "date": 15095,
+"pce":        10653.1,
+"pop": 311729,
+"psavert":            5.9,
+"uempmed":           21.6,
+"unemploy": 13853 
+},
+{
+ "date": 15126,
+"pce":        10676.4,
+"pop": 311923,
+"psavert":            6.1,
+"uempmed":           22.3,
+"unemploy": 13958 
+},
+{
+ "date": 15156,
+"pce":        10727.1,
+"pop": 312139,
+"psavert":            6.3,
+"uempmed":             22,
+"unemploy": 13756 
+},
+{
+ "date": 15187,
+"pce":        10745.6,
+"pop": 312355,
+"psavert":            6.2,
+"uempmed":           22.4,
+"unemploy": 13806 
+},
+{
+ "date": 15218,
+"pce":        10790.6,
+"pop": 312587,
+"psavert":            5.7,
+"uempmed":             22,
+"unemploy": 13929 
+},
+{
+ "date": 15248,
+"pce":        10827.6,
+"pop": 312810,
+"psavert":            5.5,
+"uempmed":           20.5,
+"unemploy": 13599 
+},
+{
+ "date": 15279,
+"pce":        10828.7,
+"pop": 313003,
+"psavert":            5.6,
+"uempmed":           20.9,
+"unemploy": 13309 
+},
+{
+ "date": 15309,
+"pce":        10827.3,
+"pop": 313191,
+"psavert":            6.4,
+"uempmed":           20.5,
+"unemploy": 13071 
+},
+{
+ "date": 15340,
+"pce":        10905.5,
+"pop": 313373,
+"psavert":            6.6,
+"uempmed":             21,
+"unemploy": 12812 
+},
+{
+ "date": 15371,
+"pce":        10979.2,
+"pop": 313537,
+"psavert":            6.7,
+"uempmed":           19.8,
+"unemploy": 12828 
+},
+{
+ "date": 15400,
+"pce":        10994.3,
+"pop": 313705,
+"psavert":            6.9,
+"uempmed":           19.2,
+"unemploy": 12696 
+},
+{
+ "date": 15431,
+"pce":        11030.2,
+"pop": 313881,
+"psavert":              7,
+"uempmed":           19.1,
+"unemploy": 12636 
+},
+{
+ "date": 15461,
+"pce":          11029,
+"pop": 314052,
+"psavert":              7,
+"uempmed":           19.9,
+"unemploy": 12668 
+},
+{
+ "date": 15492,
+"pce":        11032.5,
+"pop": 314247,
+"psavert":            7.1,
+"uempmed":           20.1,
+"unemploy": 12688 
+},
+{
+ "date": 15522,
+"pce":        11074.8,
+"pop": 314449,
+"psavert":            6.6,
+"uempmed":           17.5,
+"unemploy": 12657 
+},
+{
+ "date": 15553,
+"pce":        11104.8,
+"pop": 314673,
+"psavert":            6.4,
+"uempmed":           18.5,
+"unemploy": 12449 
+},
+{
+ "date": 15584,
+"pce":        11179.6,
+"pop": 314909,
+"psavert":            6.5,
+"uempmed":           18.8,
+"unemploy": 12106 
+},
+{
+ "date": 15614,
+"pce":        11199.9,
+"pop": 315129,
+"psavert":            7.1,
+"uempmed":           19.7,
+"unemploy": 12141 
+},
+{
+ "date": 15645,
+"pce":        11222.8,
+"pop": 315341,
+"psavert":            8.2,
+"uempmed":           18.5,
+"unemploy": 12026 
+},
+{
+ "date": 15675,
+"pce":        11245.2,
+"pop": 315532,
+"psavert":           10.5,
+"uempmed":           17.6,
+"unemploy": 12272 
+},
+{
+ "date": 15706,
+"pce":        11303.2,
+"pop": 315701,
+"psavert":            4.5,
+"uempmed":           16.2,
+"unemploy": 12497 
+},
+{
+ "date": 15737,
+"pce":        11371.4,
+"pop": 315869,
+"psavert":            4.7,
+"uempmed":           17.5,
+"unemploy": 11967 
+},
+{
+ "date": 15765,
+"pce":        11378.8,
+"pop": 316041,
+"psavert":            4.9,
+"uempmed":           17.7,
+"unemploy": 11653 
+},
+{
+ "date": 15796,
+"pce":        11373.3,
+"pop": 316220,
+"psavert":            5.1,
+"uempmed":           17.1,
+"unemploy": 11735 
+},
+{
+ "date": 15826,
+"pce":        11407.1,
+"pop": 316395,
+"psavert":            5.2,
+"uempmed":             17,
+"unemploy": 11671 
+},
+{
+ "date": 15857,
+"pce":        11462.4,
+"pop": 316594,
+"psavert":            5.3,
+"uempmed":           16.6,
+"unemploy": 11736 
+},
+{
+ "date": 15887,
+"pce":        11484.7,
+"pop": 316799,
+"psavert":            5.1,
+"uempmed":           16.3,
+"unemploy": 11357 
+},
+{
+ "date": 15918,
+"pce":        11511.6,
+"pop": 317019,
+"psavert":            5.3,
+"uempmed":           16.8,
+"unemploy": 11241 
+},
+{
+ "date": 15949,
+"pce":        11559.6,
+"pop": 317253,
+"psavert":            5.2,
+"uempmed":           16.5,
+"unemploy": 11251 
+},
+{
+ "date": 15979,
+"pce":        11602.1,
+"pop": 317470,
+"psavert":            4.7,
+"uempmed":           16.1,
+"unemploy": 11161 
+},
+{
+ "date": 16010,
+"pce":        11671.5,
+"pop": 317679,
+"psavert":            4.3,
+"uempmed":             17,
+"unemploy": 10814 
+},
+{
+ "date": 16040,
+"pce":        11686.3,
+"pop": 317867,
+"psavert":            4.1,
+"uempmed":             17,
+"unemploy": 10376 
+},
+{
+ "date": 16071,
+"pce":        11663.9,
+"pop": 318032,
+"psavert":            4.9,
+"uempmed":           15.9,
+"unemploy": 10280 
+},
+{
+ "date": 16102,
+"pce":        11714.4,
+"pop": 318200,
+"psavert":              5,
+"uempmed":           16.2,
+"unemploy": 10387 
+},
+{
+ "date": 16130,
+"pce":        11807.1,
+"pop": 318373,
+"psavert":            4.8,
+"uempmed":           15.9,
+"unemploy": 10384 
+},
+{
+ "date": 16161,
+"pce":        11825.2,
+"pop": 318552,
+"psavert":              5,
+"uempmed":           15.6,
+"unemploy": 9696 
+},
+{
+ "date": 16191,
+"pce":        11864.3,
+"pop": 318728,
+"psavert":            5.1,
+"uempmed":           14.5,
+"unemploy": 9761 
+},
+{
+ "date": 16222,
+"pce":        11922.6,
+"pop": 318927,
+"psavert":            5.1,
+"uempmed":           13.2,
+"unemploy": 9453 
+},
+{
+ "date": 16252,
+"pce":        11944.4,
+"pop": 319133,
+"psavert":            5.1,
+"uempmed":           13.5,
+"unemploy": 9648 
+},
+{
+ "date": 16283,
+"pce":          12017,
+"pop": 319354,
+"psavert":            4.7,
+"uempmed":           13.3,
+"unemploy": 9568 
+},
+{
+ "date": 16314,
+"pce":        12044.6,
+"pop": 319588,
+"psavert":            4.6,
+"uempmed":           13.3,
+"unemploy": 9237 
+},
+{
+ "date": 16344,
+"pce":        12096.4,
+"pop": 319804,
+"psavert":            4.6,
+"uempmed":           13.5,
+"unemploy": 8983 
+},
+{
+ "date": 16375,
+"pce":        12142.2,
+"pop": 320013,
+"psavert":            4.5,
+"uempmed":           12.8,
+"unemploy": 9071 
+},
+{
+ "date": 16405,
+"pce":          12122,
+"pop": 320201,
+"psavert":              5,
+"uempmed":           12.6,
+"unemploy": 8688 
+},
+{
+ "date": 16436,
+"pce":        12080.8,
+"pop": 320367,
+"psavert":            5.5,
+"uempmed":           13.4,
+"unemploy": 8979 
+},
+{
+ "date": 16467,
+"pce":        12095.9,
+"pop": 320534,
+"psavert":            5.7,
+"uempmed":           13.1,
+"unemploy": 8705 
+},
+{
+ "date": 16495,
+"pce":        12161.5,
+"pop": 320707,
+"psavert":            5.2,
+"uempmed":           12.2,
+"unemploy": 8575 
+},
+{
+ "date": 16526,
+"pce":        12158.9,
+"pop": 320887,
+"psavert":            5.6,
+"uempmed":           11.7,
+"unemploy": 8549 
 } 
 ]
   
@@ -4558,7 +5362,7 @@ p2$print('chart2')
 
 
 ```r
-p3 <- hPlot(Pulse ~ Height, data = MASS::survey, type = "bubble", title = "Zoom demo", 
+p3 <- hPlot(Pulse ~ Height, data = MASS::survey, type = "bubble", title = "Zoom demo",
             subtitle = "bubble chart", size = "Age", group = "Exer")
 p3$chart(zoomType = "xy"); p3$exporting(enabled = T); p3$print('chart3')
 ```
@@ -5572,11 +6376,11 @@ customtext <- cntext[,colnames(cntext)==cou]
 # Trade in Value-added: 'r country'
 ## EXGRDVA\_EX {#exgrdvaex}
 ### Domestic value added content of gross exports, 'r year', %
-'''{r fig1, fig.path="figures/report_icio_tiva/<%= x %>/", fig.height=5, fig.width=10, 
+'''{r fig1, fig.path="figures/report_icio_tiva/<%= x %>/", fig.height=5, fig.width=10,
       echo=FALSE, message=FALSE}
 	source(file.path(path, "code", "figure1.R"))
 '''
-'r country' domestic value-added content of its exports is, at 'r .perc1'%, 'r .rel1' 
+'r country' domestic value-added content of its exports is, at 'r .perc1'%, 'r .rel1'
 the OECD average in 'r year'.
 'r if(!is.na(customtext[1])) customtext[1]'
 ```
@@ -5600,6 +6404,8 @@ the OECD average in 'r year'.
 ## References
 
 - ggplot2 http://ggplot2.org/
-- ggthemes https://github.com/jrnold/ggthemes
-- julia gadfly http://gadflyjl.org/
+- ggplot2 extensions https://www.ggplot2-exts.org/
+- static plotting showcase http://yutannihilation.github.io/allYourFigureAreBelongToUs/
+- interactive plotting showcase http://gallery.htmlwidgets.org/
 - CRAN Task View: Graphics http://cran.r-project.org/web/views/Graphics.html
+- Shiny R Graph Catalog http://shinyapps.stat.ubc.ca/r-graph-catalog/

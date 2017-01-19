@@ -15,14 +15,14 @@ github      : []
 --- &twocol
 
 ```{r packages, echo=FALSE, message=FALSE}
-require(cluster)
-require(ggplot2)
-require(graphics)
-require(grDevices) # for colours
-require(rCharts)
-require(stats)
-require(ggthemes)
-require(networkD3)
+library(cluster)
+library(ggplot2)
+library(graphics)
+library(grDevices) # for colours
+library(rCharts)
+library(stats)
+library(ggthemes)
+library(ggthemr)
 ```
 
 ## Graphics in statistical software
@@ -30,18 +30,24 @@ require(networkD3)
 *** =left
 programming
   - quality: reproducibility, calculations
+
   - efficiency gains: scaling
+
   - output flexibility: PDF, Word, HTML
 
 *** =right
 interactive creation (e.g. Excel, Tableau)
   - development time
+
   - changing requirements
+
   - maintenance and transparency
 
 --- &twocol
 
 ## `R` Graphics Systems
+
+[google trends: python, r, ggplot](https://www.google.com/trends/explore?date=all&q=python%20programming,r%20programming,ggplot)
 
 *** =left
 traditional graphics
@@ -67,7 +73,7 @@ grid graphics system
 
 #### Publication quality graphics with `ggplot`
 
-- implementation of Leland Wilkinson's "grammar of graphics" (2005)  
+- implementation of Leland Wilkinson's "grammar of graphics" (2005)
 - independent components that can be composed in different ways
 - not limited to a set of pre-specified graphics
 - create new graphics that are precisely tailored
@@ -96,7 +102,7 @@ grid graphics system
 ### traditional S-PLUS graphics: `example(plot)`
 
 ```{r plotexample, echo=FALSE, fig.height=8, fig.width=12, message=FALSE}
-	
+
 	op <- par(mfrow = c(2, 2), # 2 x 2 pictures on one plot
 		      pty = "s",
 		      mar = c(3, 0, 0, 0))
@@ -212,7 +218,7 @@ example(barplot)
 
 ```{r barplot, echo=FALSE, message=FALSE}
 tN <- table(Ni <- stats::rpois(100, lambda = 5))
-barplot(tN, 
+barplot(tN,
 	main = "poisson distribution, n = 100, lambda = 5",
 	col = gray.colors(length(tN)))
 ```
@@ -297,8 +303,8 @@ stars(mtcars[, 1:7], key.loc = c(14, 1.5),
 *** =left
 
 ```{r mosaic1, echo=FALSE, message=FALSE}
-mosaicplot(Titanic, 
-	main = "Survival on the Titanic", 
+mosaicplot(Titanic,
+	main = "Survival on the Titanic",
 	color = TRUE)
 ```
 
@@ -306,7 +312,7 @@ mosaicplot(Titanic,
 
 ```{r mosaic2, echo=FALSE, message=FALSE}
 # mosaicplot(HairEyeColor, shade = TRUE)
-mosaicplot(HairEyeColor, 
+mosaicplot(HairEyeColor,
 	shade = TRUE,
 	main = "Independence hair ~ eye color ~ sex",
 	margin = list(1:2, 3))
@@ -319,11 +325,6 @@ mosaicplot(HairEyeColor,
 *** =left
 
 ```{r coplot1, echo=FALSE, message=FALSE}
-# coplot(lat ~ long | depth, data = quakes
-# 	# ,
-# 	# main = "Tonga Trench Earthquakes"
-# 	)
-
 library(maps)
 coplot(lat ~ long | depth, data = quakes, number=4,
 panel=function(x, y, ...) {
@@ -343,9 +344,8 @@ points(x, y, pch=".")
 ## Example with empty panels:
 with(data.frame(state.x77), {
 coplot(Life.Exp ~ Income | Illiteracy * state.region, number = 3,
-       panel = function(x, y, ...) panel.smooth(x, y, span = .8, ...)
-       # ,
-       # main = "life expectation ~ income, given illiteracy and region"
+       panel = function(x, y, ...) panel.smooth(x, y, span = .8, ...),
+       main = "life expectation ~ income, given illiteracy and region"
        )
 	})
 ```
@@ -355,15 +355,11 @@ coplot(Life.Exp ~ Income | Illiteracy * state.region, number = 3,
 ### traditional S-PLUS graphics: lm example
 
 ```{r lmplot, echo=FALSE, message=FALSE, fig.height=8, fig.width=12}
-
-	op <- par(mfrow = c(2, 2), # 2 x 2 pictures on one plot
+op <- par(mfrow = c(2, 2), # 2 x 2 pictures on one plot
 		      pty = "s",
 		      mar = c(3, 0, 0, 0))
-
 lm.SR <- lm(sr ~ pop15 + pop75 + dpi + ddpi, data = LifeCycleSavings)
-# par(mfrow=c(2,2))
 plot(lm.SR)
-
 par(op)
 ```
 
@@ -375,16 +371,13 @@ par(op)
 op <- par(mfrow = c(1, 2),
 	      pty = "s",
 	      mar = c(0, 2, 0, 0))
-
 subset <- sample(1:150, 20)
 cS <- as.character(Sp <- iris$Species[subset])
 cS[Sp == "setosa"] <- "S"
 cS[Sp == "versicolor"] <- "V"
 cS[Sp == "virginica"] <- "g"
 ai <- agnes(iris[subset, 1:4])
-
 plot(ai, labels = cS)
-
 par(op)
 ```
 
@@ -407,9 +400,9 @@ plot(hclust(d = dist(USArrests), method = "average"), main=title)
 *** =left
 
 ```{r oztemp, echo=FALSE, message=FALSE}
-require(RGraphics)
-require(grid)
-require(oz)
+library(RGraphics)
+library(grid)
+library(oz)
 data(ozTemp)
 # source(file.path(dbpath, "GitHub", "as_seminar_report", "assets", "code", "interactgrid-oztempfig.R"))
 source(file.path("assets", "code", "interactgrid-oztempfig.R"))
@@ -426,7 +419,8 @@ source(file.path("assets", "code", "interactgrid-oztempfig.R"))
 *** =left
 
 ```{r viewport, echo=FALSE, message=FALSE}
-source(file.path(dbpath, "GitHub", "as_seminar_report", "assets", "code", "combine-gridbaselattice.R"))
+library(lattice)
+source(file.path("assets", "code", "combine-gridbaselattice.R"))
 ```
 
 *** =right
@@ -439,7 +433,7 @@ source(file.path(dbpath, "GitHub", "as_seminar_report", "assets", "code", "combi
 
 ### Layered Grammar of Graphics
 
-A statistical graphic is a mapping from data to 
+A statistical graphic is a mapping from data to
   - geometric objects (points, lines, bars)
   - with aesthetic attributes (colour, shape, size)
   - in a coordinate system (cartesian, polar, map projection)
@@ -449,7 +443,7 @@ and optionally entails
   - faceting to generate the same graphic for different subsets of the dataset
 
 ggplot2 attempts to produce any kind of statistical graphic using
- - a compact syntax and independent components to facilitate extensions 
+ - a compact syntax and independent components to facilitate extensions
  - the `grid` package to exercise low-level control over the appearance of the plot
 
 Wickham, H. (2009). ggplot2. doi:10.1007/978-0-387-98141-3
@@ -528,17 +522,17 @@ qplot(x, y, geom = c("point", "line"))
 ### `mtcars` dataset
 
 Data from the 1974 _Motor Trend_ US magazine for 32 automobiles (1973-74 models). The variables are the following:
-  - `mpg` Miles/(US) gallon                        
-  - `cyl` Number of cylinders                      
-  - `disp` Displacement (cu.in.)                    
-  - `hp` Gross horsepower                         
-  - `drat` Rear axle ratio                          
-  - `wt` Weight (lb/1000)                         
-  - `qsec` 1/4 mile time                            
-  - `vs` V/S                                      
-  - `am` Transmission (0 = automatic, 1 = manual) 
-  - `gear` Number of forward gears                  
-  - `carb` Number of carburetors     
+  - `mpg` Miles/(US) gallon
+  - `cyl` Number of cylinders
+  - `disp` Displacement (cu.in.)
+  - `hp` Gross horsepower
+  - `drat` Rear axle ratio
+  - `wt` Weight (lb/1000)
+  - `qsec` 1/4 mile time
+  - `vs` V/S
+  - `am` Transmission (0 = automatic, 1 = manual)
+  - `gear` Number of forward gears
+  - `carb` Number of carburetors
 
 --- &twocol
 
@@ -547,14 +541,14 @@ Data from the 1974 _Motor Trend_ US magazine for 32 automobiles (1973-74 models)
 *** =left
 
 ```{r boxplotcomp, message=FALSE}
-boxplot(wt~cyl, 
+boxplot(wt~cyl,
 	    data=mtcars, col="lightgray")
 ```
 
 *** =right
 
-```{r boxqplotcomp, message=FALSE}
-qplot(factor(cyl), wt, 
+```{r boxqplotcomp, message=FALSE, fig.height=6.2}
+qplot(factor(cyl), wt,
 	  data=mtcars, geom=c("boxplot", "jitter"))
 ```
 
@@ -571,7 +565,7 @@ hist(mtcars$wt)
 *** =right
 
 ```{r histqplotcomp, message=FALSE, fig.height=6.2}
-qplot(mtcars$wt, geom = "histogram", 
+qplot(mtcars$wt, geom = "histogram",
 	  binwidth = 0.5, color = factor(0))
 ```
 
@@ -588,8 +582,8 @@ cdplot(mtcars$wt, factor(mtcars$cyl))
 *** =right
 
 ```{r cdqplotcomp, message=FALSE, , fig.height=6.5}
-qplot(mtcars$wt, fill=factor(mtcars$cyl), 
-	  geom="density", position="fill")
+qplot(mtcars$wt, fill=factor(mtcars$cyl),
+	  geom="density")
 ```
 
 --- .class #id
@@ -608,51 +602,69 @@ A dataset containing the prices and other attributes of almost 54,000 diamonds. 
   - `depth` total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43-79)
   - `table` width of top of diamond relative to widest point (43-95)
 
---- .class #id
+--- &twocol
 
 ### ggplot2 `qplot()`: single line of code
 
-```{r qplotex1, message=FALSE, fig.height=6.5, fig.width=10}
-qplot(x=price, y=carat, colour=clarity, data=diamonds, geom=("point"))
+*** =left
+
+```{r qplotex1, message=FALSE, fig.height=6.2}
+qplot(x=carat, y=price, colour=clarity,
+  data=diamonds, geom=("point"))
+```
+
+*** =right
+
+```{r qplotex2, message=FALSE, fig.height=6.2}
+qplot(carat, price,
+  data = diamonds, geom = c("point", "smooth"))
 ```
 
 --- .class #id
 
-### ggplot2 `qplot()`: single line of code
-
-```{r qplotex2, message=FALSE, fig.height=6.5, fig.width=10}
-qplot(factor(cyl), wt, data = mtcars, geom=c("boxplot", "jitter"))
-```
-
---- .class #id
-
-### ggplot2 `ggplot()`: add layers for more control using `+`
+### ggplot2 `ggplot()`: add layers for more control using "`+`"
 
 ```{r ggplotex, message=FALSE, fig.height=6, fig.width=14}
-ggplot(data=diamonds) + 
-	geom_point(aes(x=price, y=carat, colour=color)) + 
+ggplot(data=diamonds) +
+	geom_point(aes(x=price, y=carat, colour=color)) +
     facet_grid(. ~ clarity)
 ```
 
 --- .class #id
 
-### ggplot2 `ggplot()`: add layers for more control using `+`
+### ggplot2 `ggplot()`: add layers for more control using "`+`"
 
-```{r ggplotlayerprep, message=FALSE, echo=FALSE}
+```{r ggplotlayerprep-old, eval=FALSE, message=FALSE, echo=FALSE}
      df <- data.frame(gp = factor(rep(letters[1:3], each = 10)),
                       y = rnorm(30))
      # Compute sample mean and standard deviation in each group
      library(plyr)
      ds <- ddply(df, .(gp), summarise, mean = mean(y), sd = sd(y))
 ```
-     
-```{r ggplotlayer, message=FALSE, fig.height=5, fig.width=10}
+
+```{r ggplotlayer-old, eval=FALSE, echo=FALSE, message=FALSE, fig.height=5, fig.width=10}
 ggplot() +
 	geom_point(data = df, aes(x = gp, y = y)) +
 	geom_point(data = ds, aes(x = gp, y = mean), colour = 'red', size = 3) +
-	geom_errorbar(data = ds, aes(x = gp, y = mean, 
+	geom_errorbar(data = ds, aes(x = gp,
 		                         ymin = mean - sd, ymax = mean + sd),
 		          colour = 'red', width = 0.4)
+```
+
+```{r ggplotlayerprep, message=FALSE, echo=FALSE}
+df <- data.frame(x = 1:10,
+                 y = 1:10,
+                 ymin = (1:10) - runif(10),
+                 ymax = (1:10) + runif(10),
+                 xmin = (1:10) - runif(10),
+                 xmax = (1:10) + runif(10))
+```
+
+```{r ggplotlayer, message=FALSE, fig.height=5, fig.width=14}
+ggplot(data = df,aes(x = x,y = y)) + # source: https://plot.ly/ggplot2/geom_errorbar/
+    geom_errorbar(aes(ymin = ymin,ymax = ymax), colour = 'steelblue', width = 0.2) +
+    geom_errorbarh(aes(xmin = xmin,xmax = xmax), colour = 'steelblue', height = 0.4) +
+    geom_point(color = "black", size = 3)
 ```
 
 --- &twocol
@@ -668,7 +680,7 @@ dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
 
 ```{r ggthemesstata, message=FALSE, echo=FALSE, fig.height=6}
 (qplot(carat, price, data=dsamp, colour=cut)
-                             + theme_stata() 
+                             + theme_stata()
                              + scale_colour_stata()
                              + ggtitle("Plot Title"))
 ```
@@ -709,30 +721,53 @@ Tableau `theme_igray()`
 
 --- .class #id
 
-### ggplot Themes
+### ggplot Themes: `ggthemr`
 
-```{r ggthemescustomprep, message=FALSE, echo=FALSE}
+```{r ggthemescustomprep, eval=FALSE, message=FALSE, echo=FALSE}
 pal.crN <- c('#95B3D7','#F79646','#8064A2','#4BACC6','#9BBB59','#C0504D','#DA9694','#C4D79B','#B1A0C7','#4F81BD','#92CDDC','#FABF8F')
 ```
 
-```{r ggthemescustom, message=FALSE, warning=FALSE, echo=TRUE, fig.height=5}
-source(file.path("demofiles", "scoreboard", "theme_scoreboard.R"))
-theme_set(theme_sb())
-hist_cut <- ggplot(dsamp, aes(x=price, fill=cut))
-hist_cut + geom_bar() + scale_fill_manual(values=pal.crN)
+```{r ggthemr, message=FALSE, warning=FALSE, echo=TRUE, fig.height=5.5, fig.width=14}
+pal.crN <- c('#95B3D7','#F79646','#8064A2','#4BACC6','#9BBB59','#C0504D')
+ugly <- define_palette(
+  swatch = pal.crN, gradient = c(lower = pal.crN[1L], upper = pal.crN[2L]))
+ggthemr(ugly)
+ggplot(dsamp, aes(x=price, fill=cut)) + geom_bar(binwidth = 500)
+ggthemr_reset()
 ```
 
---- .class #id
+--- &twocol
 
 ### gridSVG: gapminder
 
+*** =left
+
 <p style="text-align:center"><img src="assets/img/gapminderOnePanel.svg" alt="gapminder animation" height="550px"/></p>
 
---- .class #id
+*** =right
 
-### gridSVG: rnd
+- `gridSVG` animates a ggplot object before the output is flattened for export
+  to a graphics device
+- the animation is obtained from mapping to the time dimension (annual since
+  1950)
+- `size` = population
+- `color` = continent
+    - `blue`: Europe
+    - `red`: Asia
+    - `green`: Africa
+    - `yellow`: America
+
+--- &twocol
+
+### gridSVG: R&D Expendidures
+
+*** =left
 
 <p style="text-align:center"><img src="assets/img/RDplotOnePanel.svg" alt="rnd animation" height="550px"/></p>
+
+*** =right
+
+- 
 
 --- &twocol
 
@@ -761,7 +796,7 @@ p2$print('chart2')
 ### rCharts: highcharts
 
 ```{r highchartsbubble, echo = TRUE, results = 'asis', warning=FALSE}
-p3 <- hPlot(Pulse ~ Height, data = MASS::survey, type = "bubble", title = "Zoom demo", 
+p3 <- hPlot(Pulse ~ Height, data = MASS::survey, type = "bubble", title = "Zoom demo",
             subtitle = "bubble chart", size = "Age", group = "Exer")
 p3$chart(zoomType = "xy"); p3$exporting(enabled = T); p3$print('chart3')
 ```
@@ -842,11 +877,11 @@ customtext <- cntext[,colnames(cntext)==cou]
 # Trade in Value-added: 'r country'
 ## EXGRDVA\_EX {#exgrdvaex}
 ### Domestic value added content of gross exports, 'r year', %
-'''{r fig1, fig.path="figures/report_icio_tiva/<%= x %>/", fig.height=5, fig.width=10, 
+'''{r fig1, fig.path="figures/report_icio_tiva/<%= x %>/", fig.height=5, fig.width=10,
       echo=FALSE, message=FALSE}
 	source(file.path(path, "code", "figure1.R"))
 '''
-'r country' domestic value-added content of its exports is, at 'r .perc1'%, 'r .rel1' 
+'r country' domestic value-added content of its exports is, at 'r .perc1'%, 'r .rel1'
 the OECD average in 'r year'.
 'r if(!is.na(customtext[1])) customtext[1]'
 ```
@@ -870,6 +905,8 @@ the OECD average in 'r year'.
 ## References
 
 - ggplot2 http://ggplot2.org/
-- ggthemes https://github.com/jrnold/ggthemes
-- julia gadfly http://gadflyjl.org/
+- ggplot2 extensions https://www.ggplot2-exts.org/
+- static plotting showcase http://yutannihilation.github.io/allYourFigureAreBelongToUs/
+- interactive plotting showcase http://gallery.htmlwidgets.org/
 - CRAN Task View: Graphics http://cran.r-project.org/web/views/Graphics.html
+- Shiny R Graph Catalog http://shinyapps.stat.ubc.ca/r-graph-catalog/

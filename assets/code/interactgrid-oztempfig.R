@@ -1,7 +1,5 @@
 library(oz)
 
-
-
 makeOzViewports <- function(ozRegion) {
   vpStack(viewport(name="ozlay", layout=grid.layout(1, 1,
                      widths=diff(ozRegion$rangex),
@@ -99,7 +97,6 @@ widthDetails.ribbonLegend <- function(x) {
   sum(layout.widths(viewport.layout(x$childrenvp[[1]]))) 
 } 
 
-
 grid.ozGrob(ozRegion())
 downViewport("ozvp")
 for (i in 1:(dim(ozTemp)[1])) {
@@ -120,6 +117,3 @@ for (i in 1:(dim(ozTemp)[1])) {
   popViewport()
 }
 upViewport(0)
-
-
-
