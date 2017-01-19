@@ -6404,6 +6404,7 @@ the OECD average in 'r year'.
 ## References
 
 - ggplot2 http://ggplot2.org/
+- R for Data Science http://r4ds.had.co.nz/
 - ggplot2 extensions https://www.ggplot2-exts.org/
 - static plotting showcase http://yutannihilation.github.io/allYourFigureAreBelongToUs/
 - interactive plotting showcase http://gallery.htmlwidgets.org/
