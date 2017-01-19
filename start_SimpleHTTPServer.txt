@@ -1,3 +1,0 @@
-cd /home/z930/Dropbox/GitHub/as_seminar_report && python -m SimpleHTTPServer
-
-cd c:\Users\werth_b\LocalData\Dropbox\markdown_files\OECD\shiny\as_seminar\shiny_seminar_presentation && python -m SimpleHTTPServer
